@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Modulo 3: Introducción a Streamlit &#8212; Visualización de datos</title>
   
@@ -15,56 +14,53 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=6c7211e7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'modulo_3';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Módulo 4: Visualización de datos interactivos" href="modulo_4.html" />
@@ -78,19 +74,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -112,12 +112,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -132,9 +140,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -144,12 +156,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="Visualización de datos - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Visualización de datos - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -179,7 +202,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -188,14 +211,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -317,26 +340,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -383,18 +408,18 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="modulo-3-introduccion-a-streamlit">
-<h1><strong>Modulo 3: Introducción a Streamlit</strong><a class="headerlink" href="#modulo-3-introduccion-a-streamlit" title="Permalink to this heading">#</a></h1>
+<h1><strong>Modulo 3: Introducción a Streamlit</strong><a class="headerlink" href="#modulo-3-introduccion-a-streamlit" title="Link to this heading">#</a></h1>
 <section id="que-es-streamlit">
-<h2><strong>¿Qué es Streamlit?</strong><a class="headerlink" href="#que-es-streamlit" title="Permalink to this heading">#</a></h2>
+<h2><strong>¿Qué es Streamlit?</strong><a class="headerlink" href="#que-es-streamlit" title="Link to this heading">#</a></h2>
 <p><strong><code class="docutils literal notranslate"><span class="pre">Streamlit</span></code></strong> es un marco de trabajo de <strong>código abierto, gratuito y altamente eficiente</strong>, diseñado para la <strong>creación rápida de aplicaciones web interactivas</strong> enfocadas en aprendizaje automático y ciencia de datos. Desarrollado en Python, Streamlit está pensado específicamente para científicos de datos e ingenieros de machine learning, quienes, sin ser necesariamente desarrolladores web, necesitan una herramienta sencilla y accesible que les permita construir visualizaciones y aplicaciones sin invertir semanas en aprender tecnologías web complejas.</p>
 <p>Con Streamlit, puedes desarrollar aplicaciones web atractivas y funcionales utilizando solo unas pocas líneas de código, lo que facilita la visualización de datos y la interacción con parámetros esenciales para los modelos, todo en un entorno que prioriza la simplicidad y la rapidez en el desarrollo.</p>
 <p><img alt="stream" src="_images/stream.png" /></p>
 </section>
 <section id="por-que-los-cientificos-de-datos-deberian-utilizar-streamlit">
-<h2><strong>¿Por qué los científicos de datos deberían utilizar Streamlit?</strong><a class="headerlink" href="#por-que-los-cientificos-de-datos-deberian-utilizar-streamlit" title="Permalink to this heading">#</a></h2>
+<h2><strong>¿Por qué los científicos de datos deberían utilizar Streamlit?</strong><a class="headerlink" href="#por-que-los-cientificos-de-datos-deberian-utilizar-streamlit" title="Link to this heading">#</a></h2>
 <p>Lo más destacado de <strong>Streamlit</strong> es que no necesitas conocimientos previos de desarrollo web para comenzar a crear tu primera aplicación. Si te dedicas a la ciencia de datos y quieres implementar tus modelos de forma rápida, sencilla y con solo unas pocas líneas de código, <strong>Streamlit</strong> es una opción excelente.</p>
 <p>Una característica clave para el éxito de cualquier aplicación es ofrecer una interfaz de usuario intuitiva y eficiente. Muchas aplicaciones modernas, que gestionan grandes volúmenes de datos, se enfrentan al desafío de desarrollar interfaces atractivas sin procesos complicados. Aquí es donde <strong>Streamlit</strong> brilla: esta biblioteca de Python de código abierto permite a los desarrolladores crear interfaces interactivas y visualmente atractivas en muy poco tiempo.</p>
 <p><strong>Streamlit</strong> es la forma más sencilla de convertir tu código en una aplicación web, especialmente si no tienes experiencia en desarrollo frontend:</p>
@@ -407,7 +432,7 @@ document.write(`
 </ul>
 </section>
 <section id="como-utilizar-streamlit">
-<h2><strong>¿Cómo utilizar Streamlit?</strong><a class="headerlink" href="#como-utilizar-streamlit" title="Permalink to this heading">#</a></h2>
+<h2><strong>¿Cómo utilizar Streamlit?</strong><a class="headerlink" href="#como-utilizar-streamlit" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Debemos crear un ambiente exclusivamente para <code class="docutils literal notranslate"><span class="pre">streamlit</span></code> usando anaconda powershell prompt.</p></li>
 </ol>
@@ -447,10 +472,10 @@ document.write(`
 <img alt="desp_5" src="_images/stream_10.png" /></p>
 </section>
 <section id="guia-paso-a-paso-para-la-creacion-de-una-aplicacion-con-streamlit">
-<h2><strong>Guía paso a paso para la creación de una aplicación con Streamlit</strong><a class="headerlink" href="#guia-paso-a-paso-para-la-creacion-de-una-aplicacion-con-streamlit" title="Permalink to this heading">#</a></h2>
+<h2><strong>Guía paso a paso para la creación de una aplicación con Streamlit</strong><a class="headerlink" href="#guia-paso-a-paso-para-la-creacion-de-una-aplicacion-con-streamlit" title="Link to this heading">#</a></h2>
 <p>Una explicación paso a paso más detallada para la creación de la carpeta <em>app</em> y el uso de Streamlit con un script en Python llamado <strong><code class="docutils literal notranslate"><span class="pre">app.py</span></code></strong>.</p>
 <section id="creacion-de-la-carpeta-app">
-<h3>Creación de la carpeta <strong>app</strong><a class="headerlink" href="#creacion-de-la-carpeta-app" title="Permalink to this heading">#</a></h3>
+<h3>Creación de la carpeta <strong>app</strong><a class="headerlink" href="#creacion-de-la-carpeta-app" title="Link to this heading">#</a></h3>
 <p>Para organizar tu proyecto, es importante crear una carpeta donde se alojarán todos los archivos relacionados. Sigue estos pasos:</p>
 <ol class="arabic simple">
 <li><p><strong>En Windows</strong></p>
@@ -473,7 +498,7 @@ document.write(`
 </ol>
 </section>
 <section id="apertura-de-la-carpeta-en-el-editor-de-codigo">
-<h3><strong>Apertura de la carpeta en el editor de código</strong><a class="headerlink" href="#apertura-de-la-carpeta-en-el-editor-de-codigo" title="Permalink to this heading">#</a></h3>
+<h3><strong>Apertura de la carpeta en el editor de código</strong><a class="headerlink" href="#apertura-de-la-carpeta-en-el-editor-de-codigo" title="Link to this heading">#</a></h3>
 <p>Tomando el editor de código de Visual Studio Code (VSCode)</p>
 <ul class="simple">
 <li><p>Abre <code class="docutils literal notranslate"><span class="pre">VSCode</span></code>.</p></li>
@@ -482,7 +507,7 @@ document.write(`
 </ul>
 </section>
 <section id="creacion-del-archivo-app-py">
-<h3><strong>Creación del archivo <code class="docutils literal notranslate"><span class="pre">app.py</span></code></strong><a class="headerlink" href="#creacion-del-archivo-app-py" title="Permalink to this heading">#</a></h3>
+<h3><strong>Creación del archivo <code class="docutils literal notranslate"><span class="pre">app.py</span></code></strong><a class="headerlink" href="#creacion-del-archivo-app-py" title="Link to this heading">#</a></h3>
 <p>Pasos para VSCode</p>
 <ul class="simple">
 <li><p>Dentro de la carpeta <code class="docutils literal notranslate"><span class="pre">app</span></code>, haz clic derecho y selecciona <strong>Nuevo archivo</strong>.</p></li>
@@ -490,13 +515,13 @@ document.write(`
 </ul>
 </section>
 <section id="escritura-y-ejecucion-del-codigo-en-app-py">
-<h3><strong>Escritura y ejecución del código en <code class="docutils literal notranslate"><span class="pre">app.py</span></code></strong><a class="headerlink" href="#escritura-y-ejecucion-del-codigo-en-app-py" title="Permalink to this heading">#</a></h3>
+<h3><strong>Escritura y ejecución del código en <code class="docutils literal notranslate"><span class="pre">app.py</span></code></strong><a class="headerlink" href="#escritura-y-ejecucion-del-codigo-en-app-py" title="Link to this heading">#</a></h3>
 <p>Abrimos el archivo <code class="docutils literal notranslate"><span class="pre">app.py</span></code> y se escribe el código en Streamlit para empezar. Y despues en la terminal de anaconda powershell, escribe lo siguiente para la ejecución <code class="docutils literal notranslate"><span class="pre">streamlit</span> <span class="pre">run</span> <span class="pre">app.py</span></code></p>
 <p><img alt="desp_6" src="_images/stream_11.png" /></p>
 <p>Los comandos de Streamlit son fáciles de escribir y comprender. Con un simple comando, podrá visualizar textos, elementos multimedia, widgets, gráficos, etc.</p>
 </section>
 <section id="mostrar-textos-con-streamlit">
-<h3><strong>Mostrar textos con Streamlit</strong><a class="headerlink" href="#mostrar-textos-con-streamlit" title="Permalink to this heading">#</a></h3>
+<h3><strong>Mostrar textos con Streamlit</strong><a class="headerlink" href="#mostrar-textos-con-streamlit" title="Link to this heading">#</a></h3>
 <p>Al principio, veremos cómo agregar texto a tu aplicación Streamlit y cuáles son los diferentes comandos para agregar textos.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">st.write()</span></code>: Esta función se utiliza para agregar cualquier cosa a una aplicación web, desde cadenas formateadas hasta gráficos en figuras de matplotlib, gráficos de Altair, figuras de plotly, marco de datos, modelo Keras y otros.</p></li>
@@ -515,7 +540,7 @@ document.write(`
 <p><img alt="desp_8" src="_images/stream_13.png" /></p>
 </section>
 <section id="visualizacion-de-imagen-video-o-audio-con-streamlit">
-<h3><strong>Visualización de imagen, vídeo o audio con Streamlit</strong><a class="headerlink" href="#visualizacion-de-imagen-video-o-audio-con-streamlit" title="Permalink to this heading">#</a></h3>
+<h3><strong>Visualización de imagen, vídeo o audio con Streamlit</strong><a class="headerlink" href="#visualizacion-de-imagen-video-o-audio-con-streamlit" title="Link to this heading">#</a></h3>
 <p>No encontrará funciones tan sencillas como las de Streamlit para mostrar imágenes, vídeos y archivos de audio. Veamos cómo mostrar archivos multimedia con Streamlit.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">st.image()</span></code>: Esta función se utiliza para mostrar una imagen.</p></li>
@@ -543,7 +568,7 @@ document.write(`
 </div>
 </section>
 <section id="widgets-de-entrada">
-<h3><strong>Widgets de entrada</strong><a class="headerlink" href="#widgets-de-entrada" title="Permalink to this heading">#</a></h3>
+<h3><strong>Widgets de entrada</strong><a class="headerlink" href="#widgets-de-entrada" title="Link to this heading">#</a></h3>
 <p>Los <strong>widgets</strong> son los componentes más importantes de la interfaz de usuario. Streamlit tiene varios widgets que te permiten incorporar interactividad directamente a tus aplicaciones con botones, controles deslizantes, entradas de texto y más.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">st.checkbox()</span></code>: Casilla de verificación. Esta función devuelve un valor booleano: <code class="docutils literal notranslate"><span class="pre">True</span></code> si la casilla está marcada, <code class="docutils literal notranslate"><span class="pre">False</span></code> en caso contrario.</p></li>
@@ -606,7 +631,7 @@ document.write(`
 <p><img alt="desp_10" src="_images/stream_15.png" /></p>
 </section>
 <section id="visualizacion-del-progreso-y-el-estado-con-streamlit">
-<h3><strong>Visualización del progreso y el estado con Streamlit</strong><a class="headerlink" href="#visualizacion-del-progreso-y-el-estado-con-streamlit" title="Permalink to this heading">#</a></h3>
+<h3><strong>Visualización del progreso y el estado con Streamlit</strong><a class="headerlink" href="#visualizacion-del-progreso-y-el-estado-con-streamlit" title="Link to this heading">#</a></h3>
 <p>Ahora veremos cómo podemos agregar una barra de progreso y mensajes de estado como error y éxito a nuestra aplicación.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">st.balloons()</span></code>: Mostrar globos de celebración. Se utiliza para celebrar un evento o acción completada con éxito, mostrando animaciones de globos en la aplicación.</p></li>
@@ -624,7 +649,7 @@ document.write(`
 <p><img alt="desp_12" src="_images/stream_17.png" /></p>
 </section>
 <section id="barra-lateral-y-contenedor">
-<h3><strong>Barra lateral y contenedor</strong><a class="headerlink" href="#barra-lateral-y-contenedor" title="Permalink to this heading">#</a></h3>
+<h3><strong>Barra lateral y contenedor</strong><a class="headerlink" href="#barra-lateral-y-contenedor" title="Link to this heading">#</a></h3>
 <p>En Streamlit, puedes utilizar la barra lateral para organizar mejor tu contenido y proporcionar a los usuarios una experiencia más intuitiva. Al usar <code class="docutils literal notranslate"><span class="pre">st.sidebar</span></code>, los elementos que agregues aparecerán en un panel lateral fijo a la izquierda de la aplicación. Esto es útil para menús, controles o configuraciones que no interfieren directamente con el contenido principal.</p>
 <p>Veamos cómo usar la barra lateral y los contenedores para organizar tu aplicación.</p>
 <ul class="simple">
@@ -646,7 +671,7 @@ document.write(`
 </div>
 </section>
 <section id="visualizacion-con-streamlit">
-<h3><strong>Visualización con Streamlit</strong><a class="headerlink" href="#visualizacion-con-streamlit" title="Permalink to this heading">#</a></h3>
+<h3><strong>Visualización con Streamlit</strong><a class="headerlink" href="#visualizacion-con-streamlit" title="Link to this heading">#</a></h3>
 <p>La visualización de datos es una herramienta poderosa para comunicar información compleja de una manera clara y accesible. Con Streamlit, puedes integrar fácilmente gráficos y visualizaciones dentro de tu aplicación para contar historias a partir de los datos. Vamos a ver cómo usar la función <code class="docutils literal notranslate"><span class="pre">st.pyplot()</span></code> para mostrar gráficos creados con Matplotlib, una de las bibliotecas más populares para la creación de gráficos en Python.</p>
 <div class="tip dropdown admonition">
 <p class="admonition-title">¿Por qué necesitamos la visualización de datos?</p>
@@ -681,7 +706,7 @@ document.write(`
 <p><img alt="desp_21" src="_images/stream_25.png" /></p>
 </section>
 <section id="visualizacion-de-mapas-con-streamlit">
-<h3><strong>Visualización de mapas con Streamlit</strong><a class="headerlink" href="#visualizacion-de-mapas-con-streamlit" title="Permalink to this heading">#</a></h3>
+<h3><strong>Visualización de mapas con Streamlit</strong><a class="headerlink" href="#visualizacion-de-mapas-con-streamlit" title="Link to this heading">#</a></h3>
 <p>La función <code class="docutils literal notranslate"><span class="pre">st.map()</span></code> en Streamlit se utiliza para visualizar mapas interactivos, siempre y cuando tengas datos que incluyan latitud y longitud. Es una forma sencilla de mostrar puntos en un mapa sin necesidad de instalar bibliotecas adicionales como folium o plotly. Un ejemplo básico</p>
 <p><img alt="desp_22" src="_images/stream_26.png" /></p>
 <p>También puedes integrar mapas en la barra lateral con filtros interactivos, por ejemplo, permitiendo al usuario seleccionar un rango de latitudes y longitudes:</p>
@@ -715,11 +740,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="modulo_2.html"
@@ -739,10 +763,7 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -750,6 +771,7 @@ document.write(`
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -795,9 +817,10 @@ By Carlos de Oro Aguado
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -821,8 +844,8 @@ By Carlos de Oro Aguado
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
