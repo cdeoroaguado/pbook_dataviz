@@ -1,6 +1,6 @@
-# __Visualización de datos con Python__
+# **Visualización de datos con Python**
 
-## __Introducción__ 
+## **Introducción**
 
 ¡Bienvenido al modulo de "__Visualización de datos__", te guiaremos desde los conceptos fundamentales del lenguaje hasta la creación de programas y análisis complejos. No importa si eres un principiante absoluto; iremos paso a paso, explicando cada concepto con claridad y ejemplos prácticos para asegurar que comprendas y puedas aplicar lo aprendido.
 
