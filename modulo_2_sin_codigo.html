@@ -1,0 +1,1691 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Manipulación de datos con pandas &#8212; Visualización de datos</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=6c7211e7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'modulo_2_sin_codigo';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.jpg" class="logo__image only-light" alt="Visualización de datos - Home"/>
+    <script>document.write(`<img src="_static/logo.jpg" class="logo__image only-dark" alt="Visualización de datos - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Visualización de datos con Python
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="modulo_1.html"><strong>Módulo 1: Introducción a la ciencia de datos con Python</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="modulo_2.html"><strong>Módulo 2: Estructuración y manipulación de datos con Python</strong></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmodulo_2_sin_codigo.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/modulo_2_sin_codigo.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Manipulación de datos con pandas</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Manipulación de datos con pandas</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas"><strong>Pandas</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adicion-de-nuevas-columnas-al-dataframe"><strong>Adición de nuevas columnas al DataFrame</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-estadistica"><strong>Descripción estadística</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen-estadistico-univariado"><strong>Resumen estadístico univariado</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen-estadistico-bivariado"><strong>Resumen estadístico bivariado</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indices-explicitos"><strong>Indices explicitos</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-sencilla-de-datos"><strong>Visualización sencilla de datos</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histograma"><strong>Histograma</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#densidad"><strong>Densidad</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histograma-con-funcion-de-densidad"><strong>Histograma con función de densidad</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cajas-y-bigotes"><strong>Cajas y bigotes</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#barras"><strong>Barras</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-forma-de-realizar-graficos-de-barras"><strong>Otras forma de realizar gráficos de barras</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#circulares"><strong>Circulares</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lineas"><strong>Lineas</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispersion-scatter-plots"><strong>Dispersión (Scatter Plots)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogramas-con-variable-categorica"><strong>Histogramas con variable categórica</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cajas-y-bigotes-con-variable-categorica"><strong>Cajas y bigotes con variable categórica</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagrama-de-barras-con-variables-categoricas"><strong>Diagrama de barras con variables categóricas</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagrama-hexagonal"><strong>Diagrama hexagonal</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagrama-de-contorno"><strong>Diagrama de contorno</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exploracion-de-datos-con-ydata-profiling"><strong>Exploración de Datos con <code class="docutils literal notranslate"><span class="pre">ydata-profiling</span></code></strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-ydata-profiling"><strong>¿Qué es <code class="docutils literal notranslate"><span class="pre">ydata-profiling</span></code>?</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-incluye-el-informe"><strong>¿Qué incluye el informe?</strong></a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="manipulacion-de-datos-con-pandas">
+<h1><strong>Manipulación de datos con pandas</strong><a class="headerlink" href="#manipulacion-de-datos-con-pandas" title="Link to this heading">#</a></h1>
+<section id="pandas">
+<h2><strong>Pandas</strong><a class="headerlink" href="#pandas" title="Link to this heading">#</a></h2>
+<p>En este módulo, profundizaremos en la creación de <code class="docutils literal notranslate"><span class="pre">DataFrames</span></code>, una de las estructuras de datos más versátiles y poderosas para la manipulación de información financiera. Exploraremos tres métodos distintos para construir DataFrames, cada uno con aplicaciones específicas en la industria bancaria.</p>
+<p>Un <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> es una estructura bidimensional, similar a una tabla, que nos permite organizar y manipular datos con facilidad. En el contexto bancario, los DataFrames son ideales para manejar información de clientes, transacciones, productos financieros, y otros tipos de datos críticos.</p>
+<p>Ahora carguemos el conjunto de datos de <strong>marketing del banco</strong> <code class="docutils literal notranslate"><span class="pre">bank-full</span></code>.</p>
+<p>Los datos están relacionados con <code class="docutils literal notranslate"><span class="pre">campañas</span> <span class="pre">de</span> <span class="pre">marketing</span> <span class="pre">directo</span></code> (llamadas telefónicas) de una institución bancaria portuguesa.</p>
+<p>Este conjunto de datos tiene 4521 observaciones y 17 variables. Las variables son:</p>
+<ul class="simple">
+<li><p><strong>age:</strong> Edad del cliente.</p></li>
+<li><p><strong>job</strong>: Profesión del cliente (por ejemplo, desempleado, servicios, gestión).</p></li>
+<li><p><strong>marital</strong>: Estado civil del cliente (soltero, casado, divorciado).</p></li>
+<li><p><strong>education</strong>: Nivel educativo del cliente (primaria, secundaria, terciaria).</p></li>
+<li><p><strong>default</strong> : Indica si el cliente tiene crédito en incumplimiento (sí o no).</p></li>
+<li><p><strong>balance</strong>: Saldo promedio anual de la cuenta bancaria del cliente.</p></li>
+<li><p><strong>housing</strong>: Indica si el cliente tiene un préstamo hipotecario (sí o no).</p></li>
+<li><p><strong>loan</strong>: Indica si el cliente tiene un préstamo personal (sí o no).</p></li>
+<li><p><strong>contact</strong>: Tipo de comunicación de contacto (teléfono celular, teléfono fijo).</p></li>
+<li><p><strong>day</strong>: Día del mes en que se realizó el último contacto con el cliente.</p></li>
+<li><p><strong>month</strong>: Mes en que se realizó el último contacto con el cliente.</p></li>
+<li><p><strong>duration</strong>: Duración del último contacto en segundos.</p></li>
+<li><p><strong>campaign</strong>: Número de contactos realizados durante esta campaña de marketing.</p></li>
+<li><p><strong>pdays</strong>: Días que han pasado desde que el cliente fue contactado por última vez en una campaña anterior (valores -1 indican que el cliente no fue contactado previamente).</p></li>
+<li><p><strong>previous</strong>: Número de contactos realizados antes de esta campaña.</p></li>
+<li><p><strong>poutcome</strong>: Resultado de una campaña de marketing anterior (éxito, fracaso, desconocido).</p></li>
+<li><p><strong>y</strong>: Resultado de la campaña actual (si el cliente suscribió o no un depósito a plazo fijo).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># importar librerias</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Asignar la URL del archivo: url</span>
+<span class="n">url</span> <span class="o">=</span><span class="s1">&#39;https://raw.githubusercontent.com/cdeoroaguado/Datos/refs/heads/main/datamanip/bank/bank-full.csv&#39;</span>
+
+<span class="c1"># leer el archivo en u dataframe:df</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+<span class="c1"># Imprimir el encabezado del dataframe</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+<span class="c1"># Mostrar las 5 ultimas filas de DataFrame</span>
+<span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Las dimensiones del dataset:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Obtener las dimensiones del DataFrame</span>
+<span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Información de la estructura del dataset de marketing:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Obtener información sobre la estructura del DataFrame</span>
+<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>El atributo <code class="docutils literal notranslate"><span class="pre">df.size</span></code> en pandas devuelve el número total de elementos en un <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. Esto se calcula multiplicando el número de filas por el número de columnas. Es útil para obtener una visión rápida del tamaño total del DataFrame en términos de elementos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># número total de elementos en el dataframe</span>
+<span class="n">df</span><span class="o">.</span><span class="n">size</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Puede ocurrir que el conjunto de datos de marketing para la banca tenga duplicados. El método <code class="docutils literal notranslate"><span class="pre">drop_duplicates()</span></code> en pandas se utiliza para eliminar filas duplicadas de un DataFrame. Este método permite identificar y remover filas que contienen los mismos valores en las columnas seleccionadas, o en todas las columnas si no se especifica ninguna.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eliminar filas duplicadas</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora, el nombres de las variables, el indice, el tipo de dato del dataset de marketing</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># nombre de las variables</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+
+<span class="c1"># Obtener el índice del DataFrame</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+
+<span class="c1"># tipo de dato</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Queremos saber los clientes menores de 20 años:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Seleccionar solo las filas donde la condición es True</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">20</span>
+
+<span class="c1"># Mostrar los clientes menores de 20 años</span>
+<span class="n">dfm20</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">]</span>
+
+<span class="c1"># imprimir el dataframe las 5 primeras</span>
+<span class="n">dfm20</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Escojamos las columnas <code class="docutils literal notranslate"><span class="pre">age</span></code>, <code class="docutils literal notranslate"><span class="pre">marital</span></code>, <code class="docutils literal notranslate"><span class="pre">balance</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> de los clientes menores de 20</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># seleccionemos las columnas</span>
+<span class="n">new_dfm20</span> <span class="o">=</span> <span class="n">dfm20</span><span class="p">[[</span><span class="s1">&#39;age&#39;</span><span class="p">,</span><span class="s1">&#39;marital&#39;</span><span class="p">,</span><span class="s1">&#39;balance&#39;</span><span class="p">,</span><span class="s1">&#39;y&#39;</span><span class="p">]]</span>
+
+<span class="c1"># imprimir</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">new_dfm20</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para saber quien tiene mayor balance en la cuenta de los menores de 20, debo ordenarlo usando el método <code class="docutils literal notranslate"><span class="pre">sort_values</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ordenar</span>
+<span class="n">new_dfm20</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;balance&#39;</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Puedes aplicar una función personalizada a una columna específica del DataFrame usando el método <code class="docutils literal notranslate"><span class="pre">apply()</span></code> de <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. Supongamos que deseas crear una nueva columna llamada <code class="docutils literal notranslate"><span class="pre">balance_category</span></code> que clasifique el balance de cada cliente en <code class="docutils literal notranslate"><span class="pre">&quot;Bajo&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;Medio&quot;</span></code> o <code class="docutils literal notranslate"><span class="pre">&quot;Alto&quot;</span></code> según ciertos umbrales.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definir una función para categorizar el balance</span>
+<span class="k">def</span> <span class="nf">categorizar_balance</span><span class="p">(</span><span class="n">balance</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">balance</span> <span class="o">&lt;</span> <span class="mi">500</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;Bajo&#39;</span>
+    <span class="k">elif</span> <span class="mi">500</span> <span class="o">&lt;=</span> <span class="n">balance</span> <span class="o">&lt;</span> <span class="mi">1500</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;Medio&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;Alto&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Aplicar la función &#39;categorizar_balance&#39; a la columna &#39;balance&#39;</span>
+<span class="c1"># y crear la nueva columna &#39;balance_category&#39;</span>
+<span class="n">new_dfm20</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;balance_category&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_dfm20</span><span class="p">[</span><span class="s1">&#39;balance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">categorizar_balance</span><span class="p">)</span>
+
+<span class="c1"># Mostrar el DataFrame actualizado</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">new_dfm20</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="warning admonition">
+<p class="admonition-title"><strong>Observación</strong></p>
+<p>Podemos aplicar funciones que ya tienen implementadas python o podemos usar la función <code class="docutils literal notranslate"><span class="pre">lambda</span></code></p>
+<ol class="arabic simple">
+<li><p>Con una función que tiene implementada <code class="docutils literal notranslate"><span class="pre">python</span></code></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">new_dfm20</span><span class="p">[</span><span class="s1">&#39;rounded_balance&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_dfm20</span><span class="p">[</span><span class="s1">&#39;balance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Con la función <code class="docutils literal notranslate"><span class="pre">lambda</span></code></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_dfm20</span><span class="p">[</span><span class="s1">&#39;rounded_balance_to_100&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_dfm20</span><span class="p">[</span><span class="s1">&#39;balance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">100</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<p>Ahora, debemos obtener los clientes menores de 20 que si se suscribieron. Ademas los que se suscribieron con balance bajo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># menores de 20 que se suscribieron</span>
+<span class="c1"># TU CODIGO</span>
+
+<span class="c1"># Otra forma de seleccionarlos</span>
+<span class="c1"># TU CODIGO</span>
+
+<span class="c1"># menores de 20 que se suscribieron con balance bajo</span>
+<span class="c1"># TU CODIGO</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="adicion-de-nuevas-columnas-al-dataframe">
+<h3><strong>Adición de nuevas columnas al DataFrame</strong><a class="headerlink" href="#adicion-de-nuevas-columnas-al-dataframe" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Anade una columna <code class="docutils literal notranslate"><span class="pre">balance_por_age</span></code> al <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. Del mismo modo, también podemos utilizar la suma, la resta y otros operadores matemáticos sobre dos columnas numéricas.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_dfm20</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;balance_por_age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">new_dfm20</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Ahora, veremos la adición condicional de columnas. Vamos a intentar añadir una columna basada en el valor de la edad, digamos que todo lo que sea más de 17 como mayor de edad (codificado como 1) y todo lo que sea inferior a 17 como menor de edad (codificado como 0).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_dfm20</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;age_cat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">new_dfm20</span><span class="o">.</span><span class="n">tail</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="descripcion-estadistica">
+<h3><strong>Descripción estadística</strong><a class="headerlink" href="#descripcion-estadistica" title="Link to this heading">#</a></h3>
+<p>Exploraremos cómo obtener estadísticas de resumen detalladas para columnas específicas de un DataFrame, así como cómo realizar análisis estadísticos avanzados mediante agrupaciones y tablas dinámicas. Comenzaremos con el cálculo de métricas descriptivas básicas, tales como medias, medianas, y desviaciones estándar, para evaluar la distribución y variabilidad de los datos. A continuación, abordaremos técnicas para aplicar estas estadísticas a subconjuntos de datos mediante agrupaciones, permitiendo un análisis más granular y enfocado.</p>
+<p>Finalmente, dominaremos el uso de tablas dinámicas para sintetizar, visualizar y resumir datos complejos, facilitando la extracción de insights clave y patrones significativos en grandes volúmenes de información. Este enfoque integral fortalecerá tu capacidad para extraer, interpretar y comunicar hallazgos estadísticos de manera efectiva en el análisis de datos.</p>
+<section id="resumen-estadistico-univariado">
+<h4><strong>Resumen estadístico univariado</strong><a class="headerlink" href="#resumen-estadistico-univariado" title="Link to this heading">#</a></h4>
+<p>Calculemos las medidas descriptivas fundamentales, incluyendo la media, mediana, moda, varianza, desviación estándar y cuartiles, para proporcionar una visión general de la distribución de los datos. Usaremos el conjunto de datos.</p>
+<ol class="arabic simple">
+<li><p>Si la variable es <em>numérica</em></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Descriptivo de una sola variable numérica solo promedio</span>
+<span class="c1"># TU CODIGO</span>
+
+<span class="c1"># Resumen descriptivo de una sola variable numérica</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="c1"># TU CODIGO))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Descriptivo de una varias variable numérica solo promedio</span>
+<span class="c1"># TU CODIGO</span>
+              
+<span class="c1"># Resumen descriptivo de varias variable numérica</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Promedio&#39;</span><span class="p">:</span> <span class="c1"># TU CODIGO.mean(),</span>
+    <span class="s1">&#39;Desv. Estandar&#39;</span><span class="p">:</span> <span class="c1"># TU CODIGO.std(),</span>
+    <span class="s1">&#39;minimo&#39;</span><span class="p">:</span> <span class="c1"># TU CODIGO.min(),</span>
+    <span class="s1">&#39;maximo&#39;</span><span class="p">:</span> <span class="c1"># TU CODIGO.max(),</span>
+    <span class="s1">&#39;mediana&#39;</span><span class="p">:</span> <span class="c1"># TU CODIGO.median(),</span>
+    <span class="s1">&#39;Cuantil 1&#39;</span><span class="p">:</span> <span class="c1"># TU CODIGO.quantile(0.25),</span>
+    <span class="s1">&#39;Cuantil 3&#39;</span><span class="p">:</span> <span class="c1"># TU CODIGO.quantile(0.75)</span>
+<span class="p">})</span>
+
+<span class="c1"># Mostrar los resultados</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Si la variable es <em>catégorica</em></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Descriptivo de una sola variable categórica solo conteo</span>
+<span class="n">conteo</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">conteo</span><span class="p">)</span>
+
+<span class="c1"># Descriptivo de una sola variable categórica solo proporcion</span>
+<span class="n">proporciones</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">proporciones</span><span class="p">)</span>
+
+<span class="c1"># Combinar los resultados en un solo DataFrame</span>
+<span class="n">resultado</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Conteo&#39;</span><span class="p">:</span> <span class="n">conteo</span><span class="p">,</span>
+    <span class="s1">&#39;Proporción&#39;</span><span class="p">:</span> <span class="n">proporciones</span>
+<span class="p">})</span>
+
+<span class="c1"># imprimir</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultado</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Descriptivo de varias variable categórica solo conteo</span>
+<span class="n">conteo</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
+<span class="c1"># print(conteo)</span>
+
+<span class="c1"># Descriptivo de varias variable categórica solo proporcion</span>
+<span class="n">proporciones</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
+<span class="c1"># print(proporciones)</span>
+
+<span class="c1"># Combinar los resultados en un solo DataFrame</span>
+<span class="n">resultado</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Conteo&#39;</span><span class="p">:</span> <span class="n">conteo</span><span class="p">,</span>
+    <span class="s1">&#39;Proporción&#39;</span><span class="p">:</span> <span class="n">proporciones</span>
+<span class="p">})</span>
+
+<span class="c1"># imprimir</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultado</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="resumen-estadistico-bivariado">
+<h4><strong>Resumen estadístico bivariado</strong><a class="headerlink" href="#resumen-estadistico-bivariado" title="Link to this heading">#</a></h4>
+<p>El resumen estadístico bivariado se refiere al estudio de dos variables simultáneamente para determinar si existe alguna relación o asociación entre ellas. Solo realizaremos las tablas para dicho análisis estadístico.</p>
+<ol class="arabic simple">
+<li><p><strong>Variable categórica vs variable numérica</strong></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># descriptivo edad según la suscripcion solo una variable</span>
+<span class="c1"># TU CODIGO</span>
+
+<span class="n">var_num_cat</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
+
+<span class="c1"># Mostrar los resultados</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var_num_cat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># descriptivo edad según la suscripcion varias variable</span>
+<span class="c1"># TU CODIGO</span>
+
+<span class="c1"># Resumen descriptivo  de edad según la suscripcion solo una variable</span>
+<span class="n">var_num_cat</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
+
+<span class="c1"># Renombrar las columnas resultantes</span>
+<span class="n">var_num_cat</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;Edad_Promedio&#39;</span><span class="p">,</span> <span class="s1">&#39;Edad_Desviacion_Estandar&#39;</span><span class="p">,</span> <span class="s1">&#39;Edad_Minimo&#39;</span><span class="p">,</span> <span class="s1">&#39;Edad_Maximo&#39;</span><span class="p">,</span> <span class="s1">&#39;Edad_Mediana&#39;</span><span class="p">,</span> <span class="s1">&#39;Edad_Cuantil_1&#39;</span><span class="p">,</span> <span class="s1">&#39;Edad_Cuantil_3&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Balance_Promedio&#39;</span><span class="p">,</span> <span class="s1">&#39;Balance_Desviacion_Estandar&#39;</span><span class="p">,</span> <span class="s1">&#39;Balance_Minimo&#39;</span><span class="p">,</span> <span class="s1">&#39;Balance_Maximo&#39;</span><span class="p">,</span> <span class="s1">&#39;Balance_Mediana&#39;</span><span class="p">,</span> <span class="s1">&#39;Balance_Cuantil_1&#39;</span><span class="p">,</span> <span class="s1">&#39;Balance_Cuantil_3&#39;</span>
+<span class="p">]</span>
+
+<span class="c1"># imprimir</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var_num_cat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para crear una <strong>tabla de contigencia</strong>, basta con tener dos variables categóricas. Por ejemplo</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Otra forma de crear una tabla de contingencia</span>
+<span class="n">crosstab</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">crosstab</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="indices-explicitos">
+<h3><strong>Indices explicitos</strong><a class="headerlink" href="#indices-explicitos" title="Link to this heading">#</a></h3>
+<p>En Python, los <strong>índices</strong> son utilizados para acceder a elementos en estructuras de datos como listas, tuplas, y matrices (arrays). Un índice explícito se refiere a la práctica de definir de manera específica el índice que se va a utilizar para acceder a un elemento, en lugar de depender de la indexación automática por la posición.</p>
+<div class="note admonition">
+<p class="admonition-title"><strong>Características de los Índices Explícitos</strong></p>
+<ul class="simple">
+<li><p><strong>Flexibilidad</strong>: Permiten el acceso a elementos específicos de una estructura de datos sin necesidad de recorrer secuencialmente todos los elementos.</p></li>
+<li><p><strong>Claridad</strong>: Facilitan la lectura y comprensión del código al hacer evidente qué elementos se están accediendo o modificando.</p></li>
+<li><p><strong>Manipulación de Datos</strong>: Hacen más sencillo realizar operaciones como reordenar elementos, filtrar,seleccionar, agrupar o acceder a subconjuntos de datos.</p></li>
+<li><p><strong>Compatibilidad con Pandas</strong>: En bibliotecas como pandas, los índices explícitos son fundamentales para trabajar con Series y DataFrames, permitiendo indexar tanto por números como por etiquetas.</p></li>
+<li><p><strong>Precisión</strong>: Al especificar el índice, reduces el riesgo de errores al manipular datos.</p></li>
+<li><p><strong>Eficiencia</strong>: Mejoran la eficiencia al permitir operaciones directas sobre los elementos deseados.</p></li>
+</ul>
+</div>
+<p>Visualicemos nuevamente el dataframe de marketing para la banca.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># marco de datos</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Analicemos algunas funciones utiles de la indexación explicita:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">df.set_index()</span></code>; Este método se usa para establecer una o más columnas del DataFrame como su índice.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Establecer la columna &#39;job&#39; como índice</span>
+<span class="c1"># TU CODIGO</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">df.reset_index()</span></code>:Este método se usa para restablecer el índice del DataFrame, devolviendo los índices actuales a columnas y creando un nuevo índice numérico predeterminado. Si usas el parámetro <code class="docutils literal notranslate"><span class="pre">drop=True</span></code> indica que se debe eliminar la columna de índice original en lugar de moverla a una columna.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TU CODIGO</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">df.sort_index()</span></code>: Este método ordena las filas del DataFrame en función del índice.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># orden de los indices</span>
+<span class="c1"># TU CODIGO</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>En conclusión, el uso de índices explícitos en Python es una técnica poderosa que permite un control detallado sobre la manipulación de datos. Ya sea en estructuras simples como listas o en análisis más complejos utilizando pandas, el conocimiento y uso adecuado de índices explícitos puede mejorar significativamente la eficiencia y claridad de tu código.</p>
+</section>
+</section>
+</section>
+<section id="visualizacion-sencilla-de-datos">
+<h1><strong>Visualización sencilla de datos</strong><a class="headerlink" href="#visualizacion-sencilla-de-datos" title="Link to this heading">#</a></h1>
+<p>Para el desarrollo de las visualización trabajaremos con datos sobre los almacenes Walmart, que es un cadena de grande almacenes de Ewa.</p>
+<figure class="align-center" id="walmart">
+<a class="reference internal image-reference" href="_images/walmart.png"><img alt="_images/walmart.png" src="_images/walmart.png" style="width: 488.5px; height: 268.5px;" />
+</a>
+</figure>
+<p>El conjunto de datos completos lo puede encontrar este <a class="reference external" href="https://www.kaggle.com/datasets/yasserh/walmart-dataset/data">link</a>. Trabajaremos un subconjunto de datos contiene las ventas semanales en dolares, cada tienda tiene un número de identificación y un tipo de tienda específico, las ventas estan separadas por ID de departamento. Junto con las ventas hay variables como si fue de vacaciones o no, la temperatura media durante la semana en esa localidad, el tiempo medio del combustible en dolares por litro esa semana y la tasa de desempleo de esa semana</p>
+<p>Aquí tienes una explicación de las variables en el conjunto de datos de ventas proporcionado:</p>
+<ul class="simple">
+<li><p><strong>Unnamed</strong>: Columna de índice que parece haber sido incluida al guardar el archivo. No es una variable significativa.</p></li>
+<li><p><strong>store</strong>: Identificador del número de la tienda.</p></li>
+<li><p><strong>type</strong>: Tipo de tienda, representado por una letra (por ejemplo, “A”, “B”, etc.).</p></li>
+<li><p><strong>department</strong>: Identificador del número de departamento dentro de la tienda.</p></li>
+<li><p><strong>date</strong>: Fecha en la que se registró la venta.</p></li>
+<li><p><strong>weekly_sales</strong>: Ventas semanales en USD registradas en esa tienda y departamento específicos.</p></li>
+<li><p><strong>is_holiday</strong>: Variable booleana que indica si la fecha corresponde a un día festivo o no. Los valores son “True” o “False”.</p></li>
+<li><p><strong>temperature_c</strong>: Temperatura en grados Celsius en la fecha registrada.</p></li>
+<li><p><strong>fuel_price_usd_per_l</strong>: Precio del combustible en dólares estadounidenses por litro en la fecha registrada.</p></li>
+<li><p><strong>unemployment</strong>: Tasa de desempleo en la fecha registrada.</p></li>
+</ul>
+<p>Carguemos el conjunto de datos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Renombrar una columna</span>
+<span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">:</span> <span class="s1">&#39;id&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Informacion del conjunto de datos</span>
+<span class="c1"># TU CODIGO</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="histograma">
+<h2><strong>Histograma</strong><a class="headerlink" href="#histograma" title="Link to this heading">#</a></h2>
+<p>Un <strong>histograma</strong> es una representación gráfica que muestra la distribución de una variable continua. Se divide el rango de valores en intervalos (<code class="docutils literal notranslate"><span class="pre">bins</span></code>) y se cuenta cuántos valores caen en cada intervalo.</p>
+<div class="note admonition">
+<p class="admonition-title"><strong>Características del histograma</strong></p>
+<ul class="simple">
+<li><p>Ideal para visualizar la forma de la distribución de los datos.</p></li>
+<li><p>Ayuda a identificar la simetría, la dispersión, y la presencia de outliers.</p></li>
+<li><p>El número de <code class="docutils literal notranslate"><span class="pre">bins</span></code> afecta la interpretación; demasiados o muy pocos <code class="docutils literal notranslate"><span class="pre">bins</span></code> pueden ocultar patrones importantes.</p></li>
+<li><p>Permite una fácil visualización de la distribución de datos.</p></li>
+<li><p>Útil para identificar la presencia de sesgos en los datos.</p></li>
+<li><p>No es útil para datos categóricos.</p></li>
+</ul>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># importar matplotlib</span>
+<span class="c1"># TU CODIGO</span>
+
+<span class="c1"># Histograma de las ventas semanales</span>
+<span class="c1"># TU CODIGO</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Otra forma</span>
+<span class="c1"># TU CODIGO</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importar seaborn</span>
+<span class="c1"># TU CODIGO</span>
+
+<span class="c1"># Histograma de las ventas semanales con Seaborn</span>
+<span class="c1"># TU CODIGO</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="densidad">
+<h2><strong>Densidad</strong><a class="headerlink" href="#densidad" title="Link to this heading">#</a></h2>
+<p>Una <strong>gráfica de densidad</strong> es una representación gráfica suave de la distribución de una variable continua. Se basa en la estimación de la función de densidad de probabilidad (KDE, por sus siglas en inglés), lo que permite visualizar la forma general de la distribución sin depender de intervalos rígidos como en los histogramas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Gráfico de densidad</span>
+<span class="c1"># TU CODIGO</span>
+<span class="c1"># TU CODIGO</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Gráfica de densidad de precio del combustible (Seaborn)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Precio USD por litro&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Densidad&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="histograma-con-funcion-de-densidad">
+<h2><strong>Histograma con función de densidad</strong><a class="headerlink" href="#histograma-con-funcion-de-densidad" title="Link to this heading">#</a></h2>
+<p>Un <strong>histograma con función de densidad</strong> combina la representación clásica del histograma (que agrupa los datos en intervalos) con una <strong>curva de densidad suave</strong> (estimación KDE). Esta combinación permite visualizar tanto la frecuencia aproximada de los valores como la forma general de la distribución de los datos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="c1"># TU CODIGO</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histograma con curva de densidad (Seaborn)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Precio USD por litro&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Densidad&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Una <strong>transformación logarítmica</strong> ayuda a identificar más tendencias. Por ejemplo, en el siguiente gráfico, el eje
+muestra los valores transformados en logaritmos de la variable del precio, y vemos que hay dos o más picos que indican el precio de la gasolina por litro</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Datos transformados</span>
+<span class="n">log_data</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
+
+<span class="c1"># Gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">log_data</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgreen&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histograma con Curva de Densidad (Log Precios)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Log(Precio USD por litro)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Densidad&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="cajas-y-bigotes">
+<h2><strong>Cajas y bigotes</strong><a class="headerlink" href="#cajas-y-bigotes" title="Link to this heading">#</a></h2>
+<p>Un gráfico de cajas y bigotes visualiza la distribución de un conjunto de datos, mostrando la mediana y los cuartiles, así como los posibles outliers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># diagrama de cajas y bigotes de la temperatura</span>
+<span class="c1"># TU CODIGO</span>
+
+<span class="c1"># Remover el nombre de la columna del eje X</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">])</span>  
+
+<span class="c1"># Agregar título y etiquetas</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Gráfico de Cajas y Bigotes&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Temperatura (°F)&#39;</span><span class="p">)</span>
+
+<span class="c1"># Mostrar el gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear un diagrama de cajas y bigotes con Seaborn</span>
+<span class="c1"># TU CODIGO</span>
+
+<span class="c1"># Remover el nombre de la columna del eje X</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">])</span>
+
+<span class="c1"># Agregar título y etiquetas</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Gráfico de Cajas y Bigotes&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Temperatura (°C)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Temperatura (°C)&#39;)
+</pre></div>
+</div>
+<img alt="_images/650ddca3be35f67914c562a006d864dc55fc2b77cc668965a0d833ab14b84045.png" src="_images/650ddca3be35f67914c562a006d864dc55fc2b77cc668965a0d833ab14b84045.png" />
+</div>
+</div>
+</section>
+<section id="barras">
+<h2><strong>Barras</strong><a class="headerlink" href="#barras" title="Link to this heading">#</a></h2>
+<p>Una gráfica de barras se utiliza para mostrar y comparar cantidades entre diferentes categorías. Cada barra representa una categoría, y su altura es proporcional al valor que representa.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Contar el tipo de tienda</span>
+<span class="n">tipo</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
+
+<span class="c1"># Graficar el conteo de tipos de tienda en un gráfico de barras verticales</span>
+<span class="c1"># TU CODIGO</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Graficar el conteo de tipos de tienda en un gráfico de barras con Seaborn</span>
+<span class="c1"># TU CODIGO</span>
+
+<span class="c1"># Agregar título y etiquetas si lo deseas</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Conteo de tipos de tienda&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tipo de tienda&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
+
+<span class="c1"># Mostrar el gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convertir is_holiday en categorica</span>
+<span class="n">festivo</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
+
+<span class="c1"># Contar el tipo de tienda</span>
+<span class="n">conteo_festivo</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
+
+<span class="c1">#Graficar el conteo de festivos en un gráfico de barras verticales</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">conteo_festivo</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">conteo_festivo</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Contar el tipo de festividad</span>
+<span class="n">conteo_festivo</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
+<span class="n">conteo_festivo</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Festivo&#39;</span><span class="p">,</span> <span class="s1">&#39;Conteo&#39;</span><span class="p">]</span>
+
+<span class="c1"># Graficar el conteo de festividades en un gráfico de barras horizontal con Seaborn</span>
+<span class="c1"># TU CODIGO</span>
+
+<span class="c1"># Agregar título y etiquetas si lo deseas</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Conteo de festividades&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Conteo&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Festivo&#39;</span><span class="p">)</span>
+
+<span class="c1"># Mostrar el gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="otras-forma-de-realizar-graficos-de-barras">
+<h2><strong>Otras forma de realizar gráficos de barras</strong><a class="headerlink" href="#otras-forma-de-realizar-graficos-de-barras" title="Link to this heading">#</a></h2>
+<p>Aprenderemos a crear una tabla utilizando la función <code class="docutils literal notranslate"><span class="pre">pandas</span> <span class="pre">crosstab</span></code>. Utilizaremos una tabla para generar un gráfico de barras. A continuación, exploraremos un gráfico de barras generado con la biblioteca <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> y calcularemos la distribución del promedio de <code class="docutils literal notranslate"><span class="pre">weekly_sales</span></code> según el <code class="docutils literal notranslate"><span class="pre">store</span></code>. Para ello, vamos a realizar los siguientes pasos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">median</span><span class="p">,</span> <span class="n">mean</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span> <span class="o">=</span> <span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="c1"># TU CODIGO);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Ahora, veamos un gráfico de barras agrupada. Utilice el parámetro <code class="docutils literal notranslate"><span class="pre">hue</span></code> para trazar grupos anidados:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="c1"># TU CODIGO);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Si deseamos poner notas en diagrama de barras.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">mean</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;store&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;weekly_sales&quot;</span><span class="p">,</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
+    <span class="n">estimator</span><span class="o">=</span><span class="n">mean</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#8FD694&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Encuentra la tienda con mayores ventas promedio</span>
+<span class="n">mean_sales</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;store&quot;</span><span class="p">)[</span><span class="s2">&quot;weekly_sales&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">top_store</span> <span class="o">=</span> <span class="n">mean_sales</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+<span class="n">top_value</span> <span class="o">=</span> <span class="n">mean_sales</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">mean_sales</span><span class="o">.</span><span class="n">index</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">top_store</span><span class="p">)</span>  <span class="c1"># posición de la barra en el eje x</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">top_value</span>  <span class="c1"># altura de la barra</span>
+
+<span class="c1"># Anotación con nota visual</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+    <span class="s1">&#39;Excelente desempeño máximas ventas promedio&#39;</span><span class="p">,</span>
+    <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span>
+    <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">2000</span><span class="p">),</span>
+    <span class="n">bbox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">boxstyle</span><span class="o">=</span><span class="s1">&#39;round,pad=0.5&#39;</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s1">&#39;lightyellow&#39;</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;gold&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">),</span>
+    <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Promedio de ventas semanales por tienda&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Tienda&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Weekly Sales&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="circulares">
+<h2><strong>Circulares</strong><a class="headerlink" href="#circulares" title="Link to this heading">#</a></h2>
+<p>Un diagrama circular (o gráfico de pastel) es una representación gráfica que muestra la proporción de diferentes categorías dentro de un conjunto de datos como segmentos de un círculo. Cada segmento del círculo representa una categoría y su tamaño es proporcional a su frecuencia o porcentaje en relación con el total.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tipo</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
+
+<span class="c1"># Graficar el conteo de tipos de tienda en un diagrama circular</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">tipo</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">tipo</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%1.1f%%</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">startangle</span><span class="o">=</span><span class="mi">140</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Paired</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tipo</span><span class="p">))))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de tipos de tienda&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora haremos unas gráficas bivariadas.</p>
+</section>
+<section id="lineas">
+<h2><strong>Lineas</strong><a class="headerlink" href="#lineas" title="Link to this heading">#</a></h2>
+<p>Una gráfica de líneas conecta una serie de puntos de datos con líneas, generalmente utilizada para mostrar cambios o tendencias a lo largo del tiempo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convertir la columna date a formato de fecha</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span><span class="c1"># TU CODIGO</span>
+
+<span class="c1"># Agrupar las ventas por fecha, sumando las ventas semanales en las fechas repetidas</span>
+<span class="n">df_grouped</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
+
+<span class="n">df_grouped</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear un gráfico de líneas con las fechas agrupadas</span>
+<span class="c1"># TU CODIGO</span>
+
+<span class="c1"># Rotar las etiquetas del eje X para que se muestren en vertical</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="c1"># Mostrar el gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/13be0eb7aa4bfc4645b9280092510c82acc0606b2b1b4c192f641318d0c39fe9.png" src="_images/13be0eb7aa4bfc4645b9280092510c82acc0606b2b1b4c192f641318d0c39fe9.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear un gráfico de líneas con las fechas agrupadas utilizando Seaborn</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>  <span class="c1"># Ajustar el tamaño del gráfico</span>
+<span class="c1"># TU CODIGO</span>
+
+<span class="c1"># Rotar las etiquetas del eje X para que se muestren en vertical</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+
+<span class="c1"># Agregar título y etiquetas si lo deseas</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Ventas semanales agrupadas por fecha&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Fecha&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Ventas semanales&#39;</span><span class="p">)</span>
+
+<span class="c1"># Mostrar el gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="dispersion-scatter-plots">
+<h2><strong>Dispersión (Scatter Plots)</strong><a class="headerlink" href="#dispersion-scatter-plots" title="Link to this heading">#</a></h2>
+<p>Una gráfica de dispersión muestra la relación entre dos variables numéricas mediante puntos dispersos en un plano cartesiano.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear una gráfica de dispersión de ventas semanales vs. precio de la gasolina utilizando Seaborn</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>  <span class="c1"># Ajustar el tamaño del gráfico</span>
+<span class="c1"># TU CODIGO</span>
+
+<span class="c1"># Agregar título y etiquetas</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Relación entre ventas semanales y precio de la gasolina&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ventas semanales ($)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Precio de la gasolina (USD por litro)&#39;</span><span class="p">)</span>
+
+<span class="c1"># Mostrar el gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="histogramas-con-variable-categorica">
+<h2><strong>Histogramas con variable categórica</strong><a class="headerlink" href="#histogramas-con-variable-categorica" title="Link to this heading">#</a></h2>
+<p>Para hacer estos histogramas debemos tener una variable numérica según una variable categórica</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear una superposición de histogramas de las ventas semanales según el tipo de tienda utilizando Seaborn</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>  <span class="c1"># Ajustar el tamaño del gráfico</span>
+
+<span class="c1"># Histograma para el tipo &#39;A&#39;</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="c1"># TU CODIGO, color=&#39;blue&#39;, label=&#39;A&#39;, kde=False, alpha=0.7)</span>
+
+<span class="c1"># Histograma para el tipo &#39;B&#39;</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="c1"># TU CODIGO, color=&#39;red&#39;, label=&#39;B&#39;, kde=False, alpha=0.7)</span>
+
+<span class="c1"># Agregar título y etiquetas</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de las ventas semanales según el tipo&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ventas semanales ($)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
+
+<span class="c1"># Mostrar la leyenda</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="cajas-y-bigotes-con-variable-categorica">
+<h2><strong>Cajas y bigotes con variable categórica</strong><a class="headerlink" href="#cajas-y-bigotes-con-variable-categorica" title="Link to this heading">#</a></h2>
+<p>Para hacer estos diagramas de cajas y bigotes debemos tener una variable numérica según una variable categórica</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Separar los datos por sexo</span>
+<span class="n">u_a</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
+<span class="n">u_b</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
+
+<span class="c1"># Crear un diagrama de cajas y bigotes para &#39;height_cm&#39; vs &#39;sex&#39; usando pandas</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">boxplot</span><span class="p">([</span><span class="n">u_a</span><span class="p">,</span> <span class="n">u_b</span><span class="p">],</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">])</span>
+
+<span class="c1"># Agregar título y etiquetas</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Diagrama de cajas y bigotes: tasa de desempleo según el tipo&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Sexo&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Altura (cm)&#39;</span><span class="p">)</span>
+
+<span class="c1"># Mostrar el gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear un diagrama de cajas y bigotes para &#39;unemployment&#39; vs &#39;type&#39; usando Seaborn</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>  <span class="c1"># Ajustar el tamaño del gráfico</span>
+
+<span class="c1"># TU CODIGO</span>
+
+<span class="c1"># Agregar título y etiquetas</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Diagrama de cajas y bigotes: tasa de desempleo según el tipo&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tipo de tienda&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tasa de desempleo&#39;</span><span class="p">)</span>
+
+<span class="c1"># Mostrar el gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>¿Y si pudiéramos obtener una pista sobre la distribución completa de una característica numérica específica agrupada por otras características categóricas? El tipo de técnica de visualización adecuada en este caso es un <strong>gráfico de violín</strong>. Un gráfico de violín es similar a un grafico de caja pero incluye más detalles sobre las variaciones de los datos.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear un diagrama de violín para &#39;unemployment&#39; vs &#39;type&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>  <span class="c1"># Tamaño del gráfico</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;unemployment&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">inner</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;pastel&#39;</span><span class="p">)</span>
+
+<span class="c1"># Agregar título y etiquetas</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de la tasa de desempleo según el tipo de tienda&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tipo de tienda&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tasa de desempleo&#39;</span><span class="p">)</span>
+
+<span class="c1"># Mostrar el gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a0bcb618301b93e93d2a6db1843ea279a0e8f84335b53721e26b86093862b641.png" src="_images/a0bcb618301b93e93d2a6db1843ea279a0e8f84335b53721e26b86093862b641.png" />
+</div>
+</div>
+</section>
+<section id="diagrama-de-barras-con-variables-categoricas">
+<h2><strong>Diagrama de barras con variables categóricas</strong><a class="headerlink" href="#diagrama-de-barras-con-variables-categoricas" title="Link to this heading">#</a></h2>
+<p>Realizaremos un diagrama de barras con dos variables categóricas</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convertimos &#39;is_holiday&#39; a categoría con valores &#39;Holiday&#39; y &#39;Non-Holiday&#39;</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;is_holiday&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Contar la frecuencia de cada combinación de &#39;type&#39; y &#39;is_holiday&#39; y desapilamos</span>
+<span class="n">grouped_data</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
+
+<span class="c1"># Crear el gráfico de barras sin apilar</span>
+<span class="n">grouped_data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">stacked</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Personalización del gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frecuencia de tipo en función de los dias feriados o no&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tipo&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Mostrar el gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para exportar las gráficas en formato png. Usamos <code class="docutils literal notranslate"><span class="pre">savefig</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Contar la frecuencia de cada combinación de &#39;type&#39; y &#39;is_holiday&#39; y desapilamos</span>
+<span class="n">grouped_data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;is_holiday&#39;</span><span class="p">],</span> <span class="n">observed</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+
+<span class="c1"># Crear el gráfico de barras sin apilar</span>
+<span class="n">grouped_data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">stacked</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Personalización del gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frecuencia de tipo en función de los dias feriados o no&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tipo&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># exportar la figura</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;_image/grafica_1.png&#39;</span><span class="p">,</span><span class="n">transparent</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># exportar la figura con transparencia</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;_image/grafica_2.png&#39;</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="diagrama-hexagonal">
+<h2><strong>Diagrama hexagonal</strong><a class="headerlink" href="#diagrama-hexagonal" title="Link to this heading">#</a></h2>
+<p>Existe una versión más elegante de los gráficos de dispersión, llamada <code class="docutils literal notranslate"><span class="pre">hexagonal</span> <span class="pre">binning</span> <span class="pre">plot</span></code> (<code class="docutils literal notranslate"><span class="pre">hexbin</span> <span class="pre">plot</span></code>). En este ejercicio, utilizaremos <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> para crear una gráfica de dispersión hexagonal (<code class="docutils literal notranslate"><span class="pre">Hexbin</span> <span class="pre">Plot</span></code>) que muestre la relación entre las <strong>ventas semanales</strong> (<code class="docutils literal notranslate"><span class="pre">weekly_sales</span></code>) y el precio de la gasolina en <strong>USD por litro</strong> (<code class="docutils literal notranslate"><span class="pre">fuel_price_usd_per_l</span></code>). Este gráfico es útil para representar la densidad de datos cuando estos se superponen.</p>
+<ol class="arabic simple">
+<li><p>Importemos las bibliotecas necesarias:</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Usaremos <code class="docutils literal notranslate"><span class="pre">sns.scatterplot</span></code> para crear una gráfica de dispersión, y añadiremos un esquema de color personalizado para mejorar la visualización.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
+
+<span class="c1"># Establecer el estilo de los gráficos</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;ticks&quot;</span><span class="p">)</span>
+
+<span class="c1"># Crear el gráfico hexbin</span>
+<span class="c1"># TU CODIGO</span>
+
+<span class="c1"># Mostrar el gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="diagrama-de-contorno">
+<h2><strong>Diagrama de contorno</strong><a class="headerlink" href="#diagrama-de-contorno" title="Link to this heading">#</a></h2>
+<p>Los gráficos de contorno son útiles cuando los puntos de datos están densamente poblados en ciertas áreas, ya que muestran la concentración de los datos mediante líneas de contorno. En este ejercicio, crearemos un gráfico de contorno para analizar la relación entre las <strong>ventas semanales</strong> (<code class="docutils literal notranslate"><span class="pre">weekly_sales</span></code>) y el <strong>precio de la gasolina en USD por litro</strong> (<code class="docutils literal notranslate"><span class="pre">fuel_price_usd_per_l</span></code>).</p>
+<ol class="arabic simple">
+<li><p>Importar las bibliotecas necesarias:</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Utilizaremos el método <code class="docutils literal notranslate"><span class="pre">sns.kdeplot()</span></code> para generar un gráfico de contorno con las ventas semanales y el precio de la gasolina, y rellenar las áreas con gradientes de color para reflejar la densidad de puntos.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
+
+<span class="c1"># Establecer el estilo de los gráficos</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+
+<span class="c1"># Crear el gráfico de contorno con densidad del núcleo (KDE)</span>
+<span class="c1"># TU CODIGO</span>
+
+<span class="c1"># Añadir título y etiquetas descriptivas</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Relación entre ventas semanales y precio de la gasolina&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ventas semanales ($)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Precio de la gasolina (USD por litro)&#39;</span><span class="p">)</span>
+
+<span class="c1"># Mostrar el gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="exploracion-de-datos-con-ydata-profiling">
+<h1><strong>Exploración de Datos con <code class="docutils literal notranslate"><span class="pre">ydata-profiling</span></code></strong><a class="headerlink" href="#exploracion-de-datos-con-ydata-profiling" title="Link to this heading">#</a></h1>
+<section id="que-es-ydata-profiling">
+<h2><strong>¿Qué es <code class="docutils literal notranslate"><span class="pre">ydata-profiling</span></code>?</strong><a class="headerlink" href="#que-es-ydata-profiling" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">ydata-profiling</span></code> es una herramienta de Python que genera <strong>informes exploratorios automáticos y visuales</strong> a partir de un DataFrame de <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
+<p>Su objetivo es facilitar la <strong>exploración inicial de datos (EDA)</strong>, mostrando estadísticas, valores nulos, duplicados, correlaciones y más, todo en un informe HTML.</p>
+</section>
+<section id="que-incluye-el-informe">
+<h2><strong>¿Qué incluye el informe?</strong><a class="headerlink" href="#que-incluye-el-informe" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Estadísticas descriptivas (media, mediana, desvío estándar, etc.)</p></li>
+<li><p>Detección de valores faltantes y duplicados</p></li>
+<li><p>Tipos de datos por variable</p></li>
+<li><p>Distribuciones y gráficos por variable</p></li>
+<li><p>Matriz de correlaciones</p></li>
+<li><p>Alertas de calidad de datos</p></li>
+<li><p>Recomendaciones para limpieza</p></li>
+</ul>
+<div class="note admonition">
+<p class="admonition-title"><strong>Ventajas</strong></p>
+<ul class="simple">
+<li><p>Rápido y automático</p></li>
+<li><p>Visual e interactivo</p></li>
+<li><p>Exportable como HTML</p></li>
+<li><p>Ideal para auditoría de datos</p></li>
+<li><p>Muy útil en las primeras etapas de un análisis</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ydata-profiling</span></code> es ideal para <strong>ahorrar tiempo</strong> en la etapa de análisis exploratorio y para generar documentación de tus datos que sea clara y compartible.</p></li>
+</ul>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">ydata_profiling</span> <span class="kn">import</span> <span class="n">ProfileReport</span>
+
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;C:/GitHub/Datos/datamanip/bank/bank-full.csv&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+<span class="n">profile</span> <span class="o">=</span> <span class="n">ProfileReport</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Informe de los datos&#39;</span><span class="p">,</span> <span class="n">explorative</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">profile</span><span class="o">.</span><span class="n">to_notebook_iframe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Manipulación de datos con pandas</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas"><strong>Pandas</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adicion-de-nuevas-columnas-al-dataframe"><strong>Adición de nuevas columnas al DataFrame</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-estadistica"><strong>Descripción estadística</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen-estadistico-univariado"><strong>Resumen estadístico univariado</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen-estadistico-bivariado"><strong>Resumen estadístico bivariado</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indices-explicitos"><strong>Indices explicitos</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-sencilla-de-datos"><strong>Visualización sencilla de datos</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histograma"><strong>Histograma</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#densidad"><strong>Densidad</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histograma-con-funcion-de-densidad"><strong>Histograma con función de densidad</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cajas-y-bigotes"><strong>Cajas y bigotes</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#barras"><strong>Barras</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-forma-de-realizar-graficos-de-barras"><strong>Otras forma de realizar gráficos de barras</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#circulares"><strong>Circulares</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lineas"><strong>Lineas</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispersion-scatter-plots"><strong>Dispersión (Scatter Plots)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogramas-con-variable-categorica"><strong>Histogramas con variable categórica</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cajas-y-bigotes-con-variable-categorica"><strong>Cajas y bigotes con variable categórica</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagrama-de-barras-con-variables-categoricas"><strong>Diagrama de barras con variables categóricas</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagrama-hexagonal"><strong>Diagrama hexagonal</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagrama-de-contorno"><strong>Diagrama de contorno</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exploracion-de-datos-con-ydata-profiling"><strong>Exploración de Datos con <code class="docutils literal notranslate"><span class="pre">ydata-profiling</span></code></strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-ydata-profiling"><strong>¿Qué es <code class="docutils literal notranslate"><span class="pre">ydata-profiling</span></code>?</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-incluye-el-informe"><strong>¿Qué incluye el informe?</strong></a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Carlos de Oro Aguado
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
