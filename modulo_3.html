@@ -189,6 +189,7 @@
 <li class="toctree-l1"><a class="reference internal" href="modulo_2.html"><strong>Módulo 2: Estructuración y manipulación de datos con Python</strong></a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Módulo 3: Visualización de datos interactivos</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="modulo_4.html"><strong>Modulo 4: Introducción a Streamlit</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="modulo_5.html"><strong>Modulo 5: Despliegue de Dashboard</strong></a></li>
 </ul>
 
     </div>
@@ -432,12 +433,14 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-interactiva-de-mapas-con-datos-geograficos"><strong>Visualización interactiva de mapas con datos geográficos</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-de-un-mapa-coropletico"><strong>Creación de un mapa coroplético</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-del-uso-de-internet-a-nivel-mundial">Visualización del Uso de Internet a Nivel Mundial</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-de-un-mapa-coropletico"><strong>Creación de un mapa coroplético</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-del-uso-de-internet-a-nivel-mundial"><strong>Visualización del uso de internet a Nivel Mundial</strong></a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ajuste-de-un-mapa-coropletico-mundial"><strong>Ajuste de un mapa coroplético mundial</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anadiendo-animacion-a-un-mapa-coropletico"><strong>Añadiendo animación a un mapa coroplético</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mapas-coropleticos-con-graph-objects"><strong>Mapas coropléticos con <code class="docutils literal notranslate"><span class="pre">graph_objects</span></code></strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construccion-de-un-grafico-de-gispersion-en-un-mapa-geografico"><strong>Construcción de un gráfico de gispersión en un mapa geográfico</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construccion-de-un-grafico-de-dispersion-en-un-mapa-geografico"><strong>Construcción de un gráfico de dispersión en un mapa geográfico</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construccion-de-un-grafico-de-burbujas-en-un-mapa-geografico"><strong>Construcción de un gráfico de burbujas en un mapa geográfico</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construccion-de-un-grafico-de-burbujas-con-animacion-del-crecimiento-de-usuarios-de-internet"><strong>Construcción de un gráfico de burbujas con animación del crecimiento de usuarios de internet</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construccion-de-graficos-de-lineas-en-un-mapa-geografico"><strong>Construcción de gráficos de líneas en un mapa geográfico</strong></a></li>
@@ -3474,8 +3477,19 @@ function(Bokeh) {
 <p>Construimos el <code class="docutils literal notranslate"><span class="pre">slider</span></code> que utilizaremos para actualizar las figuras, y realizamos el llamado de la función <code class="docutils literal notranslate"><span class="pre">callback</span></code> que recibirá como input cada año que proviene del slider. La siguiente figura podrá ser visualizada desde su editor <code class="docutils literal notranslate"><span class="pre">VS</span> <span class="pre">Code</span></code>. Para visualizarla en su JBook deberá actualizar el html desde su navegador, para que la función <code class="docutils literal notranslate"><span class="pre">show()</span></code> pueda activarse y mostrarse en su página.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">slider</span> <span class="o">=</span> <span class="n">Slider</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">year</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">year</span><span class="p">),</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">year</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear deslizador para seleccionar el año</span>
+<span class="n">slider</span> <span class="o">=</span> <span class="n">Slider</span><span class="p">(</span>
+    <span class="n">start</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">year</span><span class="p">),</span>   <span class="c1"># Año inicial (mínimo del dataset)</span>
+    <span class="n">end</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">year</span><span class="p">),</span>     <span class="c1"># Año final (máximo del dataset)</span>
+    <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>                 <span class="c1"># Avance de 1 en 1 año</span>
+    <span class="n">value</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">year</span><span class="p">),</span>   <span class="c1"># Valor inicial del deslizador</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span>            <span class="c1"># Título que aparece en el control</span>
+<span class="p">)</span>
+
+<span class="c1"># Conectar el deslizador con la función de actualización (callback)</span>
 <span class="n">slider</span><span class="o">.</span><span class="n">js_on_change</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">callback</span><span class="p">)</span>
+
+<span class="c1"># Organizar el deslizador y el gráfico en una misma columna</span>
 <span class="n">layout</span> <span class="o">=</span> <span class="n">column</span><span class="p">(</span><span class="n">slider</span><span class="p">,</span> <span class="n">plot</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -4465,9 +4479,8 @@ function(Bokeh) {
 <p>Esta sección te proporcionará las herramientas necesarias para generar gráficos que representen datos geográficos de manera efectiva. Aunque bibliotecas como <code class="docutils literal notranslate"><span class="pre">Altair</span></code> y <code class="docutils literal notranslate"><span class="pre">Geopandas</span></code> ofrecen posibilidades interesantes para visualizar estos datos, <code class="docutils literal notranslate"><span class="pre">Plotly</span></code> destaca por su capacidad de crear gráficos geográficos variados que son fáciles de construir, personalizar y depurar. Además, utilizaremos <code class="docutils literal notranslate"><span class="pre">Plotly</span></code> para mostrar cómo generar distintos tipos de visualizaciones geográficas utilizando conjuntos de datos públicos. Un ejemplo clave es el mapa coroplético, que colorea diferentes divisiones geográficas, como países o regiones, para mostrar el valor de una característica específica en cada una. Por ejemplo, podrías visualizar el acceso a internet en diferentes países del mundo utilizando un <strong>mapa coroplético</strong>.</p>
 <section id="creacion-de-un-mapa-coropletico">
 <h3><strong>Creación de un mapa coroplético</strong><a class="headerlink" href="#creacion-de-un-mapa-coropletico" title="Link to this heading">#</a></h3>
-</section>
 <section id="visualizacion-del-uso-de-internet-a-nivel-mundial">
-<h3>Visualización del Uso de Internet a Nivel Mundial<a class="headerlink" href="#visualizacion-del-uso-de-internet-a-nivel-mundial" title="Link to this heading">#</a></h3>
+<h4><strong>Visualización del uso de internet a Nivel Mundial</strong><a class="headerlink" href="#visualizacion-del-uso-de-internet-a-nivel-mundial" title="Link to this heading">#</a></h4>
 <p>En la primera visualización, utilizaremos las estadísticas de uso de internet publicadas por <a class="reference external" href="https://ourworldindata.org/internet">Our World in Data</a> para mostrar el porcentaje de la población que utiliza internet en cada país, desde 1990 hasta 2017.</p>
 <p>¿Te has dado cuenta de la columna llamada <code class="docutils literal notranslate"><span class="pre">Code</span></code> en el conjunto de datos? Este campo contiene un código asignado a cada país bajo el estándar <strong>ISO 3166-1</strong>, el cual es utilizado globalmente por desarrolladores para referirse a los nombres de los países de manera uniforme en los datos.</p>
 <p>Dado que el <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> incluye registros de múltiples años, primero filtraremos los datos para un año específico, como 2016. Luego, utilizaremos este subconjunto de datos para generar un mapa mundial, donde se visualizará el uso de internet por país.</p>
@@ -4645,6 +4658,7 @@ if (outputEl) {{
 
                         })                };                });            </script>        </div></div></div>
 </div>
+</section>
 </section>
 <section id="ajuste-de-un-mapa-coropletico-mundial">
 <h3><strong>Ajuste de un mapa coroplético mundial</strong><a class="headerlink" href="#ajuste-de-un-mapa-coropletico-mundial" title="Link to this heading">#</a></h3>
@@ -5266,8 +5280,8 @@ if (outputEl) {{
                         })                };                });            </script>        </div></div></div>
 </div>
 </section>
-<section id="construccion-de-un-grafico-de-gispersion-en-un-mapa-geografico">
-<h3><strong>Construcción de un gráfico de gispersión en un mapa geográfico</strong><a class="headerlink" href="#construccion-de-un-grafico-de-gispersion-en-un-mapa-geografico" title="Link to this heading">#</a></h3>
+<section id="construccion-de-un-grafico-de-dispersion-en-un-mapa-geografico">
+<h3><strong>Construcción de un gráfico de dispersión en un mapa geográfico</strong><a class="headerlink" href="#construccion-de-un-grafico-de-dispersion-en-un-mapa-geografico" title="Link to this heading">#</a></h3>
 <p>Vamos a trazar las ubicaciones de las tiendas <strong>Walmart</strong> en un mapa de los Estados Unidos, utilizando un conjunto de datos disponible públicamente sobre las aperturas de tiendas Walmart entre 1962 y 2006. Este ejemplo nos permitirá ver la ubicación exacta de las tiendas Walmart, y utilizaremos las coordenadas de latitud y longitud para representarlas en un gráfico de dispersión.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5780,12 +5794,14 @@ if (outputEl) {{
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-interactiva-de-mapas-con-datos-geograficos"><strong>Visualización interactiva de mapas con datos geográficos</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-de-un-mapa-coropletico"><strong>Creación de un mapa coroplético</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-del-uso-de-internet-a-nivel-mundial">Visualización del Uso de Internet a Nivel Mundial</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-de-un-mapa-coropletico"><strong>Creación de un mapa coroplético</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-del-uso-de-internet-a-nivel-mundial"><strong>Visualización del uso de internet a Nivel Mundial</strong></a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ajuste-de-un-mapa-coropletico-mundial"><strong>Ajuste de un mapa coroplético mundial</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anadiendo-animacion-a-un-mapa-coropletico"><strong>Añadiendo animación a un mapa coroplético</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mapas-coropleticos-con-graph-objects"><strong>Mapas coropléticos con <code class="docutils literal notranslate"><span class="pre">graph_objects</span></code></strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construccion-de-un-grafico-de-gispersion-en-un-mapa-geografico"><strong>Construcción de un gráfico de gispersión en un mapa geográfico</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construccion-de-un-grafico-de-dispersion-en-un-mapa-geografico"><strong>Construcción de un gráfico de dispersión en un mapa geográfico</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construccion-de-un-grafico-de-burbujas-en-un-mapa-geografico"><strong>Construcción de un gráfico de burbujas en un mapa geográfico</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construccion-de-un-grafico-de-burbujas-con-animacion-del-crecimiento-de-usuarios-de-internet"><strong>Construcción de un gráfico de burbujas con animación del crecimiento de usuarios de internet</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construccion-de-graficos-de-lineas-en-un-mapa-geografico"><strong>Construcción de gráficos de líneas en un mapa geográfico</strong></a></li>
@@ -5815,7 +5831,7 @@ By Carlos de Oro Aguado
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2025, Msc Carlos de Oro Aguado.
       <br/>
     
   </p>
