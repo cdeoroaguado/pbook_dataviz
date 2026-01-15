@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=6c7211e7" />
   
@@ -424,8 +424,17 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-estructuras-de-datos-basicas-vectores-listas-matrices-diccionarios"><strong>1.4 Uso de estructuras de datos básicas (vectores, listas, matrices, diccionarios)</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vectores"><strong>1.4.1 Vectores</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#listas"><strong>1.4.2 Listas</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrices"><strong>1.4.3 Matrices</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diccionarios"><strong>1.4.4 Diccionarios</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generadores-de-valores-y-vectores-aleatorios"><strong>1.4.3 Generadores de valores y vectores aleatorios</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptos-clave"><strong>1.4.3.1 Conceptos clave:</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#numeros-aleatorios-uniforme-con-numpy"><strong>1.4.3.2 Números aleatorios uniforme con NumPy</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#distribucion-normal-gaussiana"><strong>1.4.3.3 Distribución normal (Gaussiana)</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#numeros-aleatorios-con-el-modulo-random"><strong>1.4.3.4 Números aleatorios con el módulo <code class="docutils literal notranslate"><span class="pre">random</span></code></strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reproducibilidad-con-semillas-seeds"><strong>1.4.3.5 Reproducibilidad con semillas (Seeds)</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-distribuciones-y-operaciones-avanzadas"><strong>1.4.3.6 Otras distribuciones y operaciones avanzadas</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrices"><strong>1.4.4 Matrices</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diccionarios"><strong>1.4.5 Diccionarios</strong></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-manipulacion-de-datos-creacion-manipulacion-y-analisis-de-datos-tabulares"><strong>1.5 Introducción a la manipulación de datos: Creación, manipulación y análisis de datos tabulares</strong></a><ul class="nav section-nav flex-column">
@@ -1769,8 +1778,170 @@ En programación científica, estas operaciones a menudo se realizan utilizando 
 </div>
 </div>
 </section>
+<section id="generadores-de-valores-y-vectores-aleatorios">
+<h3><strong>1.4.3 Generadores de valores y vectores aleatorios</strong><a class="headerlink" href="#generadores-de-valores-y-vectores-aleatorios" title="Link to this heading">#</a></h3>
+<p>Los <strong>generadores de valores aleatorios</strong> son herramientas fundamentales en la ciencia de datos y el análisis estadístico. Permiten crear números o arreglos de números pseudoaleatorios que son esenciales para la simulación, muestreo, y pruebas estadísticas.</p>
+<p><strong>NumPy</strong> proporciona funciones poderosas para generar valores aleatorios a través del módulo <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code>. Estas funciones permiten:</p>
+<ul class="simple">
+<li><p>Generar números aleatorios de diferentes distribuciones de probabilidad</p></li>
+<li><p>Crear matrices y vectores con valores aleatorios</p></li>
+<li><p>Realizar muestreo aleatorio de datos</p></li>
+<li><p>Establecer semillas (seeds) para reproducibilidad</p></li>
+</ul>
+<p>El módulo <strong><code class="docutils literal notranslate"><span class="pre">random</span></code></strong> de Python también ofrece capacidades para generar valores aleatorios, aunque es menos potente que NumPy para operaciones con arreglos grandes.</p>
+<section id="conceptos-clave">
+<h4><strong>1.4.3.1 Conceptos clave:</strong><a class="headerlink" href="#conceptos-clave" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Reproducibilidad</strong>: Mediante el uso de semillas (seed), podemos reproducir exactamente los mismos números “aleatorios”</p></li>
+<li><p><strong>Distribuciones</strong>: Los valores aleatorios pueden seguir diferentes distribuciones como uniforme, normal (gaussiana), exponencial, etc.</p></li>
+<li><p><strong>Vectorización</strong>: NumPy permite generar múltiples valores aleatorios simultáneamente de forma eficiente</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rand</span>
+
+<span class="c1"># Establecer semillas para reproducibilidad</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">rand</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="numeros-aleatorios-uniforme-con-numpy">
+<h4><strong>1.4.3.2 Números aleatorios uniforme con NumPy</strong><a class="headerlink" href="#numeros-aleatorios-uniforme-con-numpy" title="Link to this heading">#</a></h4>
+<p>La distribución uniforme genera números que tienen la misma probabilidad de ocurrir en un rango especificado.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generar un número aleatorio entre 0 y 1</span>
+<span class="n">num_aleatorio</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Número aleatorio entre 0 y 1:&quot;</span><span class="p">,</span> <span class="n">num_aleatorio</span><span class="p">)</span>
+
+<span class="c1"># Generar un vector de 5 números aleatorios entre 0 y 1</span>
+<span class="n">vector_aleatorio</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Vector de 5 números aleatorios:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">vector_aleatorio</span><span class="p">)</span>
+
+<span class="c1"># Generar números aleatorios en un rango específico (entre 10 y 20)</span>
+<span class="n">num_rango</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">5 números aleatorios entre 10 y 20:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">num_rango</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="distribucion-normal-gaussiana">
+<h4><strong>1.4.3.3 Distribución normal (Gaussiana)</strong><a class="headerlink" href="#distribucion-normal-gaussiana" title="Link to this heading">#</a></h4>
+<p>La distribución normal es una de las distribuciones más importantes en estadística. Genera números que tienden a agruparse alrededor de una media con una desviación estándar especificada.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generar números con distribución normal (media=0, desviación estándar=1)</span>
+<span class="n">numeros_normales</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;10 números con distribución normal estándar:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">numeros_normales</span><span class="p">)</span>
+
+<span class="c1"># Generar números con distribución normal personalizada (media=100, desviación estándar=15)</span>
+<span class="n">numeros_normales_personalizados</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">10 números normales con media=100, desv est=15:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">numeros_normales_personalizados</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="numeros-aleatorios-con-el-modulo-random">
+<h4><strong>1.4.3.4 Números aleatorios con el módulo <code class="docutils literal notranslate"><span class="pre">random</span></code></strong><a class="headerlink" href="#numeros-aleatorios-con-el-modulo-random" title="Link to this heading">#</a></h4>
+<p>El módulo <code class="docutils literal notranslate"><span class="pre">random</span></code> de Python es más simple que NumPy pero útil para tareas que no requieren procesamiento de grandes arreglos. Aquí generamos números aleatorios usando <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">random</span> <span class="pre">as</span> <span class="pre">rand</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generar un número aleatorio entre 0 y 1</span>
+<span class="n">numero_random</span> <span class="o">=</span> <span class="n">rand</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Número aleatorio (random):&quot;</span><span class="p">,</span> <span class="n">numero_random</span><span class="p">)</span>
+
+<span class="c1"># Generar un número aleatorio entero entre 1 y 100</span>
+<span class="n">numero_entero</span> <span class="o">=</span> <span class="n">rand</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Número entero aleatorio entre 1 y 100:&quot;</span><span class="p">,</span> <span class="n">numero_entero</span><span class="p">)</span>
+
+<span class="c1"># Generar un número aleatorio con distribución uniforme entre 10 y 50</span>
+<span class="n">numero_uniforme</span> <span class="o">=</span> <span class="n">rand</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Número uniforme entre 10 y 50:&quot;</span><span class="p">,</span> <span class="n">numero_uniforme</span><span class="p">)</span>
+
+<span class="c1"># Crear una lista de números aleatorios</span>
+<span class="n">lista_aleatoria</span> <span class="o">=</span> <span class="p">[</span><span class="n">rand</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lista de 5 números aleatorios entre 1 y 10:&quot;</span><span class="p">,</span> <span class="n">lista_aleatoria</span><span class="p">)</span>
+
+<span class="c1"># Elegir un elemento aleatorio de una lista</span>
+<span class="n">opciones</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Manzana&quot;</span><span class="p">,</span> <span class="s2">&quot;Plátano&quot;</span><span class="p">,</span> <span class="s2">&quot;Cereza&quot;</span><span class="p">,</span> <span class="s2">&quot;Dátil&quot;</span><span class="p">,</span> <span class="s2">&quot;Fresa&quot;</span><span class="p">]</span>
+<span class="n">eleccion_aleatoria</span> <span class="o">=</span> <span class="n">rand</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">opciones</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fruta seleccionada aleatoriamente:&quot;</span><span class="p">,</span> <span class="n">eleccion_aleatoria</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="reproducibilidad-con-semillas-seeds">
+<h4><strong>1.4.3.5 Reproducibilidad con semillas (Seeds)</strong><a class="headerlink" href="#reproducibilidad-con-semillas-seeds" title="Link to this heading">#</a></h4>
+<p>Las semillas permiten reproducir exactamente los mismos números “aleatorios” en ejecuciones posteriores. Esto es fundamental para la investigación científica y el debugging.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== Ejemplo 1: Usando semilla en NumPy ===&quot;</span><span class="p">)</span>
+<span class="c1"># Primera ejecución con semilla</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Primer set de números con seed=123:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># Segunda ejecución con la misma semilla</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Segundo set (igual semilla, mismos números):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Ejemplo 2: Usando semilla en random ===&quot;</span><span class="p">)</span>
+<span class="c1"># Primera ejecución con semilla</span>
+<span class="n">rand</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">999</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Primer set con seed=999:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">rand</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)])</span>
+
+<span class="c1"># Segunda ejecución con la misma semilla</span>
+<span class="n">rand</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">999</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Segundo set (igual semilla, mismos números):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">rand</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="otras-distribuciones-y-operaciones-avanzadas">
+<h4><strong>1.4.3.6 Otras distribuciones y operaciones avanzadas</strong><a class="headerlink" href="#otras-distribuciones-y-operaciones-avanzadas" title="Link to this heading">#</a></h4>
+<p><strong>NumPy</strong> proporciona muchas otras distribuciones de probabilidad como Poisson, Binomial, Exponencial, etc.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Distribución Poisson (eventos que ocurren en intervalos de tiempo)</span>
+<span class="n">poisson</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">poisson</span><span class="p">(</span><span class="n">lam</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Números con distribución Poisson (λ=3):&quot;</span><span class="p">,</span> <span class="n">poisson</span><span class="p">)</span>
+
+<span class="c1"># Distribución Binomial (éxitos en n intentos)</span>
+<span class="n">binomial</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Números con distribución Binomial (n=10, p=0.5):&quot;</span><span class="p">,</span> <span class="n">binomial</span><span class="p">)</span>
+
+<span class="c1"># Distribución Exponencial (tiempo entre eventos)</span>
+<span class="n">exponencial</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Números con distribución Exponencial (scale=2.0):&quot;</span><span class="p">,</span> <span class="n">exponencial</span><span class="p">)</span>
+
+<span class="c1"># Permutación aleatoria de un vector</span>
+<span class="n">vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># [0,1,2,3,4,5,6,7,8,9]</span>
+<span class="n">permutacion</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">permutation</span><span class="p">(</span><span class="n">vector</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Vector original:&quot;</span><span class="p">,</span> <span class="n">vector</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Vector permutado:&quot;</span><span class="p">,</span> <span class="n">permutacion</span><span class="p">)</span>
+
+<span class="c1"># Muestreo aleatorio sin reemplazo</span>
+<span class="n">muestra</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Muestra de 5 números sin reemplazo del 1 al 49:&quot;</span><span class="p">,</span> <span class="n">muestra</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 <section id="matrices">
-<h3><strong>1.4.3 Matrices</strong><a class="headerlink" href="#matrices" title="Link to this heading">#</a></h3>
+<h3><strong>1.4.4 Matrices</strong><a class="headerlink" href="#matrices" title="Link to this heading">#</a></h3>
 <p>Las <strong>matrices</strong> son arreglos rectangulares de elementos, es decir,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1884,7 +2055,7 @@ a_{m1} &amp; a_{m2} &amp; ⋯ &amp; a_{mn}\\
 </div>
 </section>
 <section id="diccionarios">
-<h3><strong>1.4.4 Diccionarios</strong><a class="headerlink" href="#diccionarios" title="Link to this heading">#</a></h3>
+<h3><strong>1.4.5 Diccionarios</strong><a class="headerlink" href="#diccionarios" title="Link to this heading">#</a></h3>
 <p>Los <strong>diccionarios</strong> son una estructura de datos que almacena pares de clave-valor. Cada clave es única y se utiliza para acceder a su valor asociado. Los diccionarios son útiles cuando se necesita un mapeo entre elementos, como por ejemplo, asociar nombres con números de teléfono.</p>
 <p>Las características de los diccionarios son:</p>
 <ul class="simple">
@@ -2452,8 +2623,17 @@ a_{m1} &amp; a_{m2} &amp; ⋯ &amp; a_{mn}\\
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-estructuras-de-datos-basicas-vectores-listas-matrices-diccionarios"><strong>1.4 Uso de estructuras de datos básicas (vectores, listas, matrices, diccionarios)</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vectores"><strong>1.4.1 Vectores</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#listas"><strong>1.4.2 Listas</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrices"><strong>1.4.3 Matrices</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diccionarios"><strong>1.4.4 Diccionarios</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generadores-de-valores-y-vectores-aleatorios"><strong>1.4.3 Generadores de valores y vectores aleatorios</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptos-clave"><strong>1.4.3.1 Conceptos clave:</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#numeros-aleatorios-uniforme-con-numpy"><strong>1.4.3.2 Números aleatorios uniforme con NumPy</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#distribucion-normal-gaussiana"><strong>1.4.3.3 Distribución normal (Gaussiana)</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#numeros-aleatorios-con-el-modulo-random"><strong>1.4.3.4 Números aleatorios con el módulo <code class="docutils literal notranslate"><span class="pre">random</span></code></strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reproducibilidad-con-semillas-seeds"><strong>1.4.3.5 Reproducibilidad con semillas (Seeds)</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-distribuciones-y-operaciones-avanzadas"><strong>1.4.3.6 Otras distribuciones y operaciones avanzadas</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrices"><strong>1.4.4 Matrices</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diccionarios"><strong>1.4.5 Diccionarios</strong></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-manipulacion-de-datos-creacion-manipulacion-y-analisis-de-datos-tabulares"><strong>1.5 Introducción a la manipulación de datos: Creación, manipulación y análisis de datos tabulares</strong></a><ul class="nav section-nav flex-column">
