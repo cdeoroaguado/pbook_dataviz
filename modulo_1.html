@@ -435,6 +435,7 @@ document.write(`
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrices"><strong>1.4.4 Matrices</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diccionarios"><strong>1.4.5 Diccionarios</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guardado-y-carga-de-funciones-personalizadas-de-forma-practica"><strong>1.4.6 Guardado y carga de funciones personalizadas de forma practica</strong></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-manipulacion-de-datos-creacion-manipulacion-y-analisis-de-datos-tabulares"><strong>1.5 Introducción a la manipulación de datos: Creación, manipulación y análisis de datos tabulares</strong></a><ul class="nav section-nav flex-column">
@@ -1789,6 +1790,7 @@ En programación científica, estas operaciones a menudo se realizan utilizando 
 <li><p>Establecer semillas (seeds) para reproducibilidad</p></li>
 </ul>
 <p>El módulo <strong><code class="docutils literal notranslate"><span class="pre">random</span></code></strong> de Python también ofrece capacidades para generar valores aleatorios, aunque es menos potente que NumPy para operaciones con arreglos grandes.</p>
+<p>Para más información, puedes consultar la <a class="reference external" href="https://docs.python.org/3/library/random.html">documentación oficial de random</a>, donde encontrarás recursos y ejemplos detallados para aprovechar al máximo esta librería.</p>
 <section id="conceptos-clave">
 <h4><strong>1.4.3.1 Conceptos clave:</strong><a class="headerlink" href="#conceptos-clave" title="Link to this heading">#</a></h4>
 <ul class="simple">
@@ -2181,6 +2183,144 @@ a_{m1} &amp; a_{m2} &amp; ⋯ &amp; a_{mn}\\
 </div>
 </div>
 <p>Los diccionarios son una estructura fundamental en Python, especialmente útil para organizar y acceder a datos de manera eficiente.</p>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Ejercicio 1</strong></p>
+<p>Dado un valor <span class="math notranslate nohighlight">\(n\)</span>, realice las siguientes tareas:</p>
+<ol class="arabic simple">
+<li><p><strong>Calcular el factorial</strong>: Obtenga el resultado de multiplicar los números del 1 al <span class="math notranslate nohighlight">\(n\)</span> (factorial de <span class="math notranslate nohighlight">\(n\)</span>). Implemente una función que realice este cálculo.</p></li>
+<li><p><strong>Matriz comparativa de vectores aleatorios</strong>:</p>
+<ul class="simple">
+<li><p>Cree dos vectores <span class="math notranslate nohighlight">\(V_1\)</span> y <span class="math notranslate nohighlight">\(V_2\)</span> de tamaño <span class="math notranslate nohighlight">\(n\)</span> con números aleatorios entre 1 y 10</p></li>
+<li><p>Genere un vector <span class="math notranslate nohighlight">\(V_3\)</span> donde:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(V_3[i] = 0\)</span> si <span class="math notranslate nohighlight">\(V_1[i] &lt; V_2[i]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(V_3[i] = 1\)</span> en caso contrario</p></li>
+</ul>
+</li>
+<li><p>Concatene los tres vectores (<span class="math notranslate nohighlight">\(V_1\)</span>, <span class="math notranslate nohighlight">\(V_2\)</span>, <span class="math notranslate nohighlight">\(V_3\)</span>) como columnas para obtener una matriz de dimensiones <span class="math notranslate nohighlight">\((n \times 3)\)</span></p></li>
+</ul>
+</li>
+</ol>
+<p><strong>Sugerencias:</strong></p>
+<ul class="simple">
+<li><p>Utilice <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> para generar los vectores aleatorios</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">np.random.randint()</span></code> para los números aleatorios</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">np.concatenate()</span></code> para combinar los vectores en una matriz</p></li>
+<li><p>Pruebe con <span class="math notranslate nohighlight">\(n = 10\)</span> como ejemplo</p></li>
+</ul>
+</div>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Ejercicio 2</strong></p>
+<p>Dado valores <span class="math notranslate nohighlight">\(m\)</span> (número de filas) y <span class="math notranslate nohighlight">\(n\)</span> (número de columnas), realice las siguientes tareas:</p>
+<ol class="arabic simple">
+<li><p><strong>Crear matriz de ceros</strong>: Genere una matriz <span class="math notranslate nohighlight">\(A\)</span> de dimensiones <span class="math notranslate nohighlight">\((m \times n)\)</span> inicializada con ceros.</p></li>
+<li><p><strong>Llenar matriz con números aleatorios (usando <code class="docutils literal notranslate"><span class="pre">while</span></code>)</strong>:</p>
+<ul class="simple">
+<li><p>Utilizando un bucle <code class="docutils literal notranslate"><span class="pre">while</span></code>, reemplace cada columna de la matriz <span class="math notranslate nohighlight">\(A\)</span> por vectores de números aleatorios enteros en el rango <span class="math notranslate nohighlight">\([-1, 3]\)</span></p></li>
+<li><p>Recorra columna por columna</p></li>
+</ul>
+</li>
+<li><p><strong>Transformar elementos (usando <code class="docutils literal notranslate"><span class="pre">while</span></code>)</strong>:</p>
+<ul class="simple">
+<li><p>Utilizando dos bucles <code class="docutils literal notranslate"><span class="pre">while</span></code> anidados, recorra todos los elementos de la matriz</p></li>
+<li><p>Reemplace los elementos <strong>negativos</strong> por <span class="math notranslate nohighlight">\(-1\)</span></p></li>
+<li><p>Reemplace los elementos <strong>no negativos</strong> (cero o positivos) por <span class="math notranslate nohighlight">\(5\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>Repetir transformación (usando <code class="docutils literal notranslate"><span class="pre">for</span></code>)</strong>:</p>
+<ul class="simple">
+<li><p>Realice el mismo ejercicio del paso 3, pero esta vez utilizando dos bucles <code class="docutils literal notranslate"><span class="pre">for</span></code> anidados</p></li>
+<li><p>Compare los resultados para verificar que ambos métodos producen la misma matriz</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>Sugerencias:</strong></p>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">np.zeros()</span></code> para crear la matriz inicial</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">np.random.randint()</span></code> para generar números aleatorios</p></li>
+<li><p>Recuerde que <code class="docutils literal notranslate"><span class="pre">while</span></code> requiere control manual del índice (incremento)</p></li>
+<li><p>Compare las dos matrices finales con <code class="docutils literal notranslate"><span class="pre">np.array_equal()</span></code></p></li>
+<li><p>Pruebe con <span class="math notranslate nohighlight">\(m = 4\)</span> y <span class="math notranslate nohighlight">\(n = 3\)</span> como ejemplo</p></li>
+</ul>
+</div>
+</section>
+<section id="guardado-y-carga-de-funciones-personalizadas-de-forma-practica">
+<h3><strong>1.4.6 Guardado y carga de funciones personalizadas de forma practica</strong><a class="headerlink" href="#guardado-y-carga-de-funciones-personalizadas-de-forma-practica" title="Link to this heading">#</a></h3>
+<p>Una forma práctica para guardar y luego utilizar mis funciones de manera práctica consiste en:</p>
+<ol class="arabic">
+<li><p>Crear un archivo de texto que contenga todas las funciones (teniendo cuidado con la sangría en cada función) y guardar este archivo en alguna carpeta del computador.</p></li>
+<li><p>Anexar la carpeta del item (1) a los “path” del python considerando los códigos:</p>
+<p><strong>import sys</strong></p>
+<p><strong>sys.path.append(“PONER LA DIRECCIÓN DE SU PC/nombre de la carpeta/”)</strong></p>
+</li>
+<li><p>Leer el archivo de las funciones con el código</p>
+<p><strong>import nombre_del_archivo.py as algún_alias</strong></p>
+</li>
+<li><p>El alias escogido en el item anterior contendrá todas las funciones creadas.</p></li>
+</ol>
+<p>Cuando trabajamos con Python, es común crear funciones útiles que queremos reutilizar en diferentes proyectos. En lugar de reescribir el código cada vez, podemos guardar nuestras funciones en archivos independientes (módulos) e importarlos cuando los necesitemos.</p>
+<div class="note admonition">
+<p class="admonition-title"><strong>Ventajas</strong></p>
+<p>Las ventajas de crear funciones y guardalos en archivos .py serán</p>
+<ul class="simple">
+<li><p><strong>Reutilización de código</strong>: Usa tus funciones en múltiples proyectos</p></li>
+<li><p><strong>Organización</strong>: Mantén tu código limpio y modular</p></li>
+<li><p><strong>Mantenimiento</strong>: Actualiza un archivo central en lugar de múltiples copias</p></li>
+<li><p><strong>Eficiencia</strong>: Evita duplicación de código</p></li>
+</ul>
+</div>
+<p>Realicemos un ejemplo paso a paso:</p>
+<ul class="simple">
+<li><p>Crea un archivo de texto (usando Notepad, VS Code, etc.) con todas tus funciones. Es muy importante <strong>cuidar la indentación</strong> (espacios o tabulaciones) dentro de cada función. Ejemplo de contenido para un archivo llamado <code class="docutils literal notranslate"><span class="pre">mis_funciones.py</span></code>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Función 1: Calcular el factorial</span>
+<span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calcula el factorial de n&quot;&quot;&quot;</span>
+    <span class="n">resultado</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">resultado</span> <span class="o">*=</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="n">resultado</span>
+
+<span class="c1"># Función 2: Sumar números impares</span>
+<span class="k">def</span> <span class="nf">sumar_impares</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Suma todos los números impares del 0 al n&quot;&quot;&quot;</span>
+    <span class="n">suma</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">suma</span> <span class="o">+=</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="n">suma</span>
+
+<span class="c1"># Función 3: Generar múltiplos</span>
+<span class="k">def</span> <span class="nf">multiplos</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Genera una lista de múltiplos de a hasta n&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">a</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">//</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Guarda este archivo en una carpeta del sistema (por ejemplo: <code class="docutils literal notranslate"><span class="pre">C:\Mi_Python_Modulos\</span></code> o <code class="docutils literal notranslate"><span class="pre">/Users/tu_usuario/Python_Modulos/</span></code>)</p></li>
+</ul>
+<ul class="simple">
+<li><p>Antes de importar el módulo, debes agregar la carpeta donde está guardado al “path” de Python.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;RUTA_DONDE_GUARDASTE_TU_ARCHIVO&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Importa tu módulo personalizado usando:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mis_funciones</span> <span class="k">as</span> <span class="nn">fn</span>
+</pre></div>
+</div>
+<p>El alias <code class="docutils literal notranslate"><span class="pre">fn</span></code> te permitirá acceder a todas las funciones del módulo.</p>
+<ul class="simple">
+<li><p>Accede a las funciones usando la notación de punto:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">fn</span><span class="o">.</span><span class="n">sumar_impares</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">fn</span><span class="o">.</span><span class="n">multiplos</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 </section>
 <section id="introduccion-a-la-manipulacion-de-datos-creacion-manipulacion-y-analisis-de-datos-tabulares">
@@ -2634,6 +2774,7 @@ a_{m1} &amp; a_{m2} &amp; ⋯ &amp; a_{mn}\\
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrices"><strong>1.4.4 Matrices</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diccionarios"><strong>1.4.5 Diccionarios</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guardado-y-carga-de-funciones-personalizadas-de-forma-practica"><strong>1.4.6 Guardado y carga de funciones personalizadas de forma practica</strong></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-manipulacion-de-datos-creacion-manipulacion-y-analisis-de-datos-tabulares"><strong>1.5 Introducción a la manipulación de datos: Creación, manipulación y análisis de datos tabulares</strong></a><ul class="nav section-nav flex-column">
