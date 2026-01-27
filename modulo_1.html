@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=6c7211e7" />
   
@@ -65,7 +65,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Módulo 2: Estructuración y manipulación de datos con Python" href="modulo_2.html" />
     <link rel="prev" title="Visualización de datos con Python" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -186,10 +185,6 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Módulo 1: Introducción a la ciencia de datos con Python</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="modulo_2.html"><strong>Módulo 2: Estructuración y manipulación de datos con Python</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="modulo_3.html"><strong>Módulo 3: Visualización de datos interactivos</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="modulo_4.html"><strong>Modulo 4: Introducción a Streamlit</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="modulo_5.html"><strong>Modulo 5: Despliegue de Dashboard</strong></a></li>
 </ul>
 
     </div>
@@ -441,7 +436,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-manipulacion-de-datos-creacion-manipulacion-y-analisis-de-datos-tabulares"><strong>1.5 Introducción a la manipulación de datos: Creación, manipulación y análisis de datos tabulares</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-de-datos-tabulares"><strong>1.5.1 Creación de datos tabulares</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulacion-de-datos"><strong>1.5.2 Manipulación de datos</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio"><strong>Ejercicio</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -2303,7 +2297,7 @@ a_{m1} &amp; a_{m2} &amp; ⋯ &amp; a_{mn}\\
 <li><p>Antes de importar el módulo, debes agregar la carpeta donde está guardado al “path” de Python.</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;RUTA_DONDE_GUARDASTE_TU_ARCHIVO&quot;</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;C:\Documentos\Books_CienciaDatos\pbook_dataviz\docs\mis_funciones.py&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -2580,12 +2574,9 @@ a_{m1} &amp; a_{m2} &amp; ⋯ &amp; a_{mn}\\
 </div>
 </div>
 </div>
-</section>
-<section id="ejercicio">
-<h3><strong>Ejercicio</strong><a class="headerlink" href="#ejercicio" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Se recolectaron datos de 8 estudiantes universitarios y se resumieron en la siguiente tabla:</p></li>
-</ol>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Ejercicio 3</strong></p>
+<p>Se recolectaron datos de 8 estudiantes universitarios y se resumieron en la siguiente tabla:</p>
 <div align="center">
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -2656,6 +2647,7 @@ a_{m1} &amp; a_{m2} &amp; ⋯ &amp; a_{mn}\\
 <li><p>Extraer las variables categóricas y guardarlas en un subconjunto llamado <strong>subc2</strong></p></li>
 <li><p>Extraer las variables numéricas y guardarlas en un subconjunto llamado <strong>subc3</strong></p></li>
 </ol>
+</div>
 </section>
 </section>
 </section>
@@ -2698,15 +2690,6 @@ a_{m1} &amp; a_{m2} &amp; ⋯ &amp; a_{mn}\\
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title"><strong>Visualización de datos con Python</strong></p>
       </div>
-    </a>
-    <a class="right-next"
-       href="modulo_2.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><strong>Módulo 2: Estructuración y manipulación de datos con Python</strong></p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -2780,7 +2763,6 @@ a_{m1} &amp; a_{m2} &amp; ⋯ &amp; a_{mn}\\
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-manipulacion-de-datos-creacion-manipulacion-y-analisis-de-datos-tabulares"><strong>1.5 Introducción a la manipulación de datos: Creación, manipulación y análisis de datos tabulares</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-de-datos-tabulares"><strong>1.5.1 Creación de datos tabulares</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulacion-de-datos"><strong>1.5.2 Manipulación de datos</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio"><strong>Ejercicio</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -2807,7 +2789,7 @@ By Carlos de Oro Aguado
 
   <p class="copyright">
     
-      © Copyright 2025, Msc Carlos de Oro Aguado.
+      © Copyright 2026, Msc Carlos de Oro Aguado.
       <br/>
     
   </p>
