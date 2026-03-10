@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=6c7211e7" />
   
@@ -65,6 +65,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Modulo 4: Introducción a Streamlit" href="modulo_4.html" />
     <link rel="prev" title="Módulo 2: Estructuración y manipulación de datos con Python" href="modulo_2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -187,6 +188,8 @@
 <li class="toctree-l1"><a class="reference internal" href="modulo_1.html"><strong>Módulo 1: Introducción a la ciencia de datos con Python</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="modulo_2.html"><strong>Módulo 2: Estructuración y manipulación de datos con Python</strong></a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Módulo 3: Visualización de datos interactivos</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="modulo_4.html"><strong>Modulo 4: Introducción a Streamlit</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="modulo_5.html"><strong>Modulo 5: Despliegue de Dashboard</strong></a></li>
 </ul>
 
     </div>
@@ -411,6 +414,21 @@ document.write(`
 </li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imputacion-multiple-iterativa-mice-e-iterativeimputer"><strong>Imputación múltiple iterativa (MICE) e <code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code></strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#como-funciona-la-imputacion-multiple-iterativa-idea-general"><strong>¿Cómo funciona la imputación múltiple iterativa? (idea general)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-significa-multiple-en-imputacion-multiple"><strong>¿Qué significa “múltiple” en imputación múltiple?</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#emparejamiento-predictivo-medio-pmm"><strong>Emparejamiento predictivo medio (PMM)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#puente-hacia-la-implementacion-en-r"><strong>Puente hacia la implementación en R</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacion-de-iterativeimputer"><strong>Aplicación de <code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code></strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformacion-de-datos-con-iterativeimputer"><strong>Transformación de datos con <code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code></strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterativeimputer-y-evaluacion-de-modelos"><strong><code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code> y evaluación de modelos</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterativeimputer-y-diferentes-ordenes-de-imputacion"><strong><code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code> y diferentes órdenes de imputación</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterativeimputer-y-el-numero-de-iteraciones"><strong><code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code> y el número de iteraciones</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterativeimputer-al-hacer-una-prediccion"><strong><code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code> al hacer una predicción</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instancias-y-o-caracteristicas-duplicadas"><strong>Instancias y/o características duplicadas</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mala-seleccion-de-caracteristicas"><strong>Mala selección de características</strong></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-interactiva"><strong>Visualización interactiva</strong></a><ul class="nav section-nav flex-column">
@@ -1871,6 +1889,1649 @@ if (outputEl) {{
 </div>
 </section>
 </section>
+</section>
+</section>
+<section id="imputacion-multiple-iterativa-mice-e-iterativeimputer">
+<h2><strong>Imputación múltiple iterativa (MICE) e <code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code></strong><a class="headerlink" href="#imputacion-multiple-iterativa-mice-e-iterativeimputer" title="Link to this heading">#</a></h2>
+<p>Ahora contamos con una visualización <strong>sin valores perdidos</strong>, lo que significa que representa <strong>todas las instancias</strong> presentes en el conjunto de datos. Con esto resuelto, pasemos al <strong>tercer problema</strong> que puede generar una visualización defectuosa: <strong>la imputación</strong>.</p>
+<p>Además de las técnicas vistas en <strong>R</strong>, existen otras alternativas de imputación que pueden <strong>integrarse</strong> en flujos de trabajo con <strong>Python</strong>. Por ejemplo, en Python puede aplicarse un enfoque tipo <strong>MICE</strong> (<em>Multiple Imputation by Chained Equations</em>) mediante implementaciones disponibles en <code class="docutils literal notranslate"><span class="pre">sklearn.impute</span></code>, particularmente con <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.impute.IterativeImputer.html"><code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code></a>. Este método es muy usado y conveniente para <strong>experimentación y análisis</strong>, porque permite imputar valores faltantes utilizando <strong>modelos predictivos</strong> y la información contenida en las demás variables.</p>
+<section id="como-funciona-la-imputacion-multiple-iterativa-idea-general">
+<h3><strong>¿Cómo funciona la imputación múltiple iterativa? (idea general)</strong><a class="headerlink" href="#como-funciona-la-imputacion-multiple-iterativa-idea-general" title="Link to this heading">#</a></h3>
+<p>El principio de MICE (y de la imputación iterativa en general) es <strong>rellenar los valores faltantes de una variable usando al resto como predictores</strong>, repitiendo este proceso varias veces hasta estabilizar las imputaciones.</p>
+<ol class="arabic simple">
+<li><p><strong>Imputación inicial</strong><br />
+Se completa el conjunto de datos con una estrategia básica (por ejemplo, media o mediana) para obtener una primera versión sin vacíos.</p></li>
+<li><p><strong>Ecuaciones encadenadas (un modelo por variable)</strong><br />
+Para cada variable con valores faltantes <span class="math notranslate nohighlight">\(X_j\)</span>:</p>
+<ul class="simple">
+<li><p>Se usan las filas donde <span class="math notranslate nohighlight">\(X_j\)</span> <strong>sí está observada</strong> para entrenar un modelo.</p></li>
+<li><p>Se emplean las demás variables <span class="math notranslate nohighlight">\(X_{-j}\)</span> como predictores.</p></li>
+<li><p>Con el modelo entrenado, se predicen los valores faltantes de <span class="math notranslate nohighlight">\(X_j\)</span>)$ y se reemplazan.</p></li>
+</ul>
+</li>
+<li><p><strong>Iteraciones (refinamiento progresivo)</strong><br />
+El proceso se repite recorriendo todas las variables con faltantes durante varias rondas (<strong>iteraciones</strong>) porque las imputaciones de una variable influyen en la calidad de imputación de las otras.</p></li>
+<li><p><strong>Resultado final</strong><br />
+Se obtiene un conjunto de datos completo con imputaciones que tienden a ser más <strong>coherentes</strong> con los patrones del dataset que métodos simples (como imputar con un valor fijo).</p></li>
+</ol>
+<div class="note admonition">
+<p class="admonition-title"><strong>Nota</strong></p>
+<p>En Python, <code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code> implementa esta lógica de <strong>ecuaciones encadenadas</strong>, actualizando los valores faltantes de forma iterativa.</p>
+</div>
+</section>
+<section id="que-significa-multiple-en-imputacion-multiple">
+<h3><strong>¿Qué significa “múltiple” en imputación múltiple?</strong><a class="headerlink" href="#que-significa-multiple-en-imputacion-multiple" title="Link to this heading">#</a></h3>
+<p>En <strong>MICE clásico</strong>, la palabra <em>múltiple</em> significa que se generan <strong>varios conjuntos imputados</strong> (por ejemplo, 5 o 10), incorporando la incertidumbre del proceso de imputación. Luego, los análisis se realizan sobre cada conjunto y se combinan los resultados.</p>
+<p>En <code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code>, es posible aproximar este enfoque cuando se introduce aleatoriedad (por ejemplo, con <code class="docutils literal notranslate"><span class="pre">sample_posterior=True</span></code> y distintas semillas), permitiendo generar <strong>múltiples versiones imputadas</strong> del mismo dataset.</p>
+<p><img alt="Imputacion multiple" src="_images/multiple_imputation.png" /></p>
+<p>La figura de <em>imputación múltiple</em> ilustra el flujo general:</p>
+<ul class="simple">
+<li><p>Se parte de un conjunto con valores faltantes.</p></li>
+<li><p>Se hace una imputación inicial.</p></li>
+<li><p>Se imputan variables una por una, cada una usando a las demás como soporte.</p></li>
+<li><p>El ciclo se repite en varias iteraciones hasta estabilizar los valores imputados.</p></li>
+</ul>
+<p>Esto resume exactamente el enfoque de <strong>ecuaciones encadenadas</strong>: <em>modelo por variable + actualización iterativa</em>.</p>
+</section>
+<section id="emparejamiento-predictivo-medio-pmm">
+<h3><strong>Emparejamiento predictivo medio (PMM)</strong><a class="headerlink" href="#emparejamiento-predictivo-medio-pmm" title="Link to this heading">#</a></h3>
+<p><img alt="pmm_imputation" src="_images/pmm_imputation.png" /></p>
+<p>La figura de <strong>PMM</strong> (<em>Predictive Mean Matching</em>) representa una estrategia muy común dentro de MICE (especialmente en R). A diferencia de imputar el valor predicho directamente, PMM busca imputaciones más <strong>realistas</strong>:</p>
+<ol class="arabic simple">
+<li><p>Se ajusta un modelo para la variable con faltantes.</p></li>
+<li><p>Para cada valor faltante, se obtiene su <strong>predicción</strong>.</p></li>
+<li><p>Se identifican casos observados con predicciones <strong>similares</strong> (vecinos).</p></li>
+<li><p>Se imputa el valor faltante usando un valor <strong>real observado</strong> de esos vecinos.</p></li>
+</ol>
+<div class="info admonition">
+<p class="admonition-title"><strong>Ventajas típicas de PMM:</strong></p>
+<ul class="simple">
+<li><p>Imputa valores “posibles” (observados): al tomar valores reales de donantes, evita resultados imposibles (p. ej., edades negativas) y respeta la naturaleza discreta de algunas variables.</p></li>
+<li><p>Robustez ante no normalidad y asimetrías: suele funcionar mejor que imputar con la predicción directa cuando la variable está sesgada o tiene colas largas.</p></li>
+<li><p>Menos sensibilidad a mala especificación del modelo: si el modelo lineal no captura perfectamente la relación, PMM puede ser más estable porque no usa el valor predicho tal cual, sino un donante cercano.</p></li>
+<li><p>Preserva mejor relaciones bivariadas: tiende a mantener asociaciones entre variables (correlaciones/gradientes) sin “aplanarlas” tanto como la imputación por media.</p></li>
+<li><p>Conserva la variabilidad (no “sobre-suaviza”): la imputación por predicción directa puede reducir la varianza; PMM suele mantenerla mejor al usar valores reales distintos.</p></li>
+<li><p>Respeta límites y reglas implícitas: si los datos observados ya cumplen restricciones (mínimos/máximos, valores enteros, etc.), PMM hereda esas restricciones.</p></li>
+<li><p>Útil con variables semi-continuas: por ejemplo, variables con muchos ceros y valores positivos (gasto, visitas), donde imputar con una predicción continua puede crear valores raros.</p></li>
+<li><p>Mejor comportamiento con outliers: al depender de “vecinos” en el espacio de predicción, puede evitar imputaciones extremadamente grandes/pequeñas que un modelo podría extrapolar.</p></li>
+<li><p>Interpretabilidad: es fácil explicar el criterio: “se imputa con un caso real parecido”, lo que ayuda en reportes y auditorías.</p></li>
+<li><p>Compatible con imputación múltiple: al repetir el proceso con aleatoriedad (elección de donantes/vecinos), facilita reflejar incertidumbre entre datasets imputados.</p></li>
+</ul>
+</div>
+<div class="note admonition">
+<p class="admonition-title"><strong>Nota</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code> no implementa PMM de forma idéntica a <code class="docutils literal notranslate"><span class="pre">mice</span></code> en R, pero sí comparte la estructura MICE de <strong>ecuaciones encadenadas</strong>. PMM sería una “regla de imputación” específica dentro de ese marco.</p>
+</div>
+</section>
+<section id="puente-hacia-la-implementacion-en-r">
+<h3><strong>Puente hacia la implementación en R</strong><a class="headerlink" href="#puente-hacia-la-implementacion-en-r" title="Link to this heading">#</a></h3>
+<p>Con esto, aunque <code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code> ofrece una implementación práctica en Python para imputación iterativa, el análisis continuará implementando este enfoque en <strong>R</strong>, donde MICE y estrategias como <strong>PMM</strong> suelen utilizarse para obtener imputaciones más plausibles y robustas.</p>
+</section>
+<section id="aplicacion-de-iterativeimputer">
+<h3><strong>Aplicación de <code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code></strong><a class="headerlink" href="#aplicacion-de-iterativeimputer" title="Link to this heading">#</a></h3>
+<p>En este ejemplo trabajaremos con el conjunto de datos <a class="reference external" href="https://github.com/cdeoroaguado/Datos/blob/main/dataviz/horse-colic.names.txt"><strong>Horse Colic</strong></a>, que recoge características médicas de caballos con cólico y el desenlace del caso. El archivo contiene <strong>300 filas</strong> y <strong>26 variables de entrada</strong>, además de <strong>una variable de salida</strong>. En términos prácticos, es una tarea de <strong>clasificación</strong>, porque buscamos predecir el resultado del caso.</p>
+<p>Aunque existen varias variables que podríamos usar como objetivo, aquí nos enfocaremos en predecir si el caballo <strong>requirió cirugía o no</strong> (<strong>columna 23</strong>). Por lo tanto, el problema se formula como una <strong>clasificación binaria</strong>.</p>
+<ul>
+<li><p>La variable objetivo es:</p>
+<p><code class="docutils literal notranslate"><span class="pre">23:</span> <span class="pre">outcome</span></code></p>
+<ul class="simple">
+<li><p><strong>¿Qué ocurrió finalmente con el caballo?</strong></p></li>
+<li><p><strong>Valores posibles:</strong></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> = <em>lived</em> (sobrevivió)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2</span></code> = <em>died</em> (murió)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">3</span></code> = <em>was euthanized</em> (fue sacrificado)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Un punto importante de este conjunto de datos es que presenta <strong>muchos valores faltantes</strong> en varias columnas. En el archivo original, estos faltantes aparecen marcados con un signo de interrogación: <code class="docutils literal notranslate"><span class="pre">?</span></code>.</p>
+<ol class="arabic simple">
+<li><p>Para cargar los datos de forma correcta, podemos usar <code class="docutils literal notranslate"><span class="pre">readr::read_csv()</span></code> e indicar que <code class="docutils literal notranslate"><span class="pre">?</span></code> debe interpretarse como dato faltante mediante el argumento <code class="docutils literal notranslate"><span class="pre">na_values</span></code>. Así, los faltantes quedarán registrados como <code class="docutils literal notranslate"><span class="pre">NA</span></code> dentro de R.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/cdeoroaguado/Datos/refs/heads/main/dataviz/horse-colic.csv&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">na_values</span><span class="o">=</span><span class="s1">&#39;?&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Muestrame las 5 primeras filas del dataset</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>...</th>
+      <th>18</th>
+      <th>19</th>
+      <th>20</th>
+      <th>21</th>
+      <th>22</th>
+      <th>23</th>
+      <th>24</th>
+      <th>25</th>
+      <th>26</th>
+      <th>27</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2.0</td>
+      <td>1</td>
+      <td>530101</td>
+      <td>38.5</td>
+      <td>66.0</td>
+      <td>28.0</td>
+      <td>3.0</td>
+      <td>3.0</td>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>...</td>
+      <td>45.0</td>
+      <td>8.4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>2</td>
+      <td>11300</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.0</td>
+      <td>1</td>
+      <td>534817</td>
+      <td>39.2</td>
+      <td>88.0</td>
+      <td>20.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>50.0</td>
+      <td>85.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>2</td>
+      <td>2208</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2.0</td>
+      <td>1</td>
+      <td>530334</td>
+      <td>38.3</td>
+      <td>40.0</td>
+      <td>24.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>33.0</td>
+      <td>6.7</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.0</td>
+      <td>9</td>
+      <td>5290409</td>
+      <td>39.1</td>
+      <td>164.0</td>
+      <td>84.0</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>6.0</td>
+      <td>2.0</td>
+      <td>...</td>
+      <td>48.0</td>
+      <td>7.2</td>
+      <td>3.0</td>
+      <td>5.3</td>
+      <td>2.0</td>
+      <td>1</td>
+      <td>2208</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2.0</td>
+      <td>1</td>
+      <td>530255</td>
+      <td>37.3</td>
+      <td>104.0</td>
+      <td>35.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6.0</td>
+      <td>2.0</td>
+      <td>...</td>
+      <td>74.0</td>
+      <td>7.4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>2</td>
+      <td>4300</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 28 columns</p>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>Dame la información del dataset</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 300 entries, 0 to 299
+Data columns (total 28 columns):
+ #   Column  Non-Null Count  Dtype  
+---  ------  --------------  -----  
+ 0   0       299 non-null    float64
+ 1   1       300 non-null    int64  
+ 2   2       300 non-null    int64  
+ 3   3       240 non-null    float64
+ 4   4       276 non-null    float64
+ 5   5       242 non-null    float64
+ 6   6       244 non-null    float64
+ 7   7       231 non-null    float64
+ 8   8       253 non-null    float64
+ 9   9       268 non-null    float64
+ 10  10      245 non-null    float64
+ 11  11      256 non-null    float64
+ 12  12      244 non-null    float64
+ 13  13      196 non-null    float64
+ 14  14      194 non-null    float64
+ 15  15      53 non-null     float64
+ 16  16      198 non-null    float64
+ 17  17      182 non-null    float64
+ 18  18      271 non-null    float64
+ 19  19      267 non-null    float64
+ 20  20      135 non-null    float64
+ 21  21      102 non-null    float64
+ 22  22      299 non-null    float64
+ 23  23      300 non-null    int64  
+ 24  24      300 non-null    int64  
+ 25  25      300 non-null    int64  
+ 26  26      300 non-null    int64  
+ 27  27      300 non-null    int64  
+dtypes: float64(21), int64(7)
+memory usage: 65.8 KB
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Realiza un descriptivo de las variables</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>...</th>
+      <th>18</th>
+      <th>19</th>
+      <th>20</th>
+      <th>21</th>
+      <th>22</th>
+      <th>23</th>
+      <th>24</th>
+      <th>25</th>
+      <th>26</th>
+      <th>27</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>299.000000</td>
+      <td>300.000000</td>
+      <td>3.000000e+02</td>
+      <td>240.000000</td>
+      <td>276.000000</td>
+      <td>242.000000</td>
+      <td>244.000000</td>
+      <td>231.000000</td>
+      <td>253.000000</td>
+      <td>268.000000</td>
+      <td>...</td>
+      <td>271.000000</td>
+      <td>267.000000</td>
+      <td>135.000000</td>
+      <td>102.000000</td>
+      <td>299.000000</td>
+      <td>300.000000</td>
+      <td>300.000000</td>
+      <td>300.000000</td>
+      <td>300.000000</td>
+      <td>300.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>1.397993</td>
+      <td>1.640000</td>
+      <td>1.085889e+06</td>
+      <td>38.167917</td>
+      <td>71.913043</td>
+      <td>30.417355</td>
+      <td>2.348361</td>
+      <td>2.017316</td>
+      <td>2.853755</td>
+      <td>1.305970</td>
+      <td>...</td>
+      <td>46.295203</td>
+      <td>24.456929</td>
+      <td>2.037037</td>
+      <td>3.019608</td>
+      <td>1.551839</td>
+      <td>1.363333</td>
+      <td>3657.880000</td>
+      <td>90.226667</td>
+      <td>7.363333</td>
+      <td>1.670000</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.490305</td>
+      <td>2.173972</td>
+      <td>1.529801e+06</td>
+      <td>0.732289</td>
+      <td>28.630557</td>
+      <td>17.642231</td>
+      <td>1.045054</td>
+      <td>1.042428</td>
+      <td>1.620294</td>
+      <td>0.477629</td>
+      <td>...</td>
+      <td>10.419335</td>
+      <td>27.475009</td>
+      <td>0.804905</td>
+      <td>1.968567</td>
+      <td>0.737187</td>
+      <td>0.481763</td>
+      <td>5399.513513</td>
+      <td>649.569234</td>
+      <td>127.536674</td>
+      <td>0.470998</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>5.184760e+05</td>
+      <td>35.400000</td>
+      <td>30.000000</td>
+      <td>8.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>...</td>
+      <td>23.000000</td>
+      <td>3.300000</td>
+      <td>1.000000</td>
+      <td>0.100000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>5.289040e+05</td>
+      <td>37.800000</td>
+      <td>48.000000</td>
+      <td>18.500000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>...</td>
+      <td>38.000000</td>
+      <td>6.500000</td>
+      <td>1.000000</td>
+      <td>2.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>2111.750000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>5.303055e+05</td>
+      <td>38.200000</td>
+      <td>64.000000</td>
+      <td>24.500000</td>
+      <td>3.000000</td>
+      <td>2.000000</td>
+      <td>3.000000</td>
+      <td>1.000000</td>
+      <td>...</td>
+      <td>45.000000</td>
+      <td>7.500000</td>
+      <td>2.000000</td>
+      <td>2.250000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>2673.500000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>2.000000</td>
+      <td>1.000000</td>
+      <td>5.347275e+05</td>
+      <td>38.500000</td>
+      <td>88.000000</td>
+      <td>36.000000</td>
+      <td>3.000000</td>
+      <td>3.000000</td>
+      <td>4.000000</td>
+      <td>2.000000</td>
+      <td>...</td>
+      <td>52.000000</td>
+      <td>57.000000</td>
+      <td>3.000000</td>
+      <td>3.900000</td>
+      <td>2.000000</td>
+      <td>2.000000</td>
+      <td>3209.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>2.000000</td>
+      <td>9.000000</td>
+      <td>5.305629e+06</td>
+      <td>40.800000</td>
+      <td>184.000000</td>
+      <td>96.000000</td>
+      <td>4.000000</td>
+      <td>4.000000</td>
+      <td>6.000000</td>
+      <td>3.000000</td>
+      <td>...</td>
+      <td>75.000000</td>
+      <td>89.000000</td>
+      <td>3.000000</td>
+      <td>10.100000</td>
+      <td>3.000000</td>
+      <td>2.000000</td>
+      <td>41110.000000</td>
+      <td>7111.000000</td>
+      <td>2209.000000</td>
+      <td>2.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>8 rows × 28 columns</p>
+</div></div></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Podemos enumerar cada columna y reportar el número de filas con valores faltantes para esa columna.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Revisar los datos faltantes en el conjunto de datos</span>
+<span class="n">missing_values</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="c1"># Calcular el porcentaje de valores faltantes</span>
+<span class="n">missing_percentage</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Crear un DataFrame con el análisis de datos faltantes</span>
+<span class="n">missing_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Valores Faltantes&#39;</span><span class="p">:</span> <span class="n">missing_values</span><span class="p">,</span>
+    <span class="s1">&#39;Porcentaje Faltante (%)&#39;</span><span class="p">:</span> <span class="n">missing_percentage</span>
+<span class="p">})</span>
+
+<span class="n">missing_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Valores Faltantes</th>
+      <th>Porcentaje Faltante (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>0.33</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>60</td>
+      <td>20.00</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>24</td>
+      <td>8.00</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>58</td>
+      <td>19.33</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>56</td>
+      <td>18.67</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>69</td>
+      <td>23.00</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>47</td>
+      <td>15.67</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>32</td>
+      <td>10.67</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>55</td>
+      <td>18.33</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>44</td>
+      <td>14.67</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>56</td>
+      <td>18.67</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>104</td>
+      <td>34.67</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>106</td>
+      <td>35.33</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>247</td>
+      <td>82.33</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>102</td>
+      <td>34.00</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>118</td>
+      <td>39.33</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>29</td>
+      <td>9.67</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>33</td>
+      <td>11.00</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>165</td>
+      <td>55.00</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>198</td>
+      <td>66.00</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>1</td>
+      <td>0.33</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>Podemos observar que algunas columnas (por ejemplo, los índices de columna 1 y 2) no tienen valores faltantes, mientras que otras columnas (por ejemplo, los índices de columna 15 y 21) tienen muchos o incluso la mayoría de los valores faltantes.</p></li>
+</ul>
+</section>
+<section id="transformacion-de-datos-con-iterativeimputer">
+<h3><strong>Transformación de datos con <code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code></strong><a class="headerlink" href="#transformacion-de-datos-con-iterativeimputer" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code> realiza una <strong>imputación iterativa</strong>: en lugar de rellenar los faltantes de una sola vez, ajusta modelos sucesivos para <strong>estimar</strong> cada variable con valores perdidos a partir del resto de variables disponibles.</p>
+<p>Por defecto, este método suele apoyarse en un modelo tipo <strong><code class="docutils literal notranslate"><span class="pre">BayesianRidge()</span></code></strong>, que aprende relaciones entre variables y usa esa información para proponer valores plausibles donde hay <code class="docutils literal notranslate"><span class="pre">NA</span></code>.</p>
+<p>Un detalle clave del procedimiento es el <strong>orden de imputación</strong>: las variables se completan <strong>progresivamente</strong>, empezando por aquellas con <strong>menos valores faltantes</strong> y avanzando hacia las que tienen <strong>más</strong>. Esto ayuda a que, cuando se imputen las columnas más incompletas, ya exista información adicional imputada en las demás variables que puede mejorar la estimación.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">isnan</span>
+<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">read_csv</span>
+<span class="kn">from</span> <span class="nn">sklearn.experimental</span> <span class="kn">import</span> <span class="n">enable_iterative_imputer</span>
+<span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">IterativeImputer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">imputer</span> <span class="o">=</span> <span class="n">IterativeImputer</span><span class="p">(</span><span class="n">n_nearest_features</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">imputation_order</span><span class="o">=</span><span class="s1">&#39;ascending&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>En <code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code>, el parámetro <code class="docutils literal notranslate"><span class="pre">n_nearest_features</span> <span class="pre">=</span> <span class="pre">None</span></code> se utiliza para definir <strong>cuántas variables “vecinas”</strong> se tendrán en cuenta al imputar un valor faltante.</p>
+<ul class="simple">
+<li><p>Si se asigna un número (por ejemplo, <code class="docutils literal notranslate"><span class="pre">5</span></code>), el método intentará estimar el faltante usando <strong>solo esas variables más relevantes</strong>.</p></li>
+<li><p>En cambio, cuando se deja en <code class="docutils literal notranslate"><span class="pre">None</span></code>, se indica que el algoritmo utilizará <strong>todas las variables disponibles</strong> para calcular la imputación.</p></li>
+</ul>
+<p>En la práctica, mantenerlo en <code class="docutils literal notranslate"><span class="pre">None</span></code> puede aprovechar más información del conjunto de datos, aunque también puede incrementar el costo computacional si hay muchas variables.</p>
+<ol class="arabic simple">
+<li><p>Tomemos <code class="docutils literal notranslate"><span class="pre">X</span></code> y <code class="docutils literal notranslate"><span class="pre">y</span></code></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">values</span>
+<span class="n">ix</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">23</span><span class="p">]</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="n">ix</span><span class="p">],</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">23</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Missing: </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="nb">sum</span><span class="p">(</span><span class="n">isnan</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Missing: 1605
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>El proceso suele hacerse en dos pasos:</p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Ajuste (fit):</strong> el imputador se entrena con el conjunto de datos para aprender las relaciones entre variables.</p></li>
+<li><p><strong>Transformación (transform):</strong> luego, el imputador ya ajustado se aplica al mismo conjunto (u otro compatible) para generar una <strong>copia del dataset</strong> donde los valores faltantes de cada columna se reemplazan por <strong>valores estimados</strong>.</p></li>
+</ul>
+<div class="important admonition">
+<p class="admonition-title"><strong>Nota</strong></p>
+<p>La clase <code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code> no siempre puede usarse “directamente” sin habilitarla, ya que se considera <strong>experimental</strong> en algunas versiones y requiere importarla desde el módulo correspondiente.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">imputer</span> <span class="o">=</span> <span class="n">IterativeImputer</span><span class="p">()</span>
+<span class="n">imputer</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">Xtrans</span> <span class="o">=</span> <span class="n">imputer</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Missing: </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="nb">sum</span><span class="p">(</span><span class="n">isnan</span><span class="p">(</span><span class="n">Xtrans</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Missing: 0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="iterativeimputer-y-evaluacion-de-modelos">
+<h3><strong><code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code> y evaluación de modelos</strong><a class="headerlink" href="#iterativeimputer-y-evaluacion-de-modelos" title="Link to this heading">#</a></h3>
+<p>Para aplicar correctamente la imputación iterativa y <strong>evitar la fuga de datos</strong> (<em>data leakage</em>), lo más recomendable es construir un <strong>pipeline</strong> donde el flujo sea siempre:</p>
+<ol class="arabic simple">
+<li><p><strong>Primero:</strong> imputar los valores faltantes (dentro del proceso de entrenamiento).</p></li>
+<li><p><strong>Después:</strong> ajustar el modelo de predicción.</p></li>
+</ol>
+<p>De esta forma, la imputación se aprende <strong>solo con los datos del entrenamiento</strong> en cada partición y luego se aplica al subconjunto de validación, manteniendo una evaluación más realista.</p>
+<p>En Python, esto se implementa fácilmente con la clase <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code>. Por ejemplo, se puede crear un pipeline que incluya <code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code> (con su configuración por defecto o una estrategia ajustada) y, a continuación, un modelo como un <strong>bosque aleatorio</strong> (<em>Random Forest</em>).</p>
+<p>Finalmente, el rendimiento del modelo puede evaluarse comparando el pipeline sobre el conjunto de datos mediante <strong>validación cruzada repetida de 10 pliegues</strong>, lo cual ayuda a obtener estimaciones más estables del desempeño.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">mean</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">std</span>
+<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">read_csv</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.experimental</span> <span class="kn">import</span> <span class="n">enable_iterative_imputer</span>
+<span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">IterativeImputer</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">RepeatedStratifiedKFold</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">()</span>
+<span class="n">imputer</span> <span class="o">=</span> <span class="n">IterativeImputer</span><span class="p">()</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="n">imputer</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="n">model</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cv</span> <span class="o">=</span> <span class="n">RepeatedStratifiedKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">n_repeats</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">cv</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">error_score</span><span class="o">=</span><span class="s1">&#39;raise&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mean Accuracy: </span><span class="si">%.3f</span><span class="s1"> (</span><span class="si">%.3f</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">),</span> <span class="n">std</span><span class="p">(</span><span class="n">scores</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean Accuracy: 0.868 (0.061)
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Recuerda que <code class="docutils literal notranslate"><span class="pre">StratifiedKFold</span></code> ayuda a que <strong>cada partición de entrenamiento y prueba conserve una distribución de clases similar</strong>.<br />
+En <code class="docutils literal notranslate"><span class="pre">RepeatedStratifiedKFold</span></code>, el parámetro <code class="docutils literal notranslate"><span class="pre">n_repeats</span> <span class="pre">=</span> <span class="pre">3</span></code> indica que la validación cruzada estratificada se <strong>repite tres veces</strong>; en cada repetición se generan <strong>10 particiones distintas</strong> (con diferente aleatoriedad), lo que da una evaluación más estable.</p></li>
+<li><p>En este caso, <code class="docutils literal notranslate"><span class="pre">error_score</span> <span class="pre">=</span> <span class="pre">&quot;raise&quot;</span></code> significa que, si ocurre algún problema durante el ajuste o la evaluación en uno de los pliegues, el proceso <strong>no seguirá en silencio</strong>: se lanzará una <strong>excepción</strong> (<code class="docutils literal notranslate"><span class="pre">Exception</span></code>) y la validación se detendrá. Esto es útil para detectar fallas en los datos o en el pipeline (por ejemplo, columnas mal codificadas, valores fuera de rango o incompatibilidades del modelo).</p></li>
+<li><p>Ten en cuenta que los resultados pueden variar porque tanto el algoritmo como el procedimiento de evaluación tienen un componente <strong>aleatorio</strong> (y, a veces, también influyen detalles de <strong>precisión numérica</strong>). Por eso, es buena práctica ejecutar el experimento varias veces y reportar un <strong>promedio</strong> (o incluso un intervalo de variación).</p></li>
+<li><p>Con esta configuración (10 pliegues × 3 repeticiones), el pipeline reporta una <strong>precisión promedio</strong> cercana al <strong>86.3%</strong>, lo cual es un desempeño bastante competitivo.<br />
+Aun así, queda una pregunta importante: <strong>¿la estrategia iterativa por defecto es realmente la mejor para este conjunto de datos?</strong> Para responderlo, conviene comparar distintas configuraciones de imputación (parámetros o modelos internos) y validar cuál ofrece el mejor equilibrio entre desempeño y estabilidad.</p></li>
+</ul>
+</section>
+<section id="iterativeimputer-y-diferentes-ordenes-de-imputacion">
+<h3><strong><code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code> y diferentes órdenes de imputación</strong><a class="headerlink" href="#iterativeimputer-y-diferentes-ordenes-de-imputacion" title="Link to this heading">#</a></h3>
+<p>Por defecto, <code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code> completa los valores faltantes siguiendo un <strong>orden ascendente</strong>: comienza con la variable que tiene <strong>menos valores perdidos</strong> y avanza hasta la que tiene <strong>más</strong>.</p>
+<p>Sin embargo, este orden no es el único posible. También podemos <strong>experimentar</strong> con otras estrategias para ver si el rendimiento del modelo mejora, por ejemplo:</p>
+<ul class="simple">
+<li><p><strong>Descendente:</strong> de la variable con <em>más</em> faltantes a la de <em>menos</em>.</p></li>
+<li><p><strong>De derecha a izquierda</strong> (<em>árabe</em>).</p></li>
+<li><p><strong>De izquierda a derecha</strong> (<em>romano</em>).</p></li>
+<li><p><strong>Aleatorio:</strong> el orden cambia según la semilla o el muestreo.</p></li>
+</ul>
+<p>La idea es sencilla: el orden en que se imputan las columnas puede influir en la calidad de las estimaciones y, en consecuencia, en el desempeño final del modelo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">mean</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">std</span>
+<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">read_csv</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.experimental</span> <span class="kn">import</span> <span class="n">enable_iterative_imputer</span>
+<span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">IterativeImputer</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">RepeatedStratifiedKFold</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="n">strategies</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ascending&#39;</span><span class="p">,</span> <span class="s1">&#39;descending&#39;</span><span class="p">,</span> <span class="s1">&#39;roman&#39;</span><span class="p">,</span> <span class="s1">&#39;arabic&#39;</span><span class="p">,</span> <span class="s1">&#39;random&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">strategies</span><span class="p">:</span>
+ <span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="n">IterativeImputer</span><span class="p">(</span><span class="n">imputation_order</span><span class="o">=</span><span class="n">s</span><span class="p">)),</span> <span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="n">RandomForestClassifier</span><span class="p">())])</span>
+ <span class="n">cv</span> <span class="o">=</span> <span class="n">RepeatedStratifiedKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">n_repeats</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+ <span class="n">scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">cv</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+ <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
+ <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&gt;</span><span class="si">%s</span><span class="s1"> </span><span class="si">%.3f</span><span class="s1"> (</span><span class="si">%.3f</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">),</span> <span class="n">std</span><span class="p">(</span><span class="n">scores</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;ascending 0.870 (0.053)
+&gt;descending 0.877 (0.051)
+&gt;roman 0.872 (0.056)
+&gt;arabic 0.874 (0.053)
+&gt;random 0.869 (0.049)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pyplot</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">strategies</span><span class="p">,</span> <span class="n">showmeans</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">pyplot</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">pyplot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/141205c6851bdf0d77b88efaac176fd907e224dd77d95a4568b143680b8e2f58.png" src="_images/141205c6851bdf0d77b88efaac176fd907e224dd77d95a4568b143680b8e2f58.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+
+<span class="c1"># results: lista de arrays/listas (scores por estrategia)</span>
+<span class="c1"># strategies: lista de nombres (mismo orden que results)</span>
+
+<span class="n">df_plot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;strategy&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">scores</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">strategies</span><span class="p">,</span> <span class="n">results</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">],</span>
+    <span class="s2">&quot;accuracy&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">score</span> <span class="k">for</span> <span class="n">scores</span> <span class="ow">in</span> <span class="n">results</span> <span class="k">for</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># Boxplot (con puntos)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">box</span><span class="p">(</span>
+    <span class="n">df_plot</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;strategy&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;accuracy&quot;</span><span class="p">,</span>
+    <span class="n">points</span><span class="o">=</span><span class="s2">&quot;all&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Media por estrategia como MARCADOR (no línea)</span>
+<span class="n">means</span> <span class="o">=</span> <span class="n">df_plot</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;strategy&quot;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s2">&quot;accuracy&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span>
+    <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">means</span><span class="p">[</span><span class="s2">&quot;strategy&quot;</span><span class="p">],</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">means</span><span class="p">[</span><span class="s2">&quot;accuracy&quot;</span><span class="p">],</span>
+        <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;markers&quot;</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Media&quot;</span><span class="p">,</span>
+        <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">symbol</span><span class="o">=</span><span class="s2">&quot;diamond&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">&quot;Estrategia de imputación&quot;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;Accuracy&quot;</span><span class="p">,</span>
+    <span class="n">xaxis_tickangle</span><span class="o">=</span><span class="mi">45</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>A partir del diagrama de cajas se observa que <strong>las diferencias entre estrategias son pequeñas</strong>: las medianas y los rangos intercuartílicos son muy similares en casi todos los casos, lo que sugiere un rendimiento bastante estable sin importar el orden de imputación.</p>
+<p>Aun así, el <strong>orden descendente</strong> destaca ligeramente, ya que muestra la <strong>media (diamante rojo)</strong> más alta entre las opciones comparadas. Muy cerca aparecen los órdenes <strong>romano</strong> y <strong>árabe</strong>, que también mantienen una precisión promedio alrededor de <strong>0.87</strong> (≈ <strong>87%</strong>).</p>
+<p>En resumen, aunque no hay cambios drásticos, la gráfica sugiere que <strong>usar un orden distinto al predeterminado (ascendente)</strong>, especialmente <strong>descendente</strong>, puede dar una <strong>mejora marginal</strong> en este conjunto de datos.</p>
+</section>
+<section id="iterativeimputer-y-el-numero-de-iteraciones">
+<h3><strong><code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code> y el número de iteraciones</strong><a class="headerlink" href="#iterativeimputer-y-el-numero-de-iteraciones" title="Link to this heading">#</a></h3>
+<p>Por defecto, <code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code> realiza <strong>10 iteraciones</strong> para completar los valores faltantes. En cada iteración, el método vuelve a estimar las columnas con datos perdidos usando la información del resto de variables.</p>
+<p>Sin embargo, <strong>más iteraciones no siempre significan mejores resultados</strong>. En algunos casos, un número muy alto puede introducir <strong>sesgo</strong>, aumentar el <strong>ruido</strong> en las estimaciones o simplemente aportar mejoras mínimas a cambio de más tiempo de cómputo. Por eso, a veces conviene trabajar con <strong>pocas iteraciones</strong>.</p>
+<p>El número de iteraciones se controla con el parámetro <code class="docutils literal notranslate"><span class="pre">max_iter</span></code>. En el siguiente ejemplo compararemos distintos valores de <code class="docutils literal notranslate"><span class="pre">max_iter</span></code> (por ejemplo, de <strong>1 a 20</strong>) para observar cómo cambia el desempeño del modelo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">mean</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">std</span>
+<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">read_csv</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.experimental</span> <span class="kn">import</span> <span class="n">enable_iterative_imputer</span>
+<span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">IterativeImputer</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">RepeatedStratifiedKFold</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="n">strategies</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">strategies</span><span class="p">:</span>
+	<span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="n">IterativeImputer</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">))),</span> <span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="n">RandomForestClassifier</span><span class="p">())])</span>
+	<span class="n">cv</span> <span class="o">=</span> <span class="n">RepeatedStratifiedKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">n_repeats</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+	<span class="n">scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">cv</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+	<span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&gt;</span><span class="si">%s</span><span class="s1"> </span><span class="si">%.3f</span><span class="s1"> (</span><span class="si">%.3f</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">),</span> <span class="n">std</span><span class="p">(</span><span class="n">scores</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;1 0.867 (0.050)
+&gt;2 0.866 (0.051)
+&gt;3 0.867 (0.054)
+&gt;4 0.870 (0.053)
+&gt;5 0.876 (0.052)
+&gt;6 0.873 (0.052)
+&gt;7 0.872 (0.050)
+&gt;8 0.871 (0.052)
+&gt;9 0.869 (0.055)
+&gt;10 0.877 (0.048)
+&gt;11 0.873 (0.053)
+&gt;12 0.869 (0.051)
+&gt;13 0.869 (0.056)
+&gt;14 0.871 (0.054)
+&gt;15 0.866 (0.056)
+&gt;16 0.864 (0.054)
+&gt;17 0.874 (0.050)
+&gt;18 0.864 (0.045)
+&gt;19 0.871 (0.055)
+&gt;20 0.872 (0.053)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pyplot</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">strategies</span><span class="p">,</span> <span class="n">showmeans</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">pyplot</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">pyplot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/715142cc245e863fc68ff9d92ccfae43fd9b99f412edbfec6757f815506cc29f.png" src="_images/715142cc245e863fc68ff9d92ccfae43fd9b99f412edbfec6757f815506cc29f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+
+<span class="c1"># results: lista de arrays/listas con los scores por cada max_iter</span>
+<span class="c1"># strategies: [&#39;1&#39;,&#39;2&#39;,...,&#39;20&#39;]</span>
+
+<span class="n">df_plot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;max_iter&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">scores</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">strategies</span><span class="p">,</span> <span class="n">results</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">],</span>
+    <span class="s2">&quot;accuracy&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">score</span> <span class="k">for</span> <span class="n">scores</span> <span class="ow">in</span> <span class="n">results</span> <span class="k">for</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># Boxplot + puntos</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">box</span><span class="p">(</span>
+    <span class="n">df_plot</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;max_iter&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;accuracy&quot;</span><span class="p">,</span>
+    <span class="n">points</span><span class="o">=</span><span class="s2">&quot;all&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Media por max_iter como MARCADOR (no línea)</span>
+<span class="n">means</span> <span class="o">=</span> <span class="n">df_plot</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;max_iter&quot;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s2">&quot;accuracy&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span>
+    <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">means</span><span class="p">[</span><span class="s2">&quot;max_iter&quot;</span><span class="p">],</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">means</span><span class="p">[</span><span class="s2">&quot;accuracy&quot;</span><span class="p">],</span>
+        <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;markers&quot;</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Media&quot;</span><span class="p">,</span>
+        <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">symbol</span><span class="o">=</span><span class="s2">&quot;diamond&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">&quot;Número de iteraciones (max_iter)&quot;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;Accuracy&quot;</span><span class="p">,</span>
+    <span class="n">xaxis_tickangle</span><span class="o">=</span><span class="mi">0</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>A partir del diagrama de cajas se aprecia que <strong>el desempeño cambia muy poco</strong> cuando aumentamos <code class="docutils literal notranslate"><span class="pre">max_iter</span></code> de 1 a 20: las medianas son similares y la dispersión de los puntajes se mantiene en rangos comparables.</p>
+<p>De hecho, las <strong>pocas iteraciones (≈ 3–5)</strong> ya alcanzan una precisión promedio muy cercana al mejor resultado observado (marcado por los triángulos verdes), y en algunos casos incluso lo igualan o lo superan levemente. En contraste, usar valores más altos (por ejemplo, <strong>9–12 iteraciones</strong>) <strong>no muestra una mejora clara y consistente</strong> en la precisión.</p>
+<p>En resumen, para este conjunto de datos parece razonable preferir <strong>un número bajo de iteraciones</strong>, ya que ofrece un rendimiento similar con menor costo computacional.</p>
+</section>
+<section id="iterativeimputer-al-hacer-una-prediccion">
+<h3><strong><code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code> al hacer una predicción</strong><a class="headerlink" href="#iterativeimputer-al-hacer-una-prediccion" title="Link to this heading">#</a></h3>
+<p>Una vez elegida la configuración final, podemos construir un <strong>pipeline</strong> que combine la <strong>imputación iterativa</strong> (<code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code>) con el modelo de <strong>bosque aleatorio</strong> (<em>Random Forest</em>). Esto permite que la preparación de datos y el entrenamiento queden integrados en un solo flujo.</p>
+<ul class="simple">
+<li><p>El procedimiento típico es:</p>
+<ol class="arabic simple">
+<li><p><strong>Definir el pipeline</strong> (imputador + modelo).</p></li>
+<li><p><strong>Ajustarlo</strong> con todos los datos disponibles (<code class="docutils literal notranslate"><span class="pre">fit</span></code>).</p></li>
+<li><p>Usarlo para <strong>predecir nuevos casos</strong> con <code class="docutils literal notranslate"><span class="pre">predict</span></code>.</p></li>
+</ol>
+</li>
+</ul>
+<p>Un detalle importante: cuando ingreses una nueva observación, cualquier valor desconocido o ausente debe indicarse como <code class="docutils literal notranslate"><span class="pre">NaN</span></code>. Así, el imputador podrá completar esos faltantes antes de que el modelo genere la predicción.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">nan</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">na_values</span><span class="o">=</span><span class="s1">&#39;?&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">values</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">data</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="n">IterativeImputer</span><span class="p">()),</span> <span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="n">RandomForestClassifier</span><span class="p">())])</span>
+<span class="n">pipeline</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-container-id-1 {
+  /* Definition of color scheme common for light and dark mode */
+  --sklearn-color-text: black;
+  --sklearn-color-line: gray;
+  /* Definition of color scheme for unfitted estimators */
+  --sklearn-color-unfitted-level-0: #fff5e6;
+  --sklearn-color-unfitted-level-1: #f6e4d2;
+  --sklearn-color-unfitted-level-2: #ffe0b3;
+  --sklearn-color-unfitted-level-3: chocolate;
+  /* Definition of color scheme for fitted estimators */
+  --sklearn-color-fitted-level-0: #f0f8ff;
+  --sklearn-color-fitted-level-1: #d4ebff;
+  --sklearn-color-fitted-level-2: #b3dbfd;
+  --sklearn-color-fitted-level-3: cornflowerblue;
+
+  /* Specific color for light theme */
+  --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, white)));
+  --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-icon: #696969;
+
+  @media (prefers-color-scheme: dark) {
+    /* Redefinition of color scheme for dark theme */
+    --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, #111)));
+    --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-icon: #878787;
+  }
+}
+
+#sk-container-id-1 {
+  color: var(--sklearn-color-text);
+}
+
+#sk-container-id-1 pre {
+  padding: 0;
+}
+
+#sk-container-id-1 input.sk-hidden--visually {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+#sk-container-id-1 div.sk-dashed-wrapped {
+  border: 1px dashed var(--sklearn-color-line);
+  margin: 0 0.4em 0.5em 0.4em;
+  box-sizing: border-box;
+  padding-bottom: 0.4em;
+  background-color: var(--sklearn-color-background);
+}
+
+#sk-container-id-1 div.sk-container {
+  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
+     but bootstrap.min.css set `[hidden] { display: none !important; }`
+     so we also need the `!important` here to be able to override the
+     default hidden behavior on the sphinx rendered scikit-learn.org.
+     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
+  display: inline-block !important;
+  position: relative;
+}
+
+#sk-container-id-1 div.sk-text-repr-fallback {
+  display: none;
+}
+
+div.sk-parallel-item,
+div.sk-serial,
+div.sk-item {
+  /* draw centered vertical line to link estimators */
+  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
+  background-size: 2px 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Parallel-specific style estimator block */
+
+#sk-container-id-1 div.sk-parallel-item::after {
+  content: "";
+  width: 100%;
+  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
+  flex-grow: 1;
+}
+
+#sk-container-id-1 div.sk-parallel {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background-color: var(--sklearn-color-background);
+  position: relative;
+}
+
+#sk-container-id-1 div.sk-parallel-item {
+  display: flex;
+  flex-direction: column;
+}
+
+#sk-container-id-1 div.sk-parallel-item:first-child::after {
+  align-self: flex-end;
+  width: 50%;
+}
+
+#sk-container-id-1 div.sk-parallel-item:last-child::after {
+  align-self: flex-start;
+  width: 50%;
+}
+
+#sk-container-id-1 div.sk-parallel-item:only-child::after {
+  width: 0;
+}
+
+/* Serial-specific style estimator block */
+
+#sk-container-id-1 div.sk-serial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--sklearn-color-background);
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+
+/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
+clickable and can be expanded/collapsed.
+- Pipeline and ColumnTransformer use this feature and define the default style
+- Estimators will overwrite some part of the style using the `sk-estimator` class
+*/
+
+/* Pipeline and ColumnTransformer style (default) */
+
+#sk-container-id-1 div.sk-toggleable {
+  /* Default theme specific background. It is overwritten whether we have a
+  specific estimator or a Pipeline/ColumnTransformer */
+  background-color: var(--sklearn-color-background);
+}
+
+/* Toggleable label */
+#sk-container-id-1 label.sk-toggleable__label {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+#sk-container-id-1 label.sk-toggleable__label-arrow:before {
+  /* Arrow on the left of the label */
+  content: "▸";
+  float: left;
+  margin-right: 0.25em;
+  color: var(--sklearn-color-icon);
+}
+
+#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {
+  color: var(--sklearn-color-text);
+}
+
+/* Toggleable content - dropdown */
+
+#sk-container-id-1 div.sk-toggleable__content {
+  max-height: 0;
+  max-width: 0;
+  overflow: hidden;
+  text-align: left;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content pre {
+  margin: 0.2em;
+  border-radius: 0.25em;
+  color: var(--sklearn-color-text);
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content.fitted pre {
+  /* unfitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+  /* Expand drop-down */
+  max-height: 200px;
+  max-width: 100%;
+  overflow: auto;
+}
+
+#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+  content: "▾";
+}
+
+/* Pipeline/ColumnTransformer-specific style */
+
+#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator-specific style */
+
+/* Colorize estimator box */
+#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+#sk-container-id-1 div.sk-label label.sk-toggleable__label,
+#sk-container-id-1 div.sk-label label {
+  /* The background is the default theme color */
+  color: var(--sklearn-color-text-on-default-background);
+}
+
+/* On hover, darken the color of the background */
+#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+/* Label box, darken color on hover, fitted */
+#sk-container-id-1 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator label */
+
+#sk-container-id-1 div.sk-label label {
+  font-family: monospace;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1.2em;
+}
+
+#sk-container-id-1 div.sk-label-container {
+  text-align: center;
+}
+
+/* Estimator-specific */
+#sk-container-id-1 div.sk-estimator {
+  font-family: monospace;
+  border: 1px dotted var(--sklearn-color-border-box);
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  margin-bottom: 0.5em;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+/* on hover */
+#sk-container-id-1 div.sk-estimator:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Specification for estimator info (e.g. "i" and "?") */
+
+/* Common style for "i" and "?" */
+
+.sk-estimator-doc-link,
+a:link.sk-estimator-doc-link,
+a:visited.sk-estimator-doc-link {
+  float: right;
+  font-size: smaller;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1em;
+  height: 1em;
+  width: 1em;
+  text-decoration: none !important;
+  margin-left: 1ex;
+  /* unfitted */
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-1);
+}
+
+.sk-estimator-doc-link.fitted,
+a:link.sk-estimator-doc-link.fitted,
+a:visited.sk-estimator-doc-link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+div.sk-estimator:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover,
+div.sk-label-container:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover,
+div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+/* Span, style for the box shown on hovering the info icon */
+.sk-estimator-doc-link span {
+  display: none;
+  z-index: 9999;
+  position: relative;
+  font-weight: normal;
+  right: .2ex;
+  padding: .5ex;
+  margin: .5ex;
+  width: min-content;
+  min-width: 20ex;
+  max-width: 50ex;
+  color: var(--sklearn-color-text);
+  box-shadow: 2pt 2pt 4pt #999;
+  /* unfitted */
+  background: var(--sklearn-color-unfitted-level-0);
+  border: .5pt solid var(--sklearn-color-unfitted-level-3);
+}
+
+.sk-estimator-doc-link.fitted span {
+  /* fitted */
+  background: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3);
+}
+
+.sk-estimator-doc-link:hover span {
+  display: block;
+}
+
+/* "?"-specific style due to the `<a>` HTML tag */
+
+#sk-container-id-1 a.estimator_doc_link {
+  float: right;
+  font-size: 1rem;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1rem;
+  height: 1rem;
+  width: 1rem;
+  text-decoration: none;
+  /* unfitted */
+  color: var(--sklearn-color-unfitted-level-1);
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+}
+
+#sk-container-id-1 a.estimator_doc_link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+#sk-container-id-1 a.estimator_doc_link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+#sk-container-id-1 a.estimator_doc_link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+}
+</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>Pipeline(steps=[(&#x27;i&#x27;, IterativeImputer()), (&#x27;m&#x27;, RandomForestClassifier())])</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" ><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;&nbsp;Pipeline<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.pipeline.Pipeline.html">?<span>Documentation for Pipeline</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>Pipeline(steps=[(&#x27;i&#x27;, IterativeImputer()), (&#x27;m&#x27;, RandomForestClassifier())])</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox" ><label for="sk-estimator-id-2" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;IterativeImputer<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.impute.IterativeImputer.html">?<span>Documentation for IterativeImputer</span></a></label><div class="sk-toggleable__content fitted"><pre>IterativeImputer()</pre></div> </div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-3" type="checkbox" ><label for="sk-estimator-id-3" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;RandomForestClassifier<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.ensemble.RandomForestClassifier.html">?<span>Documentation for RandomForestClassifier</span></a></label><div class="sk-toggleable__content fitted"><pre>RandomForestClassifier()</pre></div> </div></div></div></div></div></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">530101</span><span class="p">,</span> <span class="mf">38.50</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">nan</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">nan</span><span class="p">,</span> <span class="n">nan</span><span class="p">,</span> <span class="n">nan</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">45.00</span><span class="p">,</span> <span class="mf">8.40</span><span class="p">,</span> <span class="n">nan</span><span class="p">,</span> <span class="n">nan</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">11300</span><span class="p">,</span> <span class="mi">00000</span><span class="p">,</span> <span class="mi">00000</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yhat</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">predict</span><span class="p">([</span><span class="n">row</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted Class: </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">yhat</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Predicted Class: 2
+</pre></div>
+</div>
+</div>
+</div>
+<p>En tu caso (según el diccionario del dataset horse-colic):</p>
+<ul class="simple">
+<li><p>1 = lived (sobrevivió)</p></li>
+<li><p>2 = died (murió)</p></li>
+<li><p>3 = was euthanized (fue sacrificado)</p></li>
+</ul>
+<p>Así que 2 se interpreta como: el modelo predice que el caballo murió.</p>
+</section>
+<section id="instancias-y-o-caracteristicas-duplicadas">
+<h3><strong>Instancias y/o características duplicadas</strong><a class="headerlink" href="#instancias-y-o-caracteristicas-duplicadas" title="Link to this heading">#</a></h3>
+<p>Un tercer problema común al analizar datos es la presencia de <strong>instancias (filas) y/o características (columnas) duplicadas</strong>. En general, estos duplicados no aportan información nueva y, si no se detectan y eliminan, pueden <strong>distorsionar</strong> los patrones del conjunto de datos y llevar a <strong>conclusiones equivocadas</strong> en una visualización.</p>
+<p>Por ejemplo, imagina que construyes una gráfica para explorar la relación entre el <strong>género</strong> de un adolescente y si <strong>toca el piano</strong>. Si el conjunto de datos incluye <strong>valores atípicos</strong>, <strong>errores</strong>, <strong>registros repetidos</strong> o <strong>faltantes</strong>, la visualización puede terminar mostrando una tendencia engañosa.</p>
+<p>A partir de una gráfica así, podrías llegar a concluir que <strong>hay más mujeres que tocan el piano que hombres</strong>. Sin embargo, antes de aceptar esa interpretación, conviene revisar si la visualización proviene de un conjunto de datos con duplicados o problemas de calidad, como el que se muestra a continuación.</p>
+<p><img alt="Figure714" src="_images/Figure714.png" /></p>
+<p>En este ejemplo aparecen <strong>dos registros</strong> para <strong>Nita Thadaka</strong> y <strong>tres registros</strong> para <strong>Pooja Rajesh</strong>. En total, esto implica <strong>tres instancias duplicadas</strong> (registros repetidos que no deberían contarse más de una vez).</p>
+<p>Cuando hay duplicados, la visualización puede <strong>sobre-representar</strong> ciertos casos y terminar mostrando una “tendencia” que en realidad es producto de datos repetidos. Por eso, la lectura de la gráfica podría ser <strong>inexacta</strong>.</p>
+<p>La forma más directa de manejar este problema suele ser <strong>eliminar los duplicados</strong>. En <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, esto se puede hacer fácilmente con la función <code class="docutils literal notranslate"><span class="pre">drop_duplicates()</span></code>.</p>
+</section>
+<section id="mala-seleccion-de-caracteristicas">
+<h3><strong>Mala selección de características</strong><a class="headerlink" href="#mala-seleccion-de-caracteristicas" title="Link to this heading">#</a></h3>
+<p>En un conjunto de datos, una <strong>característica</strong> es una <strong>columna</strong> (variable), mientras que una <strong>instancia</strong> es una <strong>fila</strong> (registro).<br />
+Por ejemplo, en una tabla donde aparecen <code class="docutils literal notranslate"><span class="pre">nombre</span></code>, <code class="docutils literal notranslate"><span class="pre">sexo</span></code>, <code class="docutils literal notranslate"><span class="pre">toca_piano</span></code> y <code class="docutils literal notranslate"><span class="pre">edad</span></code>, esas serían <strong>características</strong>; en cambio, un registro específico (por ejemplo, <em>Pooja Rajesh, F, 15, yes</em>) corresponde a <strong>una instancia</strong>.</p>
+<p>Como el objetivo de una visualización es mostrar <strong>tendencias, patrones o relaciones</strong> entre variables, la selección de características debe hacerse con <strong>cuidado</strong>. Elegir variables poco relevantes puede producir gráficos “bonitos”, pero <strong>sin un mensaje claro</strong> o, peor aún, con interpretaciones engañosas.</p>
+<p>Si lo que buscas es demostrar que existe una relación fuerte entre dos variables, conviene <strong>verificar primero</strong> que realmente estén asociadas (por ejemplo, mediante una medida de correlación o un análisis exploratorio). Si no hay relación, la visualización probablemente <strong>no aporte información útil</strong>.</p>
+<p>Por ejemplo, en el conjunto de datos <code class="docutils literal notranslate"><span class="pre">co2.csv</span></code>, que incluye información de <strong>emisiones de CO₂</strong> y <strong>PIB</strong> por país, tiene sentido revisar la relación entre ambas variables antes de graficarlas. Confirmar esa asociación <em>antes</em> de visualizar ayuda a asegurarnos de que estamos construyendo una gráfica que realmente <strong>valga la pena</strong>.</p>
 </section>
 </section>
 <section id="visualizacion-interactiva">
@@ -5718,6 +7379,15 @@ if (outputEl) {{
         <p class="prev-next-title"><strong>Módulo 2: Estructuración y manipulación de datos con Python</strong></p>
       </div>
     </a>
+    <a class="right-next"
+       href="modulo_4.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><strong>Modulo 4: Introducción a Streamlit</strong></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -5763,6 +7433,21 @@ if (outputEl) {{
 </li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imputacion-multiple-iterativa-mice-e-iterativeimputer"><strong>Imputación múltiple iterativa (MICE) e <code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code></strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#como-funciona-la-imputacion-multiple-iterativa-idea-general"><strong>¿Cómo funciona la imputación múltiple iterativa? (idea general)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-significa-multiple-en-imputacion-multiple"><strong>¿Qué significa “múltiple” en imputación múltiple?</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#emparejamiento-predictivo-medio-pmm"><strong>Emparejamiento predictivo medio (PMM)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#puente-hacia-la-implementacion-en-r"><strong>Puente hacia la implementación en R</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacion-de-iterativeimputer"><strong>Aplicación de <code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code></strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformacion-de-datos-con-iterativeimputer"><strong>Transformación de datos con <code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code></strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterativeimputer-y-evaluacion-de-modelos"><strong><code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code> y evaluación de modelos</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterativeimputer-y-diferentes-ordenes-de-imputacion"><strong><code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code> y diferentes órdenes de imputación</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterativeimputer-y-el-numero-de-iteraciones"><strong><code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code> y el número de iteraciones</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterativeimputer-al-hacer-una-prediccion"><strong><code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code> al hacer una predicción</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instancias-y-o-caracteristicas-duplicadas"><strong>Instancias y/o características duplicadas</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mala-seleccion-de-caracteristicas"><strong>Mala selección de características</strong></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-interactiva"><strong>Visualización interactiva</strong></a><ul class="nav section-nav flex-column">
