@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=6c7211e7" />
   
@@ -463,16 +463,16 @@ document.write(`
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Asignar la URL del archivo: url</span>
-<span class="n">url</span> <span class="o">=</span><span class="s1">&#39;https://raw.githubusercontent.com/cdeoroaguado/Datos/refs/heads/main/datamanip/bank/bank-full.csv&#39;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
 
 <span class="c1"># leer el archivo en u dataframe:df</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
 
 <span class="c1"># Imprimir el encabezado del dataframe</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="c1"># TU CODIGO</span>
 
 <span class="c1"># Mostrar las 5 ultimas filas de DataFrame</span>
-<span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+<span class="c1"># TU CODIGO</span>
 </pre></div>
 </div>
 </div>
@@ -481,7 +481,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Obtener las dimensiones del DataFrame</span>
-<span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+<span class="c1"># TU CODIGO</span>
 </pre></div>
 </div>
 </div>
@@ -490,7 +490,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Obtener información sobre la estructura del DataFrame</span>
-<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<span class="c1"># TU CODIGO</span>
 </pre></div>
 </div>
 </div>
@@ -499,7 +499,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># número total de elementos en el dataframe</span>
-<span class="n">df</span><span class="o">.</span><span class="n">size</span>
+<span class="c1"># TU CODIGO</span>
 </pre></div>
 </div>
 </div>
@@ -508,7 +508,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eliminar filas duplicadas</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+<span class="n">df</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
 <span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -536,7 +536,7 @@ document.write(`
 <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">20</span>
 
 <span class="c1"># Mostrar los clientes menores de 20 años</span>
-<span class="n">dfm20</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">]</span>
+<span class="n">dfm20</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
 
 <span class="c1"># imprimir el dataframe las 5 primeras</span>
 <span class="n">dfm20</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -548,7 +548,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># seleccionemos las columnas</span>
-<span class="n">new_dfm20</span> <span class="o">=</span> <span class="n">dfm20</span><span class="p">[[</span><span class="s1">&#39;age&#39;</span><span class="p">,</span><span class="s1">&#39;marital&#39;</span><span class="p">,</span><span class="s1">&#39;balance&#39;</span><span class="p">,</span><span class="s1">&#39;y&#39;</span><span class="p">]]</span>
+<span class="n">new_dfm20</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
 
 <span class="c1"># imprimir</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">new_dfm20</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
@@ -584,7 +584,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Aplicar la función &#39;categorizar_balance&#39; a la columna &#39;balance&#39;</span>
 <span class="c1"># y crear la nueva columna &#39;balance_category&#39;</span>
-<span class="n">new_dfm20</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;balance_category&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_dfm20</span><span class="p">[</span><span class="s1">&#39;balance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">categorizar_balance</span><span class="p">)</span>
+<span class="n">new_dfm20</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;balance_category&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
 
 <span class="c1"># Mostrar el DataFrame actualizado</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">new_dfm20</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
@@ -1048,12 +1048,6 @@ muestra los valores transformados en logaritmos de la variable del precio, y vem
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Temperatura (°C)&#39;)
-</pre></div>
-</div>
-<img alt="_images/650ddca3be35f67914c562a006d864dc55fc2b77cc668965a0d833ab14b84045.png" src="_images/650ddca3be35f67914c562a006d864dc55fc2b77cc668965a0d833ab14b84045.png" />
-</div>
 </div>
 </section>
 <section id="barras">
@@ -1237,9 +1231,6 @@ muestra los valores transformados en logaritmos de la variable del precio, y vem
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/13be0eb7aa4bfc4645b9280092510c82acc0606b2b1b4c192f641318d0c39fe9.png" src="_images/13be0eb7aa4bfc4645b9280092510c82acc0606b2b1b4c192f641318d0c39fe9.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1369,9 +1360,6 @@ muestra los valores transformados en logaritmos de la variable del precio, y vem
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/a0bcb618301b93e93d2a6db1843ea279a0e8f84335b53721e26b86093862b641.png" src="_images/a0bcb618301b93e93d2a6db1843ea279a0e8f84335b53721e26b86093862b641.png" />
 </div>
 </div>
 </section>
