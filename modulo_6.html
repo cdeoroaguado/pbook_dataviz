@@ -691,6 +691,13 @@ postgres     17        646MB
 <p><span class="caption-number">Fig. 12 </span><span class="caption-text">Descarga de la imagen <code class="docutils literal notranslate"><span class="pre">postgres:17</span></code> con <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull</span></code> desde Windows PowerShell.</span><a class="headerlink" href="#fig-m6-docker-pull" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
+<figure class="align-center" id="fig-m6-docker-desktop-contenedor">
+<a class="reference internal image-reference" href="_images/m6_docker_desktop_contenedor.png"><img alt="_images/m6_docker_desktop_contenedor.png" src="_images/m6_docker_desktop_contenedor.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">La imagen <code class="docutils literal notranslate"><span class="pre">postgres:17</span></code> descargada, en la pestaña <em>Images</em> de Docker Desktop.</span><a class="headerlink" href="#fig-m6-docker-desktop-contenedor" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Descargar la imagen es como <strong>instalar</strong> PostgreSQL una sola vez: a partir de ella podremos crear todos los servidores (contenedores) que queramos. Si algún día quieres borrarla, usa <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rmi</span> <span class="pre">postgres:17</span></code> (primero debes eliminar los contenedores que la usan).</p>
 </section>
 <section id="crear-un-primer-contenedor">
@@ -739,17 +746,10 @@ a799fe7e781c   postgres:17   Up 6 seconds   5432/tcp   pg_prueba
 <a class="reference internal image-reference" href="_images/m6_docker_run_prueba.png"><img alt="_images/m6_docker_run_prueba.png" src="_images/m6_docker_run_prueba.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Creación del contenedor <code class="docutils literal notranslate"><span class="pre">pg_prueba</span></code> y verificación con <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code>.</span><a class="headerlink" href="#fig-m6-docker-run-prueba" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Creación del contenedor <code class="docutils literal notranslate"><span class="pre">pg_prueba</span></code> y verificación con <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code>.</span><a class="headerlink" href="#fig-m6-docker-run-prueba" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>El contenedor también aparece en la pestaña <strong>Containers</strong> de Docker Desktop, desde donde puedes iniciarlo, detenerlo, ver sus registros y revisar sus variables de entorno.</p>
-<figure class="align-center" id="fig-m6-docker-desktop-contenedor">
-<a class="reference internal image-reference" href="_images/m6_docker_desktop_contenedor.png"><img alt="_images/m6_docker_desktop_contenedor.png" src="_images/m6_docker_desktop_contenedor.png" style="width: 80%;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Contenedor <code class="docutils literal notranslate"><span class="pre">pg_prueba</span></code> en la pestaña <em>Containers</em> de Docker Desktop.</span><a class="headerlink" href="#fig-m6-docker-desktop-contenedor" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
 </section>
 <section id="conectarse-al-servidor-con-psql">
 <h3><strong>Conectarse al servidor con <code class="docutils literal notranslate"><span class="pre">psql</span></code></strong><a class="headerlink" href="#conectarse-al-servidor-con-psql" title="Link to this heading">#</a></h3>
