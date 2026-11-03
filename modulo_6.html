@@ -383,7 +383,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramienta-de-administracion-de-bases-de-datos-dbeaver"><strong>Herramienta de administración de bases de datos: DBeaver</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramienta-de-administracion-de-bases-de-datos-dbeaver"><strong>Herramienta de administración de bases de datos: DBeaver</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacion-de-dbeaver-en-windows"><strong>Instalación de DBeaver en Windows</strong></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacion-y-uso-de-docker"><strong>Instalación y uso de Docker</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-docker"><strong>¿Qué es Docker?</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vocabulario-basico"><strong>Vocabulario básico</strong></a></li>
@@ -476,22 +479,121 @@ document.write(`
 <section id="herramienta-de-administracion-de-bases-de-datos-dbeaver">
 <h2><strong>Herramienta de administración de bases de datos: DBeaver</strong><a class="headerlink" href="#herramienta-de-administracion-de-bases-de-datos-dbeaver" title="Link to this heading">#</a></h2>
 <p><strong>DBeaver</strong> es un cliente de bases de datos gratuito y multiplataforma pensado para desarrolladores, analistas y administradores. Con una sola aplicación puedes conectarte a PostgreSQL, MySQL, SQLite, SQL Server, Oracle, MariaDB y muchos otros motores, explorar sus tablas, editar datos y ejecutar scripts SQL.</p>
-<ol class="arabic simple">
-<li><p>Ingresa a <a class="reference external" href="https://dbeaver.io/download/">https://dbeaver.io/download/</a> y descarga <strong>DBeaver Community</strong> para tu sistema operativo (en Windows, el <em>Windows (installer)</em>).</p></li>
-<li><p>Ejecuta el instalador y acepta las opciones por defecto.</p></li>
-<li><p>Por ahora no necesitas configurar nada más: primero crearemos el servidor de bases de datos con Docker y luego volveremos a DBeaver para conectarnos a él.</p></li>
-</ol>
-<figure class="align-center" id="fig-m6-dbeaver-descarga">
-<a class="reference internal image-reference" href="_images/m6_dbeaver_descarga.png"><img alt="_images/m6_dbeaver_descarga.png" src="_images/m6_dbeaver_descarga.png" style="width: 80%;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Página de descarga de DBeaver Community. En Windows se usa el instalador <em>Windows (installer)</em>.</span><a class="headerlink" href="#fig-m6-dbeaver-descarga" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
 <div class="note admonition">
 <p class="admonition-title"><strong>DBeaver no es una base de datos</strong></p>
 <p>DBeaver (al igual que pgAdmin) es solo un <strong>cliente</strong>: una interfaz para hablar con un servidor de bases de datos. El servidor, que es quien guarda los datos, lo vamos a ejecutar con Docker.</p>
 </div>
+<section id="instalacion-de-dbeaver-en-windows">
+<h3><strong>Instalación de DBeaver en Windows</strong><a class="headerlink" href="#instalacion-de-dbeaver-en-windows" title="Link to this heading">#</a></h3>
+<p><strong>1. Descargar el instalador.</strong> Ingresa a <a class="reference external" href="https://dbeaver.io/download/">https://dbeaver.io/download/</a>. La página detecta tu sistema operativo; en la pestaña <strong>Community</strong> pulsa <strong>Download EXE</strong> para descargar el instalador de Windows.</p>
+<figure class="align-center" id="fig-m6-dbeaver-descarga">
+<a class="reference internal image-reference" href="_images/m6_dbeaver_descarga.png"><img alt="_images/m6_dbeaver_descarga.png" src="_images/m6_dbeaver_descarga.png" style="width: 90%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Página de descarga de DBeaver Community. El botón <em>Download EXE</em> descarga el instalador para Windows.</span><a class="headerlink" href="#fig-m6-dbeaver-descarga" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>2. Elegir el idioma.</strong> Ejecuta el archivo descargado. En la ventana <em>Installer Language</em> selecciona <strong>Español</strong> y pulsa <strong>OK</strong>.</p>
+<figure class="align-center" id="fig-m6-instalacion-dbeaver-1">
+<a class="reference internal image-reference" href="_images/m6_instalacion_dbeaver_1.png"><img alt="_images/m6_instalacion_dbeaver_1.png" src="_images/m6_instalacion_dbeaver_1.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Selección del idioma del instalador.</span><a class="headerlink" href="#fig-m6-instalacion-dbeaver-1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>3. Iniciar el asistente.</strong> En la pantalla de bienvenida pulsa <strong>Siguiente</strong>. Se recomienda cerrar las demás aplicaciones antes de continuar.</p>
+<figure class="align-center" id="fig-m6-instalacion-dbeaver-2">
+<a class="reference internal image-reference" href="_images/m6_instalacion_dbeaver_2.png"><img alt="_images/m6_instalacion_dbeaver_2.png" src="_images/m6_instalacion_dbeaver_2.png" style="width: 480px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Pantalla de bienvenida del asistente de instalación.</span><a class="headerlink" href="#fig-m6-instalacion-dbeaver-2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>4. Aceptar la licencia.</strong> DBeaver Community se distribuye bajo la licencia libre <em>Apache 2.0</em>. Pulsa <strong>Acepto</strong>.</p>
+<figure class="align-center" id="fig-m6-instalacion-dbeaver-3">
+<a class="reference internal image-reference" href="_images/m6_instalacion_dbeaver_3.png"><img alt="_images/m6_instalacion_dbeaver_3.png" src="_images/m6_instalacion_dbeaver_3.png" style="width: 480px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Acuerdo de licencia de DBeaver Community.</span><a class="headerlink" href="#fig-m6-instalacion-dbeaver-3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>5. Elegir los usuarios.</strong> Selecciona <strong>For me</strong> para instalarlo solo para tu usuario; esta opción no requiere permisos de administrador. Pulsa <strong>Siguiente</strong>.</p>
+<figure class="align-center" id="fig-m6-instalacion-dbeaver-4">
+<a class="reference internal image-reference" href="_images/m6_instalacion_dbeaver_4.png"><img alt="_images/m6_instalacion_dbeaver_4.png" src="_images/m6_instalacion_dbeaver_4.png" style="width: 480px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Instalación para el usuario actual (<em>For me</em>).</span><a class="headerlink" href="#fig-m6-instalacion-dbeaver-4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>6. Seleccionar los componentes.</strong> Marca las siguientes opciones y pulsa <strong>Siguiente</strong>:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Componente</p></th>
+<th class="head"><p>¿Marcar?</p></th>
+<th class="head"><p>Para qué sirve</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DBeaver Community</p></td>
+<td><p>Sí (obligatorio)</p></td>
+<td><p>Es el programa principal</p></td>
+</tr>
+<tr class="row-odd"><td><p>Include Java</p></td>
+<td><p>Sí</p></td>
+<td><p>DBeaver necesita Java; así no hay que instalarlo aparte</p></td>
+</tr>
+<tr class="row-even"><td><p>Reset Settings</p></td>
+<td><p>No</p></td>
+<td><p>Solo borra la configuración de una instalación anterior</p></td>
+</tr>
+<tr class="row-odd"><td><p>Associate SQL files</p></td>
+<td><p>Opcional</p></td>
+<td><p>Abre los archivos <code class="docutils literal notranslate"><span class="pre">.sql</span></code> con DBeaver al hacer doble clic</p></td>
+</tr>
+<tr class="row-even"><td><p>Associate SQLite database files</p></td>
+<td><p>Sí</p></td>
+<td><p>Abre con doble clic archivos SQLite como <code class="docutils literal notranslate"><span class="pre">sqlitedb.db</span></code>, que crearemos más adelante</p></td>
+</tr>
+<tr class="row-odd"><td><p>Add Microsoft Defender Antivirus Exclusion</p></td>
+<td><p>Opcional</p></td>
+<td><p>Evita que el antivirus revise DBeaver constantemente y acelera su inicio. En equipos administrados por la universidad puede dejarse sin marcar</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="align-center" id="fig-m6-instalacion-dbeaver-5">
+<a class="reference internal image-reference" href="_images/m6_instalacion_dbeaver_5.png"><img alt="_images/m6_instalacion_dbeaver_5.png" src="_images/m6_instalacion_dbeaver_5.png" style="width: 480px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Componentes seleccionados para la instalación.</span><a class="headerlink" href="#fig-m6-instalacion-dbeaver-5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>7. Elegir la carpeta de instalación.</strong> Deja el directorio propuesto y pulsa <strong>Siguiente</strong>.</p>
+<figure class="align-center" id="fig-m6-instalacion-dbeaver-6">
+<a class="reference internal image-reference" href="_images/m6_instalacion_dbeaver_6.png"><img alt="_images/m6_instalacion_dbeaver_6.png" src="_images/m6_instalacion_dbeaver_6.png" style="width: 480px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Directorio de instalación de DBeaver.</span><a class="headerlink" href="#fig-m6-instalacion-dbeaver-6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>8. Elegir la carpeta del menú Inicio.</strong> Deja el nombre <strong>DBeaver Community</strong>, que es la carpeta donde quedarán los accesos directos. No elijas ninguna carpeta de la lista (pertenecen a otros programas) y no marques <em>No crear accesos directos</em>. Pulsa <strong>Instalar</strong>.</p>
+<figure class="align-center" id="fig-m6-instalacion-dbeaver-7">
+<a class="reference internal image-reference" href="_images/m6_instalacion_dbeaver_7.png"><img alt="_images/m6_instalacion_dbeaver_7.png" src="_images/m6_instalacion_dbeaver_7.png" style="width: 480px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Carpeta del menú Inicio para los accesos directos.</span><a class="headerlink" href="#fig-m6-instalacion-dbeaver-7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>9. Finalizar.</strong> Cuando termine la instalación, marca <strong>Create Desktop Shortcut</strong> si quieres un acceso directo en el escritorio, deja marcado <strong>Run DBeaver</strong> y pulsa <strong>Terminar</strong>.</p>
+<figure class="align-center" id="fig-m6-instalacion-dbeaver-8">
+<a class="reference internal image-reference" href="_images/m6_instalacion_dbeaver_8.png"><img alt="_images/m6_instalacion_dbeaver_8.png" src="_images/m6_instalacion_dbeaver_8.png" style="width: 480px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Fin de la instalación de DBeaver Community.</span><a class="headerlink" href="#fig-m6-instalacion-dbeaver-8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Al abrir DBeaver por primera vez, es posible que pregunte si deseas crear una <strong>base de datos de ejemplo</strong> (<em>sample database</em>): responde <strong>No</strong>, porque usaremos nuestra propia base de datos. Por ahora no necesitas configurar nada más: primero crearemos el servidor de bases de datos con Docker y luego volveremos a DBeaver para conectarnos a él.</p>
+</section>
 </section>
 <section id="instalacion-y-uso-de-docker">
 <h2><strong>Instalación y uso de Docker</strong><a class="headerlink" href="#instalacion-y-uso-de-docker" title="Link to this heading">#</a></h2>
@@ -553,14 +655,14 @@ docker<span class="w"> </span>run<span class="w"> </span>hello-world
 <a class="reference internal image-reference" href="_images/m6_docker_descarga.png"><img alt="_images/m6_docker_descarga.png" src="_images/m6_docker_descarga.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Página de descarga de Docker Desktop para Windows, macOS y Linux.</span><a class="headerlink" href="#fig-m6-docker-descarga" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Página de descarga de Docker Desktop para Windows, macOS y Linux.</span><a class="headerlink" href="#fig-m6-docker-descarga" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="fig-m6-docker-desktop">
 <a class="reference internal image-reference" href="_images/m6_docker_desktop.png"><img alt="_images/m6_docker_desktop.png" src="_images/m6_docker_desktop.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Docker Desktop con el motor en ejecución (<em>Engine running</em>).</span><a class="headerlink" href="#fig-m6-docker-desktop" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Docker Desktop con el motor en ejecución (<em>Engine running</em>).</span><a class="headerlink" href="#fig-m6-docker-desktop" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="warning admonition">
@@ -586,7 +688,7 @@ postgres     17        646MB
 <a class="reference internal image-reference" href="_images/m6_docker_pull.png"><img alt="_images/m6_docker_pull.png" src="_images/m6_docker_pull.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Descarga de la imagen <code class="docutils literal notranslate"><span class="pre">postgres:17</span></code> con <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull</span></code> desde Windows PowerShell.</span><a class="headerlink" href="#fig-m6-docker-pull" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Descarga de la imagen <code class="docutils literal notranslate"><span class="pre">postgres:17</span></code> con <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull</span></code> desde Windows PowerShell.</span><a class="headerlink" href="#fig-m6-docker-pull" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Descargar la imagen es como <strong>instalar</strong> PostgreSQL una sola vez: a partir de ella podremos crear todos los servidores (contenedores) que queramos. Si algún día quieres borrarla, usa <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rmi</span> <span class="pre">postgres:17</span></code> (primero debes eliminar los contenedores que la usan).</p>
@@ -637,7 +739,7 @@ a799fe7e781c   postgres:17   Up 6 seconds   5432/tcp   pg_prueba
 <a class="reference internal image-reference" href="_images/m6_docker_run_prueba.png"><img alt="_images/m6_docker_run_prueba.png" src="_images/m6_docker_run_prueba.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Creación del contenedor <code class="docutils literal notranslate"><span class="pre">pg_prueba</span></code> y verificación con <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code>.</span><a class="headerlink" href="#fig-m6-docker-run-prueba" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Creación del contenedor <code class="docutils literal notranslate"><span class="pre">pg_prueba</span></code> y verificación con <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code>.</span><a class="headerlink" href="#fig-m6-docker-run-prueba" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>El contenedor también aparece en la pestaña <strong>Containers</strong> de Docker Desktop, desde donde puedes iniciarlo, detenerlo, ver sus registros y revisar sus variables de entorno.</p>
@@ -645,7 +747,7 @@ a799fe7e781c   postgres:17   Up 6 seconds   5432/tcp   pg_prueba
 <a class="reference internal image-reference" href="_images/m6_docker_desktop_contenedor.png"><img alt="_images/m6_docker_desktop_contenedor.png" src="_images/m6_docker_desktop_contenedor.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Contenedor <code class="docutils literal notranslate"><span class="pre">pg_prueba</span></code> en la pestaña <em>Containers</em> de Docker Desktop.</span><a class="headerlink" href="#fig-m6-docker-desktop-contenedor" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Contenedor <code class="docutils literal notranslate"><span class="pre">pg_prueba</span></code> en la pestaña <em>Containers</em> de Docker Desktop.</span><a class="headerlink" href="#fig-m6-docker-desktop-contenedor" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -680,7 +782,7 @@ psql<span class="w"> </span>-U<span class="w"> </span>postgres
 <a class="reference internal image-reference" href="_images/m6_psql_create_database.png"><img alt="_images/m6_psql_create_database.png" src="_images/m6_psql_create_database.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Creación de la base de datos <code class="docutils literal notranslate"><span class="pre">sql_test</span></code> desde <code class="docutils literal notranslate"><span class="pre">psql</span></code> y listado con <code class="docutils literal notranslate"><span class="pre">\l</span></code>.</span><a class="headerlink" href="#fig-m6-psql-create-database" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Creación de la base de datos <code class="docutils literal notranslate"><span class="pre">sql_test</span></code> desde <code class="docutils literal notranslate"><span class="pre">psql</span></code> y listado con <code class="docutils literal notranslate"><span class="pre">\l</span></code>.</span><a class="headerlink" href="#fig-m6-psql-create-database" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Para salir de <code class="docutils literal notranslate"><span class="pre">psql</span></code> escribe <code class="docutils literal notranslate"><span class="pre">\q</span></code> (o presiona <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">D</span></code>); si entraste por <code class="docutils literal notranslate"><span class="pre">bash</span></code>, presiona <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">D</span></code> otra vez para salir del contenedor.</p>
@@ -723,7 +825,7 @@ docker<span class="w"> </span>rm<span class="w"> </span>pg_prueba
 <a class="reference internal image-reference" href="_images/m6_docker_rm.png"><img alt="_images/m6_docker_rm.png" src="_images/m6_docker_rm.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Listado de contenedores con <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">-a</span></code> y eliminación con <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stop</span></code> y <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rm</span></code>.</span><a class="headerlink" href="#fig-m6-docker-rm" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Listado de contenedores con <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">-a</span></code> y eliminación con <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stop</span></code> y <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rm</span></code>.</span><a class="headerlink" href="#fig-m6-docker-rm" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="warning admonition">
@@ -748,7 +850,7 @@ docker<span class="w"> </span>rm<span class="w"> </span>pg_prueba
 <a class="reference internal image-reference" href="_images/m6_docker_run_completo.png"><img alt="_images/m6_docker_run_completo.png" src="_images/m6_docker_run_completo.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Creación del contenedor <code class="docutils literal notranslate"><span class="pre">pg_dataviz</span></code> con usuario, base de datos, puerto publicado y volumen.</span><a class="headerlink" href="#fig-m6-docker-run-completo" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Creación del contenedor <code class="docutils literal notranslate"><span class="pre">pg_dataviz</span></code> con usuario, base de datos, puerto publicado y volumen.</span><a class="headerlink" href="#fig-m6-docker-run-completo" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -802,7 +904,7 @@ You are connected to database "dataviz" as user "dataviz" via socket in "/var/ru
 <a class="reference internal image-reference" href="_images/m6_psql_current_user.png"><img alt="_images/m6_psql_current_user.png" src="_images/m6_psql_current_user.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Conexión con el usuario <code class="docutils literal notranslate"><span class="pre">dataviz</span></code>: <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">CURRENT_USER;</span></code> y <code class="docutils literal notranslate"><span class="pre">\conninfo</span></code>.</span><a class="headerlink" href="#fig-m6-psql-current-user" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Conexión con el usuario <code class="docutils literal notranslate"><span class="pre">dataviz</span></code>: <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">CURRENT_USER;</span></code> y <code class="docutils literal notranslate"><span class="pre">\conninfo</span></code>.</span><a class="headerlink" href="#fig-m6-psql-current-user" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Si olvidas las credenciales, puedes consultarlas en Docker Desktop: abre el contenedor y revisa la pestaña <strong>Inspect → Env</strong>.</p>
@@ -810,7 +912,7 @@ You are connected to database "dataviz" as user "dataviz" via socket in "/var/ru
 <a class="reference internal image-reference" href="_images/m6_docker_desktop_env.png"><img alt="_images/m6_docker_desktop_env.png" src="_images/m6_docker_desktop_env.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Variables de entorno del contenedor en Docker Desktop (<em>Inspect → Env</em>).</span><a class="headerlink" href="#fig-m6-docker-desktop-env" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Variables de entorno del contenedor en Docker Desktop (<em>Inspect → Env</em>).</span><a class="headerlink" href="#fig-m6-docker-desktop-env" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -899,21 +1001,21 @@ You are connected to database "dataviz" as user "dataviz" via socket in "/var/ru
 <a class="reference internal image-reference" href="_images/m6_dbeaver_nueva_conexion.png"><img alt="_images/m6_dbeaver_nueva_conexion.png" src="_images/m6_dbeaver_nueva_conexion.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Selección de PostgreSQL en <em>Database → New Database Connection</em> de DBeaver.</span><a class="headerlink" href="#fig-m6-dbeaver-nueva-conexion" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Selección de PostgreSQL en <em>Database → New Database Connection</em> de DBeaver.</span><a class="headerlink" href="#fig-m6-dbeaver-nueva-conexion" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="fig-m6-dbeaver-credenciales">
 <a class="reference internal image-reference" href="_images/m6_dbeaver_credenciales.png"><img alt="_images/m6_dbeaver_credenciales.png" src="_images/m6_dbeaver_credenciales.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Datos de conexión al contenedor <code class="docutils literal notranslate"><span class="pre">pg_dataviz</span></code> en DBeaver.</span><a class="headerlink" href="#fig-m6-dbeaver-credenciales" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Datos de conexión al contenedor <code class="docutils literal notranslate"><span class="pre">pg_dataviz</span></code> en DBeaver.</span><a class="headerlink" href="#fig-m6-dbeaver-credenciales" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="fig-m6-dbeaver-test">
 <a class="reference internal image-reference" href="_images/m6_dbeaver_test.png"><img alt="_images/m6_dbeaver_test.png" src="_images/m6_dbeaver_test.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Prueba de conexión exitosa (<em>Test Connection</em>) desde DBeaver.</span><a class="headerlink" href="#fig-m6-dbeaver-test" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Prueba de conexión exitosa (<em>Test Connection</em>) desde DBeaver.</span><a class="headerlink" href="#fig-m6-dbeaver-test" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>En el panel <strong>Database Navigator</strong> despliega <code class="docutils literal notranslate"><span class="pre">dataviz</span> <span class="pre">→</span> <span class="pre">Schemas</span> <span class="pre">→</span> <span class="pre">public</span> <span class="pre">→</span> <span class="pre">Tables</span></code>, selecciona <strong>Tables</strong> y abre un editor con <strong>SQL Editor → New SQL script</strong> (o <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">]</span></code>). Ejecuta el siguiente script con <code class="docutils literal notranslate"><span class="pre">Alt</span> <span class="pre">+</span> <span class="pre">X</span></code>:</p>
@@ -936,7 +1038,7 @@ You are connected to database "dataviz" as user "dataviz" via socket in "/var/ru
 <a class="reference internal image-reference" href="_images/m6_dbeaver_script_users.png"><img alt="_images/m6_dbeaver_script_users.png" src="_images/m6_dbeaver_script_users.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Creación de la tabla <code class="docutils literal notranslate"><span class="pre">users</span></code> desde el editor SQL de DBeaver.</span><a class="headerlink" href="#fig-m6-dbeaver-script-users" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">Creación de la tabla <code class="docutils literal notranslate"><span class="pre">users</span></code> desde el editor SQL de DBeaver.</span><a class="headerlink" href="#fig-m6-dbeaver-script-users" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p><code class="docutils literal notranslate"><span class="pre">SERIAL</span></code> crea una columna entera que se llena sola con 1, 2, 3, … cada vez que insertamos una fila, y <code class="docutils literal notranslate"><span class="pre">PRIMARY</span> <span class="pre">KEY</span></code> garantiza que no haya dos filas con el mismo <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
@@ -952,7 +1054,7 @@ You are connected to database "dataviz" as user "dataviz" via socket in "/var/ru
 <a class="reference internal image-reference" href="_images/m6_psql_dt_users.png"><img alt="_images/m6_psql_dt_users.png" src="_images/m6_psql_dt_users.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 16 </span><span class="caption-text">La tabla <code class="docutils literal notranslate"><span class="pre">users</span></code> creada en DBeaver vista desde <code class="docutils literal notranslate"><span class="pre">psql</span></code> con <code class="docutils literal notranslate"><span class="pre">\dt</span></code>.</span><a class="headerlink" href="#fig-m6-psql-dt-users" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">La tabla <code class="docutils literal notranslate"><span class="pre">users</span></code> creada en DBeaver vista desde <code class="docutils literal notranslate"><span class="pre">psql</span></code> con <code class="docutils literal notranslate"><span class="pre">\dt</span></code>.</span><a class="headerlink" href="#fig-m6-psql-dt-users" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -1093,7 +1195,7 @@ pgadmin_dataviz   Up             0.0.0.0:8080-&gt;80/tcp
 <a class="reference internal image-reference" href="_images/m6_compose_up.png"><img alt="_images/m6_compose_up.png" src="_images/m6_compose_up.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Inicio de PostgreSQL y pgAdmin con <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">up</span> <span class="pre">-d</span></code>.</span><a class="headerlink" href="#fig-m6-compose-up" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Inicio de PostgreSQL y pgAdmin con <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">up</span> <span class="pre">-d</span></code>.</span><a class="headerlink" href="#fig-m6-compose-up" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="warning admonition">
@@ -1110,14 +1212,14 @@ pgadmin_dataviz   Up             0.0.0.0:8080-&gt;80/tcp
 <a class="reference internal image-reference" href="_images/m6_pgadmin_login.png"><img alt="_images/m6_pgadmin_login.png" src="_images/m6_pgadmin_login.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Pantalla de inicio de sesión de pgAdmin en <a class="reference external" href="http://localhost:8080">http://localhost:8080</a>.</span><a class="headerlink" href="#fig-m6-pgadmin-login" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text">Pantalla de inicio de sesión de pgAdmin en <a class="reference external" href="http://localhost:8080">http://localhost:8080</a>.</span><a class="headerlink" href="#fig-m6-pgadmin-login" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="fig-m6-pgadmin-registrar-servidor">
 <a class="reference internal image-reference" href="_images/m6_pgadmin_registrar_servidor.png"><img alt="_images/m6_pgadmin_registrar_servidor.png" src="_images/m6_pgadmin_registrar_servidor.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Registro del servidor <code class="docutils literal notranslate"><span class="pre">DataViz</span></code> en pgAdmin (pestaña <em>Connection</em>).</span><a class="headerlink" href="#fig-m6-pgadmin-registrar-servidor" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Registro del servidor <code class="docutils literal notranslate"><span class="pre">DataViz</span></code> en pgAdmin (pestaña <em>Connection</em>).</span><a class="headerlink" href="#fig-m6-pgadmin-registrar-servidor" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="note admonition">
@@ -1140,21 +1242,21 @@ pgadmin_dataviz   Up             0.0.0.0:8080-&gt;80/tcp
 <a class="reference internal image-reference" href="_images/m6_railway_nuevo_proyecto.png"><img alt="_images/m6_railway_nuevo_proyecto.png" src="_images/m6_railway_nuevo_proyecto.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Creación de un proyecto con PostgreSQL en el <em>Dashboard</em> de Railway.</span><a class="headerlink" href="#fig-m6-railway-nuevo-proyecto" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 28 </span><span class="caption-text">Creación de un proyecto con PostgreSQL en el <em>Dashboard</em> de Railway.</span><a class="headerlink" href="#fig-m6-railway-nuevo-proyecto" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="fig-m6-railway-variables">
 <a class="reference internal image-reference" href="_images/m6_railway_variables.png"><img alt="_images/m6_railway_variables.png" src="_images/m6_railway_variables.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Variables de conexión del servicio PostgreSQL en Railway.</span><a class="headerlink" href="#fig-m6-railway-variables" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 29 </span><span class="caption-text">Variables de conexión del servicio PostgreSQL en Railway.</span><a class="headerlink" href="#fig-m6-railway-variables" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="fig-m6-railway-dbeaver">
 <a class="reference internal image-reference" href="_images/m6_railway_dbeaver.png"><img alt="_images/m6_railway_dbeaver.png" src="_images/m6_railway_dbeaver.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Conexión desde DBeaver a la base de datos de Railway.</span><a class="headerlink" href="#fig-m6-railway-dbeaver" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 30 </span><span class="caption-text">Conexión desde DBeaver a la base de datos de Railway.</span><a class="headerlink" href="#fig-m6-railway-dbeaver" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Para subir a Railway una base de datos que creaste en Docker, restaura el respaldo hecho con <code class="docutils literal notranslate"><span class="pre">pg_dump</span></code> apuntando al servidor remoto:</p>
@@ -1242,21 +1344,21 @@ customer &gt;── address &gt;── city &gt;── country
 <a class="reference internal image-reference" href="_images/m6_pgadmin_crear_bd.png"><img alt="_images/m6_pgadmin_crear_bd.png" src="_images/m6_pgadmin_crear_bd.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 23 </span><span class="caption-text">Creación de la base de datos <code class="docutils literal notranslate"><span class="pre">dvdrental</span></code> en pgAdmin (<em>Create → Database…</em>).</span><a class="headerlink" href="#fig-m6-pgadmin-crear-bd" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 31 </span><span class="caption-text">Creación de la base de datos <code class="docutils literal notranslate"><span class="pre">dvdrental</span></code> en pgAdmin (<em>Create → Database…</em>).</span><a class="headerlink" href="#fig-m6-pgadmin-crear-bd" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="fig-m6-pgadmin-restore">
 <a class="reference internal image-reference" href="_images/m6_pgadmin_restore.png"><img alt="_images/m6_pgadmin_restore.png" src="_images/m6_pgadmin_restore.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Restauración de <code class="docutils literal notranslate"><span class="pre">dvdrental.tar</span></code> con la opción <em>Restore…</em> de pgAdmin.</span><a class="headerlink" href="#fig-m6-pgadmin-restore" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Restauración de <code class="docutils literal notranslate"><span class="pre">dvdrental.tar</span></code> con la opción <em>Restore…</em> de pgAdmin.</span><a class="headerlink" href="#fig-m6-pgadmin-restore" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="fig-m6-pgadmin-tablas">
 <a class="reference internal image-reference" href="_images/m6_pgadmin_tablas.png"><img alt="_images/m6_pgadmin_tablas.png" src="_images/m6_pgadmin_tablas.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Las 15 tablas de <code class="docutils literal notranslate"><span class="pre">dvdrental</span></code> en <em>Schemas → public → Tables</em>.</span><a class="headerlink" href="#fig-m6-pgadmin-tablas" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 33 </span><span class="caption-text">Las 15 tablas de <code class="docutils literal notranslate"><span class="pre">dvdrental</span></code> en <em>Schemas → public → Tables</em>.</span><a class="headerlink" href="#fig-m6-pgadmin-tablas" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -1321,7 +1423,7 @@ docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </spa
 <a class="reference internal image-reference" href="_images/m6_pgadmin_query_tool.png"><img alt="_images/m6_pgadmin_query_tool.png" src="_images/m6_pgadmin_query_tool.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 26 </span><span class="caption-text">Consulta en la <em>Query Tool</em> de pgAdmin sobre la base de datos <code class="docutils literal notranslate"><span class="pre">dvdrental</span></code>.</span><a class="headerlink" href="#fig-m6-pgadmin-query-tool" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 34 </span><span class="caption-text">Consulta en la <em>Query Tool</em> de pgAdmin sobre la base de datos <code class="docutils literal notranslate"><span class="pre">dvdrental</span></code>.</span><a class="headerlink" href="#fig-m6-pgadmin-query-tool" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="note admonition">
@@ -2012,7 +2114,7 @@ conda<span class="w"> </span>activate<span class="w"> </span>pg_venv
 <a class="reference internal image-reference" href="_images/m6_venv_activado.png"><img alt="_images/m6_venv_activado.png" src="_images/m6_venv_activado.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Entorno virtual <code class="docutils literal notranslate"><span class="pre">pg_venv</span></code> activado en la terminal.</span><a class="headerlink" href="#fig-m6-venv-activado" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 35 </span><span class="caption-text">Entorno virtual <code class="docutils literal notranslate"><span class="pre">pg_venv</span></code> activado en la terminal.</span><a class="headerlink" href="#fig-m6-venv-activado" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="tip admonition">
@@ -2086,7 +2188,7 @@ jupyter<span class="w"> </span>lab
 <a class="reference internal image-reference" href="_images/m6_jupyterlab_kernel.png"><img alt="_images/m6_jupyterlab_kernel.png" src="_images/m6_jupyterlab_kernel.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 28 </span><span class="caption-text">Kernel <code class="docutils literal notranslate"><span class="pre">pg_venv</span></code> disponible en JupyterLab.</span><a class="headerlink" href="#fig-m6-jupyterlab-kernel" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 36 </span><span class="caption-text">Kernel <code class="docutils literal notranslate"><span class="pre">pg_venv</span></code> disponible en JupyterLab.</span><a class="headerlink" href="#fig-m6-jupyterlab-kernel" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -2102,7 +2204,7 @@ jupyter<span class="w"> </span>lab
 <a class="reference internal image-reference" href="_images/m6_vscode_kernel.png"><img alt="_images/m6_vscode_kernel.png" src="_images/m6_vscode_kernel.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 29 </span><span class="caption-text">Selección del entorno <code class="docutils literal notranslate"><span class="pre">pg_venv</span></code> como kernel en VS Code.</span><a class="headerlink" href="#fig-m6-vscode-kernel" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 37 </span><span class="caption-text">Selección del entorno <code class="docutils literal notranslate"><span class="pre">pg_venv</span></code> como kernel en VS Code.</span><a class="headerlink" href="#fig-m6-vscode-kernel" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -2117,7 +2219,7 @@ jupyter<span class="w"> </span>lab
 <a class="reference internal image-reference" href="_images/m6_psycopg_flujo.png"><img alt="_images/m6_psycopg_flujo.png" src="_images/m6_psycopg_flujo.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 30 </span><span class="caption-text">Flujo de trabajo con psycopg: conexión, cursor, ejecución, lectura y confirmación.</span><a class="headerlink" href="#fig-m6-psycopg-flujo" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 38 </span><span class="caption-text">Flujo de trabajo con psycopg: conexión, cursor, ejecución, lectura y confirmación.</span><a class="headerlink" href="#fig-m6-psycopg-flujo" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -2249,7 +2351,7 @@ Base de datos: dataviz | Usuario: dataviz | Servidor: localhost:5432
 <a class="reference internal image-reference" href="_images/m6_pgadmin_company.png"><img alt="_images/m6_pgadmin_company.png" src="_images/m6_pgadmin_company.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 31 </span><span class="caption-text">Tabla <code class="docutils literal notranslate"><span class="pre">company</span></code> creada desde Python, vista en pgAdmin.</span><a class="headerlink" href="#fig-m6-pgadmin-company" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 39 </span><span class="caption-text">Tabla <code class="docutils literal notranslate"><span class="pre">company</span></code> creada desde Python, vista en pgAdmin.</span><a class="headerlink" href="#fig-m6-pgadmin-company" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -6220,7 +6322,7 @@ if (outputEl) {{
 <a class="reference internal image-reference" href="_images/m6_dbeaver_sqlite_ethereum.png"><img alt="_images/m6_dbeaver_sqlite_ethereum.png" src="_images/m6_dbeaver_sqlite_ethereum.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Tabla <code class="docutils literal notranslate"><span class="pre">ethereum</span></code> del archivo <code class="docutils literal notranslate"><span class="pre">sqlitedb.db</span></code> abierta en DBeaver.</span><a class="headerlink" href="#fig-m6-dbeaver-sqlite-ethereum" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 40 </span><span class="caption-text">Tabla <code class="docutils literal notranslate"><span class="pre">ethereum</span></code> del archivo <code class="docutils literal notranslate"><span class="pre">sqlitedb.db</span></code> abierta en DBeaver.</span><a class="headerlink" href="#fig-m6-dbeaver-sqlite-ethereum" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Al conectarnos a un archivo que no existe, SQLite lo crea:</p>
@@ -6854,7 +6956,10 @@ if (outputEl) {{
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramienta-de-administracion-de-bases-de-datos-dbeaver"><strong>Herramienta de administración de bases de datos: DBeaver</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramienta-de-administracion-de-bases-de-datos-dbeaver"><strong>Herramienta de administración de bases de datos: DBeaver</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacion-de-dbeaver-en-windows"><strong>Instalación de DBeaver en Windows</strong></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacion-y-uso-de-docker"><strong>Instalación y uso de Docker</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-docker"><strong>¿Qué es Docker?</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vocabulario-basico"><strong>Vocabulario básico</strong></a></li>
