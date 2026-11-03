@@ -1,0 +1,12 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: modulo_1
+- file: modulo_2
+- file: modulo_3
+- file: modulo_4
+- file: modulo_5
+- file: modulo_6
