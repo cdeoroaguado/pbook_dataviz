@@ -481,6 +481,13 @@ document.write(`
 <li><p>Ejecuta el instalador y acepta las opciones por defecto.</p></li>
 <li><p>Por ahora no necesitas configurar nada más: primero crearemos el servidor de bases de datos con Docker y luego volveremos a DBeaver para conectarnos a él.</p></li>
 </ol>
+<figure class="align-center" id="fig-m6-dbeaver-descarga">
+<a class="reference internal image-reference" href="_images/m6_dbeaver_descarga.png"><img alt="_images/m6_dbeaver_descarga.png" src="_images/m6_dbeaver_descarga.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Página de descarga de DBeaver Community. En Windows se usa el instalador <em>Windows (installer)</em>.</span><a class="headerlink" href="#fig-m6-dbeaver-descarga" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <div class="note admonition">
 <p class="admonition-title"><strong>DBeaver no es una base de datos</strong></p>
 <p>DBeaver (al igual que pgAdmin) es solo un <strong>cliente</strong>: una interfaz para hablar con un servidor de bases de datos. El servidor, que es quien guarda los datos, lo vamos a ejecutar con Docker.</p>
@@ -542,6 +549,20 @@ docker<span class="w"> </span>run<span class="w"> </span>hello-world
 </pre></div>
 </div>
 <p>Si aparece el mensaje <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">from</span> <span class="pre">Docker!</span></code>, la instalación funciona.</p>
+<figure class="align-center" id="fig-m6-docker-descarga">
+<a class="reference internal image-reference" href="_images/m6_docker_descarga.png"><img alt="_images/m6_docker_descarga.png" src="_images/m6_docker_descarga.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Página de descarga de Docker Desktop para Windows, macOS y Linux.</span><a class="headerlink" href="#fig-m6-docker-descarga" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="fig-m6-docker-desktop">
+<a class="reference internal image-reference" href="_images/m6_docker_desktop.png"><img alt="_images/m6_docker_desktop.png" src="_images/m6_docker_desktop.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Docker Desktop con el motor en ejecución (<em>Engine running</em>).</span><a class="headerlink" href="#fig-m6-docker-desktop" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <div class="warning admonition">
 <p class="admonition-title"><strong>Problemas frecuentes en Windows</strong></p>
 <ul class="simple">
@@ -561,6 +582,13 @@ docker<span class="w"> </span>images
 postgres     17        646MB
 </pre></div>
 </div>
+<figure class="align-center" id="fig-m6-docker-pull">
+<a class="reference internal image-reference" href="_images/m6_docker_pull.png"><img alt="_images/m6_docker_pull.png" src="_images/m6_docker_pull.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Descarga de la imagen <code class="docutils literal notranslate"><span class="pre">postgres:17</span></code> con <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull</span></code> desde Windows PowerShell.</span><a class="headerlink" href="#fig-m6-docker-pull" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Descargar la imagen es como <strong>instalar</strong> PostgreSQL una sola vez: a partir de ella podremos crear todos los servidores (contenedores) que queramos. Si algún día quieres borrarla, usa <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rmi</span> <span class="pre">postgres:17</span></code> (primero debes eliminar los contenedores que la usan).</p>
 </section>
 <section id="crear-un-primer-contenedor">
@@ -605,7 +633,21 @@ a799fe7e781c   postgres:17   Up 6 seconds   5432/tcp   pg_prueba
 ... LOG:  database system is ready to accept connections
 </pre></div>
 </div>
+<figure class="align-center" id="fig-m6-docker-run-prueba">
+<a class="reference internal image-reference" href="_images/m6_docker_run_prueba.png"><img alt="_images/m6_docker_run_prueba.png" src="_images/m6_docker_run_prueba.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Creación del contenedor <code class="docutils literal notranslate"><span class="pre">pg_prueba</span></code> y verificación con <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code>.</span><a class="headerlink" href="#fig-m6-docker-run-prueba" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p>El contenedor también aparece en la pestaña <strong>Containers</strong> de Docker Desktop, desde donde puedes iniciarlo, detenerlo, ver sus registros y revisar sus variables de entorno.</p>
+<figure class="align-center" id="fig-m6-docker-desktop-contenedor">
+<a class="reference internal image-reference" href="_images/m6_docker_desktop_contenedor.png"><img alt="_images/m6_docker_desktop_contenedor.png" src="_images/m6_docker_desktop_contenedor.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Contenedor <code class="docutils literal notranslate"><span class="pre">pg_prueba</span></code> en la pestaña <em>Containers</em> de Docker Desktop.</span><a class="headerlink" href="#fig-m6-docker-desktop-contenedor" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 <section id="conectarse-al-servidor-con-psql">
 <h3><strong>Conectarse al servidor con <code class="docutils literal notranslate"><span class="pre">psql</span></code></strong><a class="headerlink" href="#conectarse-al-servidor-con-psql" title="Link to this heading">#</a></h3>
@@ -634,6 +676,13 @@ psql<span class="w"> </span>-U<span class="w"> </span>postgres
 (4 rows)
 </pre></div>
 </div>
+<figure class="align-center" id="fig-m6-psql-create-database">
+<a class="reference internal image-reference" href="_images/m6_psql_create_database.png"><img alt="_images/m6_psql_create_database.png" src="_images/m6_psql_create_database.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Creación de la base de datos <code class="docutils literal notranslate"><span class="pre">sql_test</span></code> desde <code class="docutils literal notranslate"><span class="pre">psql</span></code> y listado con <code class="docutils literal notranslate"><span class="pre">\l</span></code>.</span><a class="headerlink" href="#fig-m6-psql-create-database" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Para salir de <code class="docutils literal notranslate"><span class="pre">psql</span></code> escribe <code class="docutils literal notranslate"><span class="pre">\q</span></code> (o presiona <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">D</span></code>); si entraste por <code class="docutils literal notranslate"><span class="pre">bash</span></code>, presiona <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">D</span></code> otra vez para salir del contenedor.</p>
 </section>
 <section id="detener-y-eliminar-contenedores">
@@ -670,6 +719,13 @@ psql<span class="w"> </span>-U<span class="w"> </span>postgres
 docker<span class="w"> </span>rm<span class="w"> </span>pg_prueba
 </pre></div>
 </div>
+<figure class="align-center" id="fig-m6-docker-rm">
+<a class="reference internal image-reference" href="_images/m6_docker_rm.png"><img alt="_images/m6_docker_rm.png" src="_images/m6_docker_rm.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Listado de contenedores con <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">-a</span></code> y eliminación con <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stop</span></code> y <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rm</span></code>.</span><a class="headerlink" href="#fig-m6-docker-rm" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <div class="warning admonition">
 <p class="admonition-title"><strong>Cuidado: al eliminar el contenedor se pierden los datos</strong></p>
 <p>El contenedor <code class="docutils literal notranslate"><span class="pre">pg_prueba</span></code> guarda los datos en su propio sistema de archivos, así que al eliminarlo desaparece la base <code class="docutils literal notranslate"><span class="pre">sql_test</span></code>. En la siguiente sección usaremos un <strong>volumen</strong> para que los datos sobrevivan aunque el contenedor se borre.</p>
@@ -688,6 +744,13 @@ docker<span class="w"> </span>rm<span class="w"> </span>pg_prueba
 <span class="w">  </span>postgres:17
 </pre></div>
 </div>
+<figure class="align-center" id="fig-m6-docker-run-completo">
+<a class="reference internal image-reference" href="_images/m6_docker_run_completo.png"><img alt="_images/m6_docker_run_completo.png" src="_images/m6_docker_run_completo.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Creación del contenedor <code class="docutils literal notranslate"><span class="pre">pg_dataviz</span></code> con usuario, base de datos, puerto publicado y volumen.</span><a class="headerlink" href="#fig-m6-docker-run-completo" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Opción</p></th>
@@ -735,7 +798,21 @@ docker<span class="w"> </span>rm<span class="w"> </span>pg_prueba
 You are connected to database "dataviz" as user "dataviz" via socket in "/var/run/postgresql" at port "5432".
 </pre></div>
 </div>
+<figure class="align-center" id="fig-m6-psql-current-user">
+<a class="reference internal image-reference" href="_images/m6_psql_current_user.png"><img alt="_images/m6_psql_current_user.png" src="_images/m6_psql_current_user.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Conexión con el usuario <code class="docutils literal notranslate"><span class="pre">dataviz</span></code>: <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">CURRENT_USER;</span></code> y <code class="docutils literal notranslate"><span class="pre">\conninfo</span></code>.</span><a class="headerlink" href="#fig-m6-psql-current-user" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Si olvidas las credenciales, puedes consultarlas en Docker Desktop: abre el contenedor y revisa la pestaña <strong>Inspect → Env</strong>.</p>
+<figure class="align-center" id="fig-m6-docker-desktop-env">
+<a class="reference internal image-reference" href="_images/m6_docker_desktop_env.png"><img alt="_images/m6_docker_desktop_env.png" src="_images/m6_docker_desktop_env.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Variables de entorno del contenedor en Docker Desktop (<em>Inspect → Env</em>).</span><a class="headerlink" href="#fig-m6-docker-desktop-env" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 <section id="meta-comandos-utiles-de-psql">
 <h3><strong>Meta-comandos útiles de <code class="docutils literal notranslate"><span class="pre">psql</span></code></strong><a class="headerlink" href="#meta-comandos-utiles-de-psql" title="Link to this heading">#</a></h3>
@@ -818,6 +895,27 @@ You are connected to database "dataviz" as user "dataviz" via socket in "/var/ru
 <li><p>La primera vez, DBeaver pedirá descargar el <strong>driver</strong> de PostgreSQL: pulsa <strong>Download</strong>.</p></li>
 <li><p>Pulsa <strong>Test Connection</strong>. Si aparece <em>Connected</em>, pulsa <strong>Finish</strong>.</p></li>
 </ol>
+<figure class="align-center" id="fig-m6-dbeaver-nueva-conexion">
+<a class="reference internal image-reference" href="_images/m6_dbeaver_nueva_conexion.png"><img alt="_images/m6_dbeaver_nueva_conexion.png" src="_images/m6_dbeaver_nueva_conexion.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Selección de PostgreSQL en <em>Database → New Database Connection</em> de DBeaver.</span><a class="headerlink" href="#fig-m6-dbeaver-nueva-conexion" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="fig-m6-dbeaver-credenciales">
+<a class="reference internal image-reference" href="_images/m6_dbeaver_credenciales.png"><img alt="_images/m6_dbeaver_credenciales.png" src="_images/m6_dbeaver_credenciales.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Datos de conexión al contenedor <code class="docutils literal notranslate"><span class="pre">pg_dataviz</span></code> en DBeaver.</span><a class="headerlink" href="#fig-m6-dbeaver-credenciales" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="fig-m6-dbeaver-test">
+<a class="reference internal image-reference" href="_images/m6_dbeaver_test.png"><img alt="_images/m6_dbeaver_test.png" src="_images/m6_dbeaver_test.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Prueba de conexión exitosa (<em>Test Connection</em>) desde DBeaver.</span><a class="headerlink" href="#fig-m6-dbeaver-test" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p>En el panel <strong>Database Navigator</strong> despliega <code class="docutils literal notranslate"><span class="pre">dataviz</span> <span class="pre">→</span> <span class="pre">Schemas</span> <span class="pre">→</span> <span class="pre">public</span> <span class="pre">→</span> <span class="pre">Tables</span></code>, selecciona <strong>Tables</strong> y abre un editor con <strong>SQL Editor → New SQL script</strong> (o <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">]</span></code>). Ejecuta el siguiente script con <code class="docutils literal notranslate"><span class="pre">Alt</span> <span class="pre">+</span> <span class="pre">X</span></code>:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="n">id</span><span class="w">     </span><span class="nb">SERIAL</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
@@ -834,6 +932,13 @@ You are connected to database "dataviz" as user "dataviz" via socket in "/var/ru
 (2 rows)
 </pre></div>
 </div>
+<figure class="align-center" id="fig-m6-dbeaver-script-users">
+<a class="reference internal image-reference" href="_images/m6_dbeaver_script_users.png"><img alt="_images/m6_dbeaver_script_users.png" src="_images/m6_dbeaver_script_users.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Creación de la tabla <code class="docutils literal notranslate"><span class="pre">users</span></code> desde el editor SQL de DBeaver.</span><a class="headerlink" href="#fig-m6-dbeaver-script-users" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p><code class="docutils literal notranslate"><span class="pre">SERIAL</span></code> crea una columna entera que se llena sola con 1, 2, 3, … cada vez que insertamos una fila, y <code class="docutils literal notranslate"><span class="pre">PRIMARY</span> <span class="pre">KEY</span></code> garantiza que no haya dos filas con el mismo <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
 <p>Los cambios hechos en DBeaver se ven en <code class="docutils literal notranslate"><span class="pre">psql</span></code> y viceversa, porque ambos se conectan al <strong>mismo servidor</strong>. Compruébalo desde la terminal con <code class="docutils literal notranslate"><span class="pre">\dt</span></code>:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>        List of relations
@@ -843,6 +948,13 @@ You are connected to database "dataviz" as user "dataviz" via socket in "/var/ru
 (1 row)
 </pre></div>
 </div>
+<figure class="align-center" id="fig-m6-psql-dt-users">
+<a class="reference internal image-reference" href="_images/m6_psql_dt_users.png"><img alt="_images/m6_psql_dt_users.png" src="_images/m6_psql_dt_users.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">La tabla <code class="docutils literal notranslate"><span class="pre">users</span></code> creada en DBeaver vista desde <code class="docutils literal notranslate"><span class="pre">psql</span></code> con <code class="docutils literal notranslate"><span class="pre">\dt</span></code>.</span><a class="headerlink" href="#fig-m6-psql-dt-users" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 <section id="respaldar-y-compartir-una-base-de-datos">
 <h3><strong>Respaldar y compartir una base de datos</strong><a class="headerlink" href="#respaldar-y-compartir-una-base-de-datos" title="Link to this heading">#</a></h3>
@@ -977,6 +1089,13 @@ PGADMIN_PASSWORD=admin123
 pgadmin_dataviz   Up             0.0.0.0:8080-&gt;80/tcp
 </pre></div>
 </div>
+<figure class="align-center" id="fig-m6-compose-up">
+<a class="reference internal image-reference" href="_images/m6_compose_up.png"><img alt="_images/m6_compose_up.png" src="_images/m6_compose_up.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Inicio de PostgreSQL y pgAdmin con <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">up</span> <span class="pre">-d</span></code>.</span><a class="headerlink" href="#fig-m6-compose-up" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <div class="warning admonition">
 <p class="admonition-title"><strong>Importante</strong></p>
 <p>Si ya tienes un contenedor llamado <code class="docutils literal notranslate"><span class="pre">pg_dataviz</span></code> creado con <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span></code>, elimínalo antes (<code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rm</span> <span class="pre">-f</span> <span class="pre">pg_dataviz</span></code>) para evitar conflictos de nombre y de puerto. Recuerda también que los scripts de <code class="docutils literal notranslate"><span class="pre">init/</span></code> solo se ejecutan cuando el volumen está <strong>vacío</strong>.</p>
@@ -987,6 +1106,20 @@ pgadmin_dataviz   Up             0.0.0.0:8080-&gt;80/tcp
 <li><p>Clic derecho en <strong>Servers → Register → Server…</strong> y en <strong>General</strong> escribe un nombre, por ejemplo <code class="docutils literal notranslate"><span class="pre">DataViz</span></code>.</p></li>
 <li><p>En <strong>Connection</strong> escribe <strong>Host</strong> <code class="docutils literal notranslate"><span class="pre">db</span></code> (el nombre del servicio en Compose), <strong>Port</strong> <code class="docutils literal notranslate"><span class="pre">5432</span></code> y el usuario y contraseña del <code class="docutils literal notranslate"><span class="pre">.env</span></code>. Pulsa <strong>Save</strong>.</p></li>
 </ol>
+<figure class="align-center" id="fig-m6-pgadmin-login">
+<a class="reference internal image-reference" href="_images/m6_pgadmin_login.png"><img alt="_images/m6_pgadmin_login.png" src="_images/m6_pgadmin_login.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Pantalla de inicio de sesión de pgAdmin en <a class="reference external" href="http://localhost:8080">http://localhost:8080</a>.</span><a class="headerlink" href="#fig-m6-pgadmin-login" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="fig-m6-pgadmin-registrar-servidor">
+<a class="reference internal image-reference" href="_images/m6_pgadmin_registrar_servidor.png"><img alt="_images/m6_pgadmin_registrar_servidor.png" src="_images/m6_pgadmin_registrar_servidor.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Registro del servidor <code class="docutils literal notranslate"><span class="pre">DataViz</span></code> en pgAdmin (pestaña <em>Connection</em>).</span><a class="headerlink" href="#fig-m6-pgadmin-registrar-servidor" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <div class="note admonition">
 <p class="admonition-title"><strong>¿Por qué <code class="docutils literal notranslate"><span class="pre">db</span></code> en pgAdmin y <code class="docutils literal notranslate"><span class="pre">localhost</span></code> en DBeaver?</strong></p>
 <p>pgAdmin corre <strong>dentro</strong> de Docker, en la misma red que PostgreSQL, y lo encuentra por el nombre del servicio (<code class="docutils literal notranslate"><span class="pre">db</span></code>). DBeaver y Python corren <strong>en tu computador</strong> y llegan a PostgreSQL por el puerto publicado en <code class="docutils literal notranslate"><span class="pre">localhost</span></code>.</p>
@@ -1003,6 +1136,27 @@ pgadmin_dataviz   Up             0.0.0.0:8080-&gt;80/tcp
 <li><p>Crea una nueva conexión en DBeaver o pgAdmin con esos datos, igual que hicimos con Docker.</p></li>
 <li><p>Desde la pestaña <strong>Data</strong> del servicio también puedes ver las tablas y ejecutar consultas SQL directamente en el navegador.</p></li>
 </ol>
+<figure class="align-center" id="fig-m6-railway-nuevo-proyecto">
+<a class="reference internal image-reference" href="_images/m6_railway_nuevo_proyecto.png"><img alt="_images/m6_railway_nuevo_proyecto.png" src="_images/m6_railway_nuevo_proyecto.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Creación de un proyecto con PostgreSQL en el <em>Dashboard</em> de Railway.</span><a class="headerlink" href="#fig-m6-railway-nuevo-proyecto" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="fig-m6-railway-variables">
+<a class="reference internal image-reference" href="_images/m6_railway_variables.png"><img alt="_images/m6_railway_variables.png" src="_images/m6_railway_variables.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Variables de conexión del servicio PostgreSQL en Railway.</span><a class="headerlink" href="#fig-m6-railway-variables" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="fig-m6-railway-dbeaver">
+<a class="reference internal image-reference" href="_images/m6_railway_dbeaver.png"><img alt="_images/m6_railway_dbeaver.png" src="_images/m6_railway_dbeaver.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Conexión desde DBeaver a la base de datos de Railway.</span><a class="headerlink" href="#fig-m6-railway-dbeaver" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Para subir a Railway una base de datos que creaste en Docker, restaura el respaldo hecho con <code class="docutils literal notranslate"><span class="pre">pg_dump</span></code> apuntando al servidor remoto:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-i<span class="w"> </span>pg_dataviz<span class="w"> </span>pg_restore<span class="w"> </span>--no-owner<span class="w"> </span>-d<span class="w"> </span><span class="s2">"postgresql://USUARIO:CLAVE@HOST:PUERTO/BASE"</span><span class="w"> </span>&lt;<span class="w"> </span>dataviz.dump
 </pre></div>
@@ -1084,6 +1238,27 @@ customer &gt;── address &gt;── city &gt;── country
 <li><p>Pulsa <strong>Restore</strong> y espera el mensaje <em>Process completed</em>.</p></li>
 <li><p>Clic derecho en <code class="docutils literal notranslate"><span class="pre">dvdrental</span></code> → <strong>Refresh</strong>. Las 15 tablas aparecen en <strong>Schemas → public → Tables</strong>.</p></li>
 </ol>
+<figure class="align-center" id="fig-m6-pgadmin-crear-bd">
+<a class="reference internal image-reference" href="_images/m6_pgadmin_crear_bd.png"><img alt="_images/m6_pgadmin_crear_bd.png" src="_images/m6_pgadmin_crear_bd.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">Creación de la base de datos <code class="docutils literal notranslate"><span class="pre">dvdrental</span></code> en pgAdmin (<em>Create → Database…</em>).</span><a class="headerlink" href="#fig-m6-pgadmin-crear-bd" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="fig-m6-pgadmin-restore">
+<a class="reference internal image-reference" href="_images/m6_pgadmin_restore.png"><img alt="_images/m6_pgadmin_restore.png" src="_images/m6_pgadmin_restore.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Restauración de <code class="docutils literal notranslate"><span class="pre">dvdrental.tar</span></code> con la opción <em>Restore…</em> de pgAdmin.</span><a class="headerlink" href="#fig-m6-pgadmin-restore" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="fig-m6-pgadmin-tablas">
+<a class="reference internal image-reference" href="_images/m6_pgadmin_tablas.png"><img alt="_images/m6_pgadmin_tablas.png" src="_images/m6_pgadmin_tablas.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Las 15 tablas de <code class="docutils literal notranslate"><span class="pre">dvdrental</span></code> en <em>Schemas → public → Tables</em>.</span><a class="headerlink" href="#fig-m6-pgadmin-tablas" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 <section id="opcion-2-desde-la-terminal">
 <h4><strong>Opción 2: desde la terminal</strong><a class="headerlink" href="#opcion-2-desde-la-terminal" title="Link to this heading">#</a></h4>
@@ -1142,6 +1317,13 @@ docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </spa
 </table>
 </div>
 <p>Puedes ejecutar todas las consultas de esta sección en <code class="docutils literal notranslate"><span class="pre">psql</span></code>, en la <em>Query Tool</em> de pgAdmin o en el editor SQL de DBeaver, conectados a <code class="docutils literal notranslate"><span class="pre">dvdrental</span></code>. Debajo de cada consulta se muestra su resultado (en las consultas que devuelven muchas filas se muestran solo las primeras).</p>
+<figure class="align-center" id="fig-m6-pgadmin-query-tool">
+<a class="reference internal image-reference" href="_images/m6_pgadmin_query_tool.png"><img alt="_images/m6_pgadmin_query_tool.png" src="_images/m6_pgadmin_query_tool.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text">Consulta en la <em>Query Tool</em> de pgAdmin sobre la base de datos <code class="docutils literal notranslate"><span class="pre">dvdrental</span></code>.</span><a class="headerlink" href="#fig-m6-pgadmin-query-tool" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <div class="note admonition">
 <p class="admonition-title"><strong>Convenciones</strong></p>
 <ul class="simple">
@@ -1826,6 +2008,13 @@ conda<span class="w"> </span>activate<span class="w"> </span>pg_venv
 </pre></div>
 </div>
 <p>Cuando el entorno está activo, su nombre aparece entre paréntesis al inicio de la línea de comandos, por ejemplo <code class="docutils literal notranslate"><span class="pre">(pg_venv)</span> <span class="pre">PS</span> <span class="pre">C:\Users\...&gt;</span></code>. Una vez activado puedes moverte a la carpeta de tu proyecto; no hace falta trabajar dentro de la carpeta del entorno.</p>
+<figure class="align-center" id="fig-m6-venv-activado">
+<a class="reference internal image-reference" href="_images/m6_venv_activado.png"><img alt="_images/m6_venv_activado.png" src="_images/m6_venv_activado.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Entorno virtual <code class="docutils literal notranslate"><span class="pre">pg_venv</span></code> activado en la terminal.</span><a class="headerlink" href="#fig-m6-venv-activado" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <div class="tip admonition">
 <p class="admonition-title"><strong>Recomendación</strong></p>
 <p>Crea los entornos de <code class="docutils literal notranslate"><span class="pre">venv</span></code> en una carpeta local que <strong>no</strong> se sincronice con la nube (OneDrive, Google Drive, Dropbox), por ejemplo <code class="docutils literal notranslate"><span class="pre">C:\python_venv\</span></code>. La sincronización de miles de archivos pequeños vuelve lentos los entornos y puede dañarlos.</p>
@@ -1893,6 +2082,13 @@ jupyter<span class="w"> </span>lab
 </pre></div>
 </div>
 <p>Al crear un notebook, elige el kernel <code class="docutils literal notranslate"><span class="pre">pg_venv</span></code>. Para cambiarlo en un notebook existente usa <strong>Kernel → Change Kernel…</strong></p>
+<figure class="align-center" id="fig-m6-jupyterlab-kernel">
+<a class="reference internal image-reference" href="_images/m6_jupyterlab_kernel.png"><img alt="_images/m6_jupyterlab_kernel.png" src="_images/m6_jupyterlab_kernel.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 28 </span><span class="caption-text">Kernel <code class="docutils literal notranslate"><span class="pre">pg_venv</span></code> disponible en JupyterLab.</span><a class="headerlink" href="#fig-m6-jupyterlab-kernel" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 <section id="usar-el-entorno-en-vs-code">
 <h3><strong>Usar el entorno en VS Code</strong><a class="headerlink" href="#usar-el-entorno-en-vs-code" title="Link to this heading">#</a></h3>
@@ -1902,6 +2098,13 @@ jupyter<span class="w"> </span>lab
 <li><p>Selecciona <code class="docutils literal notranslate"><span class="pre">pg_venv</span></code> de la lista. Si no aparece, elige <strong>Enter interpreter path… → Find…</strong> y busca el ejecutable, por ejemplo <code class="docutils literal notranslate"><span class="pre">C:\python_venv\pg_venv\Scripts\python.exe</span></code> (con conda: <code class="docutils literal notranslate"><span class="pre">C:\Users\&lt;usuario&gt;\miniconda3\envs\pg_venv\python.exe</span></code>).</p></li>
 <li><p>En un notebook, pulsa <strong>Select Kernel</strong> (arriba a la derecha) → <strong>Python Environments…</strong> y elige <code class="docutils literal notranslate"><span class="pre">pg_venv</span></code>.</p></li>
 </ol>
+<figure class="align-center" id="fig-m6-vscode-kernel">
+<a class="reference internal image-reference" href="_images/m6_vscode_kernel.png"><img alt="_images/m6_vscode_kernel.png" src="_images/m6_vscode_kernel.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 29 </span><span class="caption-text">Selección del entorno <code class="docutils literal notranslate"><span class="pre">pg_venv</span></code> como kernel en VS Code.</span><a class="headerlink" href="#fig-m6-vscode-kernel" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 <section id="api-de-python-para-postgresql">
@@ -1910,6 +2113,13 @@ jupyter<span class="w"> </span>lab
 <section id="rutinas-principales-de-la-api">
 <h3><strong>Rutinas principales de la API</strong><a class="headerlink" href="#rutinas-principales-de-la-api" title="Link to this heading">#</a></h3>
 <p>Todas las librerías de bases de datos de Python siguen el mismo esquema (definido en el estándar <strong>DB-API</strong>): una <strong>conexión</strong> representa la sesión con el servidor y un <strong>cursor</strong> envía las sentencias SQL y recibe los resultados.</p>
+<figure class="align-center" id="fig-m6-psycopg-flujo">
+<a class="reference internal image-reference" href="_images/m6_psycopg_flujo.png"><img alt="_images/m6_psycopg_flujo.png" src="_images/m6_psycopg_flujo.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 30 </span><span class="caption-text">Flujo de trabajo con psycopg: conexión, cursor, ejecución, lectura y confirmación.</span><a class="headerlink" href="#fig-m6-psycopg-flujo" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Rutina</p></th>
@@ -2035,6 +2245,13 @@ Base de datos: dataviz | Usuario: dataviz | Servidor: localhost:5432
 </div>
 </div>
 <p>Si actualizas la vista en pgAdmin o DBeaver (clic derecho → <strong>Refresh</strong>), verás la nueva tabla en <code class="docutils literal notranslate"><span class="pre">dataviz</span> <span class="pre">→</span> <span class="pre">Schemas</span> <span class="pre">→</span> <span class="pre">public</span> <span class="pre">→</span> <span class="pre">Tables</span></code>.</p>
+<figure class="align-center" id="fig-m6-pgadmin-company">
+<a class="reference internal image-reference" href="_images/m6_pgadmin_company.png"><img alt="_images/m6_pgadmin_company.png" src="_images/m6_pgadmin_company.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 31 </span><span class="caption-text">Tabla <code class="docutils literal notranslate"><span class="pre">company</span></code> creada desde Python, vista en pgAdmin.</span><a class="headerlink" href="#fig-m6-pgadmin-company" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 <section id="operacion-insert">
 <h3><strong>Operación INSERT</strong><a class="headerlink" href="#operacion-insert" title="Link to this heading">#</a></h3>
@@ -5999,6 +6216,13 @@ if (outputEl) {{
 </table>
 </div>
 <p>Python incluye el módulo <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code>, así que no hay que instalar nada. Si quieres usar SQLite desde la terminal, descarga las herramientas de línea de comandos (<em>sqlite-tools</em>) desde <a class="reference external" href="https://sqlite.org/download.html">https://sqlite.org/download.html</a>, descomprímelas en una carpeta como <code class="docutils literal notranslate"><span class="pre">C:\sqlite</span></code> y agrégala a la variable de entorno <code class="docutils literal notranslate"><span class="pre">PATH</span></code>. DBeaver también puede abrir archivos SQLite (<strong>New Database Connection → SQLite</strong>).</p>
+<figure class="align-center" id="fig-m6-dbeaver-sqlite-ethereum">
+<a class="reference internal image-reference" href="_images/m6_dbeaver_sqlite_ethereum.png"><img alt="_images/m6_dbeaver_sqlite_ethereum.png" src="_images/m6_dbeaver_sqlite_ethereum.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Tabla <code class="docutils literal notranslate"><span class="pre">ethereum</span></code> del archivo <code class="docutils literal notranslate"><span class="pre">sqlitedb.db</span></code> abierta en DBeaver.</span><a class="headerlink" href="#fig-m6-dbeaver-sqlite-ethereum" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Al conectarnos a un archivo que no existe, SQLite lo crea:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
