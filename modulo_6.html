@@ -398,6 +398,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#un-servidor-completo-usuario-base-de-datos-puerto-y-volumen"><strong>Un servidor completo: usuario, base de datos, puerto y volumen</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-comandos-utiles-de-psql"><strong>Meta-comandos útiles de <code class="docutils literal notranslate"><span class="pre">psql</span></code></strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conectarse-desde-dbeaver"><strong>Conectarse desde DBeaver</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-una-tabla-desde-dbeaver"><strong>Crear una tabla desde DBeaver</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ver-la-tabla-desde-la-terminal"><strong>Ver la tabla desde la terminal</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-una-tabla-desde-la-terminal"><strong>Crear una tabla desde la terminal</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#respaldar-y-compartir-una-base-de-datos"><strong>Respaldar y compartir una base de datos</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-compose-el-entorno-completo-en-un-archivo"><strong>Docker Compose: el entorno completo en un archivo</strong></a></li>
 </ul>
@@ -1062,7 +1065,26 @@ You are connected to database "dataviz" as user "dataviz" via socket in "/var/ru
 <li><p><em>password authentication failed</em>: revisa el usuario y la contraseña. Si tienes PostgreSQL instalado en Windows, ese servidor puede estar ocupando el puerto 5432; crea el contenedor con <code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">5433:5432</span></code> y usa el puerto <code class="docutils literal notranslate"><span class="pre">5433</span></code> en DBeaver.</p></li>
 </ul>
 </div>
-<p>Ahora creemos una tabla desde DBeaver. En el panel <strong>Conexiones</strong> despliega <code class="docutils literal notranslate"><span class="pre">dataviz</span> <span class="pre">→</span> <span class="pre">Bases</span> <span class="pre">de</span> <span class="pre">Datos</span> <span class="pre">→</span> <span class="pre">dataviz</span> <span class="pre">→</span> <span class="pre">Esquemas</span> <span class="pre">→</span> <span class="pre">public</span></code> (<em>Schemas → public</em>), selecciona <strong>Tablas</strong> (<em>Tables</em>) y abre un editor con <strong>Editor SQL → Nuevo script SQL</strong> (<em>SQL Editor → New SQL script</em>) o con <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">]</span></code>. Ejecuta el siguiente script con <code class="docutils literal notranslate"><span class="pre">Alt</span> <span class="pre">+</span> <span class="pre">X</span></code>:</p>
+</section>
+<section id="crear-una-tabla-desde-dbeaver">
+<h3><strong>Crear una tabla desde DBeaver</strong><a class="headerlink" href="#crear-una-tabla-desde-dbeaver" title="Link to this heading">#</a></h3>
+<p><strong>1. Ubicarse en el esquema.</strong> En el panel <strong>Conexiones</strong> despliega <code class="docutils literal notranslate"><span class="pre">dataviz</span> <span class="pre">→</span> <span class="pre">Bases</span> <span class="pre">de</span> <span class="pre">Datos</span> <span class="pre">→</span> <span class="pre">dataviz</span> <span class="pre">→</span> <span class="pre">Esquemas</span> <span class="pre">→</span> <span class="pre">public</span></code> (<em>Schemas → public</em>) y selecciona <strong>Tablas</strong> (<em>Tables</em>). Así el editor SQL que abramos quedará conectado a la base <code class="docutils literal notranslate"><span class="pre">dataviz</span></code>.</p>
+<figure class="align-center" id="fig-m6-dbeaver-script-1">
+<a class="reference internal image-reference" href="_images/m6_dbeaver_script_1.png"><img alt="_images/m6_dbeaver_script_1.png" src="_images/m6_dbeaver_script_1.png" style="width: 90%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Navegación hasta <em>Esquemas → public → Tablas</em> de la base <code class="docutils literal notranslate"><span class="pre">dataviz</span></code> en el panel <em>Conexiones</em>.</span><a class="headerlink" href="#fig-m6-dbeaver-script-1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>2. Abrir un editor SQL.</strong> En el menú <strong>Editor SQL</strong> (<em>SQL Editor</em>) selecciona <strong>Nuevo script SQL</strong> (<em>New SQL script</em>), o usa <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">]</span></code>.</p>
+<figure class="align-center" id="fig-m6-dbeaver-script-2">
+<a class="reference internal image-reference" href="_images/m6_dbeaver_script_2.png"><img alt="_images/m6_dbeaver_script_2.png" src="_images/m6_dbeaver_script_2.png" style="width: 90%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 28 </span><span class="caption-text">Menú <em>Editor SQL → Nuevo script SQL</em>.</span><a class="headerlink" href="#fig-m6-dbeaver-script-2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>3. Escribir y ejecutar el script.</strong> Copia el siguiente script y ejecútalo completo con <strong><code class="docutils literal notranslate"><span class="pre">Alt</span> <span class="pre">+</span> <span class="pre">X</span></code></strong> (<em>Ejecutar script</em>):</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="n">id</span><span class="w">     </span><span class="nb">SERIAL</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
 <span class="w">    </span><span class="n">nombre</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
@@ -1071,6 +1093,7 @@ You are connected to database "dataviz" as user "dataviz" via socket in "/var/ru
 <span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="p">;</span>
 </pre></div>
 </div>
+<p>El resultado del <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> aparece en la pestaña <strong>users 1</strong>, en la parte inferior:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span> id | nombre
 ----+--------
   1 | Ana
@@ -1079,28 +1102,114 @@ You are connected to database "dataviz" as user "dataviz" via socket in "/var/ru
 </pre></div>
 </div>
 <figure class="align-center" id="fig-m6-dbeaver-script-users">
-<a class="reference internal image-reference" href="_images/m6_dbeaver_script_users.png"><img alt="_images/m6_dbeaver_script_users.png" src="_images/m6_dbeaver_script_users.png" style="width: 80%;" />
+<a class="reference internal image-reference" href="_images/m6_dbeaver_script_users.png"><img alt="_images/m6_dbeaver_script_users.png" src="_images/m6_dbeaver_script_users.png" style="width: 90%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Creación de la tabla <code class="docutils literal notranslate"><span class="pre">users</span></code> desde el editor SQL de DBeaver.</span><a class="headerlink" href="#fig-m6-dbeaver-script-users" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 29 </span><span class="caption-text">Script ejecutado con <code class="docutils literal notranslate"><span class="pre">Alt</span> <span class="pre">+</span> <span class="pre">X</span></code>: la tabla <code class="docutils literal notranslate"><span class="pre">users</span></code> se crea, se llena y se consulta. El resultado aparece en la pestaña <em>users 1</em>.</span><a class="headerlink" href="#fig-m6-dbeaver-script-users" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
+<div class="note admonition">
+<p class="admonition-title"><strong>¿Por qué aparecen triángulos rojos junto al script?</strong></p>
+<p>Antes de ejecutar, DBeaver revisa el script y advierte que la tabla <code class="docutils literal notranslate"><span class="pre">users</span></code> <strong>todavía no existe</strong>. No es un error: la sentencia <code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">TABLE</span></code> la crea justo antes del <code class="docutils literal notranslate"><span class="pre">INSERT</span></code>. Los avisos desaparecen después de ejecutar el script.</p>
+<p>Usa <code class="docutils literal notranslate"><span class="pre">Alt</span> <span class="pre">+</span> <span class="pre">X</span></code> para ejecutar <strong>todo</strong> el script. <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Enter</span></code> ejecuta solo la sentencia donde está el cursor: si el cursor está en el <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>, aparecerá el error <em>relation “users” does not exist</em>. Si ejecutas el script dos veces, verás <em>relation “users” already exists</em>; en ese caso borra la tabla con <code class="docutils literal notranslate"><span class="pre">DROP</span> <span class="pre">TABLE</span> <span class="pre">users;</span></code> y vuelve a empezar.</p>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">SERIAL</span></code> crea una columna entera que se llena sola con 1, 2, 3, … cada vez que insertamos una fila, y <code class="docutils literal notranslate"><span class="pre">PRIMARY</span> <span class="pre">KEY</span></code> garantiza que no haya dos filas con el mismo <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
-<p>Los cambios hechos en DBeaver se ven en <code class="docutils literal notranslate"><span class="pre">psql</span></code> y viceversa, porque ambos se conectan al <strong>mismo servidor</strong>. Compruébalo desde la terminal con <code class="docutils literal notranslate"><span class="pre">\dt</span></code>:</p>
+</section>
+<section id="ver-la-tabla-desde-la-terminal">
+<h3><strong>Ver la tabla desde la terminal</strong><a class="headerlink" href="#ver-la-tabla-desde-la-terminal" title="Link to this heading">#</a></h3>
+<p>Los cambios hechos en DBeaver se ven en <code class="docutils literal notranslate"><span class="pre">psql</span></code> y viceversa, porque ambos se conectan al <strong>mismo servidor</strong>. Entra a <code class="docutils literal notranslate"><span class="pre">psql</span></code> dentro del contenedor:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>pg_dataviz<span class="w"> </span>psql<span class="w"> </span>-U<span class="w"> </span>dataviz<span class="w"> </span>-d<span class="w"> </span>dataviz
+</pre></div>
+</div>
+<p>y lista las tablas con <code class="docutils literal notranslate"><span class="pre">\dt</span></code>. Luego consulta los datos que insertaste desde DBeaver:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>\dt
+SELECT * FROM users;
+</pre></div>
+</div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>        List of relations
  Schema | Name  | Type  |  Owner
 --------+-------+-------+---------
  public | users | table | dataviz
 (1 row)
+
+ id | nombre
+----+--------
+  1 | Ana
+  2 | Luis
+(2 rows)
 </pre></div>
 </div>
 <figure class="align-center" id="fig-m6-psql-dt-users">
-<a class="reference internal image-reference" href="_images/m6_psql_dt_users.png"><img alt="_images/m6_psql_dt_users.png" src="_images/m6_psql_dt_users.png" style="width: 80%;" />
+<a class="reference internal image-reference" href="_images/m6_psql_dt_users.png"><img alt="_images/m6_psql_dt_users.png" src="_images/m6_psql_dt_users.png" style="width: 75%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 28 </span><span class="caption-text">La tabla <code class="docutils literal notranslate"><span class="pre">users</span></code> creada en DBeaver vista desde <code class="docutils literal notranslate"><span class="pre">psql</span></code> con <code class="docutils literal notranslate"><span class="pre">\dt</span></code>.</span><a class="headerlink" href="#fig-m6-psql-dt-users" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 30 </span><span class="caption-text">La tabla <code class="docutils literal notranslate"><span class="pre">users</span></code> creada en DBeaver, vista desde <code class="docutils literal notranslate"><span class="pre">psql</span></code> con <code class="docutils literal notranslate"><span class="pre">\dt</span></code> y <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>.</span><a class="headerlink" href="#fig-m6-psql-dt-users" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
+</section>
+<section id="crear-una-tabla-desde-la-terminal">
+<h3><strong>Crear una tabla desde la terminal</strong><a class="headerlink" href="#crear-una-tabla-desde-la-terminal" title="Link to this heading">#</a></h3>
+<p>Hagamos ahora el camino contrario. Dentro de <code class="docutils literal notranslate"><span class="pre">psql</span></code> crea la tabla <code class="docutils literal notranslate"><span class="pre">productos</span></code>. Puedes escribir la sentencia en varias líneas: <code class="docutils literal notranslate"><span class="pre">psql</span></code> solo la ejecuta cuando encuentra el <strong>punto y coma</strong> (<code class="docutils literal notranslate"><span class="pre">;</span></code>). Mientras falta, el indicador cambia de <code class="docutils literal notranslate"><span class="pre">dataviz=#</span></code> a <code class="docutils literal notranslate"><span class="pre">dataviz-#</span></code>.</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">productos</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">id</span><span class="w">     </span><span class="nb">SERIAL</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="w">    </span><span class="n">nombre</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">40</span><span class="p">),</span>
+<span class="w">    </span><span class="n">precio</span><span class="w"> </span><span class="nb">NUMERIC</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p>Si <code class="docutils literal notranslate"><span class="pre">psql</span></code> responde <code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">TABLE</span></code>, la tabla quedó creada.</p>
+<figure class="align-center" id="fig-m6-psql-crear-dt-terminal-1">
+<a class="reference internal image-reference" href="_images/m6_psql_crear_dt_terminal_1.png"><img alt="_images/m6_psql_crear_dt_terminal_1.png" src="_images/m6_psql_crear_dt_terminal_1.png" style="width: 60%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 31 </span><span class="caption-text">Creación de la tabla <code class="docutils literal notranslate"><span class="pre">productos</span></code> desde <code class="docutils literal notranslate"><span class="pre">psql</span></code>.</span><a class="headerlink" href="#fig-m6-psql-crear-dt-terminal-1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Inserta dos productos, consúltalos y lista las tablas:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>INSERT INTO productos (nombre, precio) VALUES ('Laptop', 3500000), ('Mouse', 60000);
+SELECT * FROM productos;
+\dt
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>INSERT 0 2
+ id | nombre |   precio
+----+--------+------------
+  1 | Laptop | 3500000.00
+  2 | Mouse  |   60000.00
+(2 rows)
+
+          List of relations
+ Schema |   Name    | Type  |  Owner
+--------+-----------+-------+---------
+ public | productos | table | dataviz
+ public | users     | table | dataviz
+(2 rows)
+</pre></div>
+</div>
+<figure class="align-center" id="fig-m6-psql-crear-dt-terminal-2">
+<a class="reference internal image-reference" href="_images/m6_psql_crear_dt_terminal_2.png"><img alt="_images/m6_psql_crear_dt_terminal_2.png" src="_images/m6_psql_crear_dt_terminal_2.png" style="width: 85%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Inserción y consulta de la tabla <code class="docutils literal notranslate"><span class="pre">productos</span></code>; <code class="docutils literal notranslate"><span class="pre">\dt</span></code> ya muestra las dos tablas.</span><a class="headerlink" href="#fig-m6-psql-crear-dt-terminal-2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Sal de <code class="docutils literal notranslate"><span class="pre">psql</span></code> con <code class="docutils literal notranslate"><span class="pre">\q</span></code> y vuelve a DBeaver. La tabla <code class="docutils literal notranslate"><span class="pre">productos</span></code> todavía no aparece porque DBeaver no se entera solo de los cambios hechos desde otra conexión: haz clic derecho sobre <strong>Tablas → Refrescar</strong> (o selecciona <strong>Tablas</strong> y pulsa <code class="docutils literal notranslate"><span class="pre">F5</span></code>). Ahora aparecen <code class="docutils literal notranslate"><span class="pre">productos</span></code> y <code class="docutils literal notranslate"><span class="pre">users</span></code>. Con doble clic sobre una tabla se abren sus <strong>Propiedades</strong> (columnas y tipos) y sus <strong>Datos</strong> (filas).</p>
+<figure class="align-center" id="fig-m6-psql-crear-dt-terminal-verificacion">
+<a class="reference internal image-reference" href="_images/m6_psql_crear_dt_terminal_verificacion.png"><img alt="_images/m6_psql_crear_dt_terminal_verificacion.png" src="_images/m6_psql_crear_dt_terminal_verificacion.png" style="width: 90%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 33 </span><span class="caption-text">Después de refrescar, DBeaver muestra la tabla <code class="docutils literal notranslate"><span class="pre">productos</span></code> creada desde la terminal junto a <code class="docutils literal notranslate"><span class="pre">users</span></code>.</span><a class="headerlink" href="#fig-m6-psql-crear-dt-terminal-verificacion" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Otras formas de ejecutar SQL desde la terminal</strong></p>
+<ul class="simple">
+<li><p>Un solo comando, sin entrar a <code class="docutils literal notranslate"><span class="pre">psql</span></code>:
+<code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span> <span class="pre">pg_dataviz</span> <span class="pre">psql</span> <span class="pre">-U</span> <span class="pre">dataviz</span> <span class="pre">-d</span> <span class="pre">dataviz</span> <span class="pre">-c</span> <span class="pre">&quot;SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">productos;&quot;</span></code></p></li>
+<li><p>Un archivo <code class="docutils literal notranslate"><span class="pre">.sql</span></code> completo (en PowerShell, desde la carpeta del archivo):
+<code class="docutils literal notranslate"><span class="pre">Get-Content</span> <span class="pre">tablas.sql</span> <span class="pre">|</span> <span class="pre">docker</span> <span class="pre">exec</span> <span class="pre">-i</span> <span class="pre">pg_dataviz</span> <span class="pre">psql</span> <span class="pre">-U</span> <span class="pre">dataviz</span> <span class="pre">-d</span> <span class="pre">dataviz</span></code></p></li>
+</ul>
+</div>
 </section>
 <section id="respaldar-y-compartir-una-base-de-datos">
 <h3><strong>Respaldar y compartir una base de datos</strong><a class="headerlink" href="#respaldar-y-compartir-una-base-de-datos" title="Link to this heading">#</a></h3>
@@ -1239,7 +1348,7 @@ pgadmin_dataviz   Up             0.0.0.0:8080-&gt;80/tcp
 <a class="reference internal image-reference" href="_images/m6_compose_up.png"><img alt="_images/m6_compose_up.png" src="_images/m6_compose_up.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 29 </span><span class="caption-text">Inicio de PostgreSQL y pgAdmin con <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">up</span> <span class="pre">-d</span></code>.</span><a class="headerlink" href="#fig-m6-compose-up" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 34 </span><span class="caption-text">Inicio de PostgreSQL y pgAdmin con <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">up</span> <span class="pre">-d</span></code>.</span><a class="headerlink" href="#fig-m6-compose-up" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="warning admonition">
@@ -1256,14 +1365,14 @@ pgadmin_dataviz   Up             0.0.0.0:8080-&gt;80/tcp
 <a class="reference internal image-reference" href="_images/m6_pgadmin_login.png"><img alt="_images/m6_pgadmin_login.png" src="_images/m6_pgadmin_login.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 30 </span><span class="caption-text">Pantalla de inicio de sesión de pgAdmin en <a class="reference external" href="http://localhost:8080">http://localhost:8080</a>.</span><a class="headerlink" href="#fig-m6-pgadmin-login" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 35 </span><span class="caption-text">Pantalla de inicio de sesión de pgAdmin en <a class="reference external" href="http://localhost:8080">http://localhost:8080</a>.</span><a class="headerlink" href="#fig-m6-pgadmin-login" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="fig-m6-pgadmin-registrar-servidor">
 <a class="reference internal image-reference" href="_images/m6_pgadmin_registrar_servidor.png"><img alt="_images/m6_pgadmin_registrar_servidor.png" src="_images/m6_pgadmin_registrar_servidor.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 31 </span><span class="caption-text">Registro del servidor <code class="docutils literal notranslate"><span class="pre">DataViz</span></code> en pgAdmin (pestaña <em>Connection</em>).</span><a class="headerlink" href="#fig-m6-pgadmin-registrar-servidor" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 36 </span><span class="caption-text">Registro del servidor <code class="docutils literal notranslate"><span class="pre">DataViz</span></code> en pgAdmin (pestaña <em>Connection</em>).</span><a class="headerlink" href="#fig-m6-pgadmin-registrar-servidor" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="note admonition">
@@ -1286,21 +1395,21 @@ pgadmin_dataviz   Up             0.0.0.0:8080-&gt;80/tcp
 <a class="reference internal image-reference" href="_images/m6_railway_nuevo_proyecto.png"><img alt="_images/m6_railway_nuevo_proyecto.png" src="_images/m6_railway_nuevo_proyecto.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Creación de un proyecto con PostgreSQL en el <em>Dashboard</em> de Railway.</span><a class="headerlink" href="#fig-m6-railway-nuevo-proyecto" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 37 </span><span class="caption-text">Creación de un proyecto con PostgreSQL en el <em>Dashboard</em> de Railway.</span><a class="headerlink" href="#fig-m6-railway-nuevo-proyecto" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="fig-m6-railway-variables">
 <a class="reference internal image-reference" href="_images/m6_railway_variables.png"><img alt="_images/m6_railway_variables.png" src="_images/m6_railway_variables.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 33 </span><span class="caption-text">Variables de conexión del servicio PostgreSQL en Railway.</span><a class="headerlink" href="#fig-m6-railway-variables" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 38 </span><span class="caption-text">Variables de conexión del servicio PostgreSQL en Railway.</span><a class="headerlink" href="#fig-m6-railway-variables" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="fig-m6-railway-dbeaver">
 <a class="reference internal image-reference" href="_images/m6_railway_dbeaver.png"><img alt="_images/m6_railway_dbeaver.png" src="_images/m6_railway_dbeaver.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 34 </span><span class="caption-text">Conexión desde DBeaver a la base de datos de Railway.</span><a class="headerlink" href="#fig-m6-railway-dbeaver" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 39 </span><span class="caption-text">Conexión desde DBeaver a la base de datos de Railway.</span><a class="headerlink" href="#fig-m6-railway-dbeaver" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Para subir a Railway una base de datos que creaste en Docker, restaura el respaldo hecho con <code class="docutils literal notranslate"><span class="pre">pg_dump</span></code> apuntando al servidor remoto:</p>
@@ -1388,21 +1497,21 @@ customer &gt;── address &gt;── city &gt;── country
 <a class="reference internal image-reference" href="_images/m6_pgadmin_crear_bd.png"><img alt="_images/m6_pgadmin_crear_bd.png" src="_images/m6_pgadmin_crear_bd.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 35 </span><span class="caption-text">Creación de la base de datos <code class="docutils literal notranslate"><span class="pre">dvdrental</span></code> en pgAdmin (<em>Create → Database…</em>).</span><a class="headerlink" href="#fig-m6-pgadmin-crear-bd" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 40 </span><span class="caption-text">Creación de la base de datos <code class="docutils literal notranslate"><span class="pre">dvdrental</span></code> en pgAdmin (<em>Create → Database…</em>).</span><a class="headerlink" href="#fig-m6-pgadmin-crear-bd" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="fig-m6-pgadmin-restore">
 <a class="reference internal image-reference" href="_images/m6_pgadmin_restore.png"><img alt="_images/m6_pgadmin_restore.png" src="_images/m6_pgadmin_restore.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 36 </span><span class="caption-text">Restauración de <code class="docutils literal notranslate"><span class="pre">dvdrental.tar</span></code> con la opción <em>Restore…</em> de pgAdmin.</span><a class="headerlink" href="#fig-m6-pgadmin-restore" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 41 </span><span class="caption-text">Restauración de <code class="docutils literal notranslate"><span class="pre">dvdrental.tar</span></code> con la opción <em>Restore…</em> de pgAdmin.</span><a class="headerlink" href="#fig-m6-pgadmin-restore" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="fig-m6-pgadmin-tablas">
 <a class="reference internal image-reference" href="_images/m6_pgadmin_tablas.png"><img alt="_images/m6_pgadmin_tablas.png" src="_images/m6_pgadmin_tablas.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 37 </span><span class="caption-text">Las 15 tablas de <code class="docutils literal notranslate"><span class="pre">dvdrental</span></code> en <em>Schemas → public → Tables</em>.</span><a class="headerlink" href="#fig-m6-pgadmin-tablas" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 42 </span><span class="caption-text">Las 15 tablas de <code class="docutils literal notranslate"><span class="pre">dvdrental</span></code> en <em>Schemas → public → Tables</em>.</span><a class="headerlink" href="#fig-m6-pgadmin-tablas" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -1467,7 +1576,7 @@ docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </spa
 <a class="reference internal image-reference" href="_images/m6_pgadmin_query_tool.png"><img alt="_images/m6_pgadmin_query_tool.png" src="_images/m6_pgadmin_query_tool.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 38 </span><span class="caption-text">Consulta en la <em>Query Tool</em> de pgAdmin sobre la base de datos <code class="docutils literal notranslate"><span class="pre">dvdrental</span></code>.</span><a class="headerlink" href="#fig-m6-pgadmin-query-tool" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 43 </span><span class="caption-text">Consulta en la <em>Query Tool</em> de pgAdmin sobre la base de datos <code class="docutils literal notranslate"><span class="pre">dvdrental</span></code>.</span><a class="headerlink" href="#fig-m6-pgadmin-query-tool" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="note admonition">
@@ -2158,7 +2267,7 @@ conda<span class="w"> </span>activate<span class="w"> </span>pg_venv
 <a class="reference internal image-reference" href="_images/m6_venv_activado.png"><img alt="_images/m6_venv_activado.png" src="_images/m6_venv_activado.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 39 </span><span class="caption-text">Entorno virtual <code class="docutils literal notranslate"><span class="pre">pg_venv</span></code> activado en la terminal.</span><a class="headerlink" href="#fig-m6-venv-activado" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 44 </span><span class="caption-text">Entorno virtual <code class="docutils literal notranslate"><span class="pre">pg_venv</span></code> activado en la terminal.</span><a class="headerlink" href="#fig-m6-venv-activado" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="tip admonition">
@@ -2232,7 +2341,7 @@ jupyter<span class="w"> </span>lab
 <a class="reference internal image-reference" href="_images/m6_jupyterlab_kernel.png"><img alt="_images/m6_jupyterlab_kernel.png" src="_images/m6_jupyterlab_kernel.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 40 </span><span class="caption-text">Kernel <code class="docutils literal notranslate"><span class="pre">pg_venv</span></code> disponible en JupyterLab.</span><a class="headerlink" href="#fig-m6-jupyterlab-kernel" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 45 </span><span class="caption-text">Kernel <code class="docutils literal notranslate"><span class="pre">pg_venv</span></code> disponible en JupyterLab.</span><a class="headerlink" href="#fig-m6-jupyterlab-kernel" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -2248,7 +2357,7 @@ jupyter<span class="w"> </span>lab
 <a class="reference internal image-reference" href="_images/m6_vscode_kernel.png"><img alt="_images/m6_vscode_kernel.png" src="_images/m6_vscode_kernel.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 41 </span><span class="caption-text">Selección del entorno <code class="docutils literal notranslate"><span class="pre">pg_venv</span></code> como kernel en VS Code.</span><a class="headerlink" href="#fig-m6-vscode-kernel" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 46 </span><span class="caption-text">Selección del entorno <code class="docutils literal notranslate"><span class="pre">pg_venv</span></code> como kernel en VS Code.</span><a class="headerlink" href="#fig-m6-vscode-kernel" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -2263,7 +2372,7 @@ jupyter<span class="w"> </span>lab
 <a class="reference internal image-reference" href="_images/m6_psycopg_flujo.png"><img alt="_images/m6_psycopg_flujo.png" src="_images/m6_psycopg_flujo.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 42 </span><span class="caption-text">Flujo de trabajo con psycopg: conexión, cursor, ejecución, lectura y confirmación.</span><a class="headerlink" href="#fig-m6-psycopg-flujo" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 47 </span><span class="caption-text">Flujo de trabajo con psycopg: conexión, cursor, ejecución, lectura y confirmación.</span><a class="headerlink" href="#fig-m6-psycopg-flujo" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -2395,7 +2504,7 @@ Base de datos: dataviz | Usuario: dataviz | Servidor: localhost:5432
 <a class="reference internal image-reference" href="_images/m6_pgadmin_company.png"><img alt="_images/m6_pgadmin_company.png" src="_images/m6_pgadmin_company.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 43 </span><span class="caption-text">Tabla <code class="docutils literal notranslate"><span class="pre">company</span></code> creada desde Python, vista en pgAdmin.</span><a class="headerlink" href="#fig-m6-pgadmin-company" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 48 </span><span class="caption-text">Tabla <code class="docutils literal notranslate"><span class="pre">company</span></code> creada desde Python, vista en pgAdmin.</span><a class="headerlink" href="#fig-m6-pgadmin-company" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -6366,7 +6475,7 @@ if (outputEl) {{
 <a class="reference internal image-reference" href="_images/m6_dbeaver_sqlite_ethereum.png"><img alt="_images/m6_dbeaver_sqlite_ethereum.png" src="_images/m6_dbeaver_sqlite_ethereum.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 44 </span><span class="caption-text">Tabla <code class="docutils literal notranslate"><span class="pre">ethereum</span></code> del archivo <code class="docutils literal notranslate"><span class="pre">sqlitedb.db</span></code> abierta en DBeaver.</span><a class="headerlink" href="#fig-m6-dbeaver-sqlite-ethereum" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 49 </span><span class="caption-text">Tabla <code class="docutils literal notranslate"><span class="pre">ethereum</span></code> del archivo <code class="docutils literal notranslate"><span class="pre">sqlitedb.db</span></code> abierta en DBeaver.</span><a class="headerlink" href="#fig-m6-dbeaver-sqlite-ethereum" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Al conectarnos a un archivo que no existe, SQLite lo crea:</p>
@@ -7015,6 +7124,9 @@ if (outputEl) {{
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#un-servidor-completo-usuario-base-de-datos-puerto-y-volumen"><strong>Un servidor completo: usuario, base de datos, puerto y volumen</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-comandos-utiles-de-psql"><strong>Meta-comandos útiles de <code class="docutils literal notranslate"><span class="pre">psql</span></code></strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conectarse-desde-dbeaver"><strong>Conectarse desde DBeaver</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-una-tabla-desde-dbeaver"><strong>Crear una tabla desde DBeaver</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ver-la-tabla-desde-la-terminal"><strong>Ver la tabla desde la terminal</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-una-tabla-desde-la-terminal"><strong>Crear una tabla desde la terminal</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#respaldar-y-compartir-una-base-de-datos"><strong>Respaldar y compartir una base de datos</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-compose-el-entorno-completo-en-un-archivo"><strong>Docker Compose: el entorno completo en un archivo</strong></a></li>
 </ul>
