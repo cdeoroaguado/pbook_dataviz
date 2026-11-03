@@ -28,13 +28,13 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=8c6b312c" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=6c7211e7" />
   
@@ -52,7 +52,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -549,22 +549,22 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">st.video()</span></code>: Esta función se utiliza para mostrar un vídeo.</p></li>
 </ul>
 <p>El código en python es:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">streamlit</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">st</span>
 
 <span class="c1"># Título principal</span>
-<span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Ejemplo de Visualización de Multimedia con Streamlit&quot;</span><span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Ejemplo de Visualización de Multimedia con Streamlit"</span><span class="p">)</span>
 
 <span class="c1"># Mostrar una imagen</span>
-<span class="n">st</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&quot;Visualización de una imagen&quot;</span><span class="p">)</span>
-<span class="n">st</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="s2">&quot;ruta_de_la_imagen.jpg&quot;</span><span class="p">,</span> <span class="n">caption</span><span class="o">=</span><span class="s2">&quot;Imagen de ejemplo&quot;</span><span class="p">,</span> <span class="n">use_column_width</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">"Visualización de una imagen"</span><span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="s2">"ruta_de_la_imagen.jpg"</span><span class="p">,</span> <span class="n">caption</span><span class="o">=</span><span class="s2">"Imagen de ejemplo"</span><span class="p">,</span> <span class="n">use_column_width</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># Reproducir un archivo de audio</span>
-<span class="n">st</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&quot;Reproducción de audio&quot;</span><span class="p">)</span>
-<span class="n">st</span><span class="o">.</span><span class="n">audio</span><span class="p">(</span><span class="s2">&quot;ruta_del_audio.mp3&quot;</span><span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">"Reproducción de audio"</span><span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">audio</span><span class="p">(</span><span class="s2">"ruta_del_audio.mp3"</span><span class="p">)</span>
 
 <span class="c1"># Mostrar un vídeo</span>
-<span class="n">st</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&quot;Visualización de un vídeo&quot;</span><span class="p">)</span>
-<span class="n">st</span><span class="o">.</span><span class="n">video</span><span class="p">(</span><span class="s2">&quot;ruta_del_video.mp4&quot;</span><span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">"Visualización de un vídeo"</span><span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">video</span><span class="p">(</span><span class="s2">"ruta_del_video.mp4"</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -580,37 +580,37 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">st.select_slider()</span></code>: Control deslizante de selección. Permite seleccionar valores discretos de un control deslizante.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">st.slider()</span></code>: Control deslizante. Es un widget que permite seleccionar un valor numérico dentro de un rango.</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">streamlit</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">st</span>
 
-<span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Ejemplo de Widgets de Entrada en Streamlit&quot;</span><span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Ejemplo de Widgets de Entrada en Streamlit"</span><span class="p">)</span>
 
 <span class="c1"># Checkbox</span>
-<span class="k">if</span> <span class="n">st</span><span class="o">.</span><span class="n">checkbox</span><span class="p">(</span><span class="s2">&quot;Mostrar texto adicional&quot;</span><span class="p">):</span>
-    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;¡Has marcado la casilla!&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">st</span><span class="o">.</span><span class="n">checkbox</span><span class="p">(</span><span class="s2">"Mostrar texto adicional"</span><span class="p">):</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"¡Has marcado la casilla!"</span><span class="p">)</span>
 
 <span class="c1"># Botón</span>
-<span class="k">if</span> <span class="n">st</span><span class="o">.</span><span class="n">button</span><span class="p">(</span><span class="s2">&quot;Haz clic aquí&quot;</span><span class="p">):</span>
-    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;¡Has pulsado el botón!&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">st</span><span class="o">.</span><span class="n">button</span><span class="p">(</span><span class="s2">"Haz clic aquí"</span><span class="p">):</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"¡Has pulsado el botón!"</span><span class="p">)</span>
 
 <span class="c1"># Radio</span>
-<span class="n">opcion_radio</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">radio</span><span class="p">(</span><span class="s2">&quot;Selecciona una opción de radio:&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Opción 1&quot;</span><span class="p">,</span> <span class="s2">&quot;Opción 2&quot;</span><span class="p">,</span> <span class="s2">&quot;Opción 3&quot;</span><span class="p">])</span>
-<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Opción seleccionada: </span><span class="si">{</span><span class="n">opcion_radio</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">opcion_radio</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">radio</span><span class="p">(</span><span class="s2">"Selecciona una opción de radio:"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"Opción 1"</span><span class="p">,</span> <span class="s2">"Opción 2"</span><span class="p">,</span> <span class="s2">"Opción 3"</span><span class="p">])</span>
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Opción seleccionada: </span><span class="si">{</span><span class="n">opcion_radio</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="c1"># Selectbox</span>
-<span class="n">opcion_selectbox</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span><span class="s2">&quot;Selecciona una opción del cuadro desplegable:&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Opción A&quot;</span><span class="p">,</span> <span class="s2">&quot;Opción B&quot;</span><span class="p">,</span> <span class="s2">&quot;Opción C&quot;</span><span class="p">])</span>
-<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Opción seleccionada: </span><span class="si">{</span><span class="n">opcion_selectbox</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">opcion_selectbox</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span><span class="s2">"Selecciona una opción del cuadro desplegable:"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"Opción A"</span><span class="p">,</span> <span class="s2">"Opción B"</span><span class="p">,</span> <span class="s2">"Opción C"</span><span class="p">])</span>
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Opción seleccionada: </span><span class="si">{</span><span class="n">opcion_selectbox</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="c1"># Multiselect</span>
-<span class="n">opciones_multiselect</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">multiselect</span><span class="p">(</span><span class="s2">&quot;Selecciona varias opciones:&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Opción 1&quot;</span><span class="p">,</span> <span class="s2">&quot;Opción 2&quot;</span><span class="p">,</span> <span class="s2">&quot;Opción 3&quot;</span><span class="p">])</span>
-<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Opciones seleccionadas: </span><span class="si">{</span><span class="n">opciones_multiselect</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">opciones_multiselect</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">multiselect</span><span class="p">(</span><span class="s2">"Selecciona varias opciones:"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"Opción 1"</span><span class="p">,</span> <span class="s2">"Opción 2"</span><span class="p">,</span> <span class="s2">"Opción 3"</span><span class="p">])</span>
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Opciones seleccionadas: </span><span class="si">{</span><span class="n">opciones_multiselect</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="c1"># Select Slider</span>
-<span class="n">opcion_slider</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">select_slider</span><span class="p">(</span><span class="s2">&quot;Selecciona un nivel:&quot;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Bajo&quot;</span><span class="p">,</span> <span class="s2">&quot;Medio&quot;</span><span class="p">,</span> <span class="s2">&quot;Alto&quot;</span><span class="p">])</span>
-<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nivel seleccionado: </span><span class="si">{</span><span class="n">opcion_slider</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">opcion_slider</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">select_slider</span><span class="p">(</span><span class="s2">"Selecciona un nivel:"</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s2">"Bajo"</span><span class="p">,</span> <span class="s2">"Medio"</span><span class="p">,</span> <span class="s2">"Alto"</span><span class="p">])</span>
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Nivel seleccionado: </span><span class="si">{</span><span class="n">opcion_slider</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="c1"># Slider</span>
-<span class="n">valor_slider</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span><span class="s2">&quot;Selecciona un valor numérico:&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
-<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Valor seleccionado: </span><span class="si">{</span><span class="n">valor_slider</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">valor_slider</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span><span class="s2">"Selecciona un valor numérico:"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Valor seleccionado: </span><span class="si">{</span><span class="n">valor_slider</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><img alt="desp_9" src="_images/stream_14.png" /></p>

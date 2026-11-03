@@ -28,13 +28,13 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=8c6b312c" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=6c7211e7" />
   
@@ -52,7 +52,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -461,8 +461,8 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># importar librerias</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="c1"># Asignar la URL del archivo: url</span>
 <span class="n">url</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
@@ -535,7 +535,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Seleccionar solo las filas donde la condición es True</span>
-<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">20</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">'age'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">20</span>
 
 <span class="c1"># Mostrar los clientes menores de 20 años</span>
 <span class="n">dfm20</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
@@ -562,7 +562,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ordenar</span>
-<span class="n">new_dfm20</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;balance&#39;</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">new_dfm20</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">'balance'</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -571,22 +571,22 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definir una función para categorizar el balance</span>
-<span class="k">def</span> <span class="nf">categorizar_balance</span><span class="p">(</span><span class="n">balance</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">categorizar_balance</span><span class="p">(</span><span class="n">balance</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">balance</span> <span class="o">&lt;</span> <span class="mi">500</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s1">&#39;Bajo&#39;</span>
+        <span class="k">return</span> <span class="s1">'Bajo'</span>
     <span class="k">elif</span> <span class="mi">500</span> <span class="o">&lt;=</span> <span class="n">balance</span> <span class="o">&lt;</span> <span class="mi">1500</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s1">&#39;Medio&#39;</span>
+        <span class="k">return</span> <span class="s1">'Medio'</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s1">&#39;Alto&#39;</span>
+        <span class="k">return</span> <span class="s1">'Alto'</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Aplicar la función &#39;categorizar_balance&#39; a la columna &#39;balance&#39;</span>
-<span class="c1"># y crear la nueva columna &#39;balance_category&#39;</span>
-<span class="n">new_dfm20</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;balance_category&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Aplicar la función 'categorizar_balance' a la columna 'balance'</span>
+<span class="c1"># y crear la nueva columna 'balance_category'</span>
+<span class="n">new_dfm20</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">'balance_category'</span><span class="p">]</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
 
 <span class="c1"># Mostrar el DataFrame actualizado</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">new_dfm20</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
@@ -600,15 +600,15 @@ document.write(`
 <ol class="arabic simple">
 <li><p>Con una función que tiene implementada <code class="docutils literal notranslate"><span class="pre">python</span></code></p></li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 
-<span class="n">new_dfm20</span><span class="p">[</span><span class="s1">&#39;rounded_balance&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_dfm20</span><span class="p">[</span><span class="s1">&#39;balance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">)</span>
+<span class="n">new_dfm20</span><span class="p">[</span><span class="s1">'rounded_balance'</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_dfm20</span><span class="p">[</span><span class="s1">'balance'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">)</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
 <li><p>Con la función <code class="docutils literal notranslate"><span class="pre">lambda</span></code></p></li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_dfm20</span><span class="p">[</span><span class="s1">&#39;rounded_balance_to_100&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_dfm20</span><span class="p">[</span><span class="s1">&#39;balance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">100</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_dfm20</span><span class="p">[</span><span class="s1">'rounded_balance_to_100'</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_dfm20</span><span class="p">[</span><span class="s1">'balance'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">100</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -634,7 +634,7 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_dfm20</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;balance_por_age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_dfm20</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">'balance_por_age'</span><span class="p">]</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">new_dfm20</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -645,7 +645,7 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_dfm20</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;age_cat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_dfm20</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">'age_cat'</span><span class="p">]</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">new_dfm20</span><span class="o">.</span><span class="n">tail</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -668,7 +668,7 @@ document.write(`
 <span class="c1"># TU CODIGO</span>
 
 <span class="c1"># Resumen descriptivo de una sola variable numérica</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="c1"># TU CODIGO))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'age'</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="c1"># TU CODIGO))</span>
 </pre></div>
 </div>
 </div>
@@ -680,13 +680,13 @@ document.write(`
               
 <span class="c1"># Resumen descriptivo de varias variable numérica</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-    <span class="s1">&#39;Promedio&#39;</span><span class="p">:</span> <span class="c1"># TU CODIGO.mean(),</span>
-    <span class="s1">&#39;Desv. Estandar&#39;</span><span class="p">:</span> <span class="c1"># TU CODIGO.std(),</span>
-    <span class="s1">&#39;minimo&#39;</span><span class="p">:</span> <span class="c1"># TU CODIGO.min(),</span>
-    <span class="s1">&#39;maximo&#39;</span><span class="p">:</span> <span class="c1"># TU CODIGO.max(),</span>
-    <span class="s1">&#39;mediana&#39;</span><span class="p">:</span> <span class="c1"># TU CODIGO.median(),</span>
-    <span class="s1">&#39;Cuantil 1&#39;</span><span class="p">:</span> <span class="c1"># TU CODIGO.quantile(0.25),</span>
-    <span class="s1">&#39;Cuantil 3&#39;</span><span class="p">:</span> <span class="c1"># TU CODIGO.quantile(0.75)</span>
+    <span class="s1">'Promedio'</span><span class="p">:</span> <span class="c1"># TU CODIGO.mean(),</span>
+    <span class="s1">'Desv. Estandar'</span><span class="p">:</span> <span class="c1"># TU CODIGO.std(),</span>
+    <span class="s1">'minimo'</span><span class="p">:</span> <span class="c1"># TU CODIGO.min(),</span>
+    <span class="s1">'maximo'</span><span class="p">:</span> <span class="c1"># TU CODIGO.max(),</span>
+    <span class="s1">'mediana'</span><span class="p">:</span> <span class="c1"># TU CODIGO.median(),</span>
+    <span class="s1">'Cuantil 1'</span><span class="p">:</span> <span class="c1"># TU CODIGO.quantile(0.25),</span>
+    <span class="s1">'Cuantil 3'</span><span class="p">:</span> <span class="c1"># TU CODIGO.quantile(0.75)</span>
 <span class="p">})</span>
 
 <span class="c1"># Mostrar los resultados</span>
@@ -710,8 +710,8 @@ document.write(`
 
 <span class="c1"># Combinar los resultados en un solo DataFrame</span>
 <span class="n">resultado</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-    <span class="s1">&#39;Conteo&#39;</span><span class="p">:</span> <span class="n">conteo</span><span class="p">,</span>
-    <span class="s1">&#39;Proporción&#39;</span><span class="p">:</span> <span class="n">proporciones</span>
+    <span class="s1">'Conteo'</span><span class="p">:</span> <span class="n">conteo</span><span class="p">,</span>
+    <span class="s1">'Proporción'</span><span class="p">:</span> <span class="n">proporciones</span>
 <span class="p">})</span>
 
 <span class="c1"># imprimir</span>
@@ -732,8 +732,8 @@ document.write(`
 
 <span class="c1"># Combinar los resultados en un solo DataFrame</span>
 <span class="n">resultado</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-    <span class="s1">&#39;Conteo&#39;</span><span class="p">:</span> <span class="n">conteo</span><span class="p">,</span>
-    <span class="s1">&#39;Proporción&#39;</span><span class="p">:</span> <span class="n">proporciones</span>
+    <span class="s1">'Conteo'</span><span class="p">:</span> <span class="n">conteo</span><span class="p">,</span>
+    <span class="s1">'Proporción'</span><span class="p">:</span> <span class="n">proporciones</span>
 <span class="p">})</span>
 
 <span class="c1"># imprimir</span>
@@ -772,8 +772,8 @@ document.write(`
 
 <span class="c1"># Renombrar las columnas resultantes</span>
 <span class="n">var_num_cat</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;Edad_Promedio&#39;</span><span class="p">,</span> <span class="s1">&#39;Edad_Desviacion_Estandar&#39;</span><span class="p">,</span> <span class="s1">&#39;Edad_Minimo&#39;</span><span class="p">,</span> <span class="s1">&#39;Edad_Maximo&#39;</span><span class="p">,</span> <span class="s1">&#39;Edad_Mediana&#39;</span><span class="p">,</span> <span class="s1">&#39;Edad_Cuantil_1&#39;</span><span class="p">,</span> <span class="s1">&#39;Edad_Cuantil_3&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Balance_Promedio&#39;</span><span class="p">,</span> <span class="s1">&#39;Balance_Desviacion_Estandar&#39;</span><span class="p">,</span> <span class="s1">&#39;Balance_Minimo&#39;</span><span class="p">,</span> <span class="s1">&#39;Balance_Maximo&#39;</span><span class="p">,</span> <span class="s1">&#39;Balance_Mediana&#39;</span><span class="p">,</span> <span class="s1">&#39;Balance_Cuantil_1&#39;</span><span class="p">,</span> <span class="s1">&#39;Balance_Cuantil_3&#39;</span>
+    <span class="s1">'Edad_Promedio'</span><span class="p">,</span> <span class="s1">'Edad_Desviacion_Estandar'</span><span class="p">,</span> <span class="s1">'Edad_Minimo'</span><span class="p">,</span> <span class="s1">'Edad_Maximo'</span><span class="p">,</span> <span class="s1">'Edad_Mediana'</span><span class="p">,</span> <span class="s1">'Edad_Cuantil_1'</span><span class="p">,</span> <span class="s1">'Edad_Cuantil_3'</span><span class="p">,</span>
+    <span class="s1">'Balance_Promedio'</span><span class="p">,</span> <span class="s1">'Balance_Desviacion_Estandar'</span><span class="p">,</span> <span class="s1">'Balance_Minimo'</span><span class="p">,</span> <span class="s1">'Balance_Maximo'</span><span class="p">,</span> <span class="s1">'Balance_Mediana'</span><span class="p">,</span> <span class="s1">'Balance_Cuantil_1'</span><span class="p">,</span> <span class="s1">'Balance_Cuantil_3'</span>
 <span class="p">]</span>
 
 <span class="c1"># imprimir</span>
@@ -823,7 +823,7 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Establecer la columna &#39;job&#39; como índice</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Establecer la columna 'job' como índice</span>
 <span class="c1"># TU CODIGO</span>
 </pre></div>
 </div>
@@ -887,7 +887,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Renombrar una columna</span>
-<span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">:</span> <span class="s1">&#39;id&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'Unnamed: 0'</span><span class="p">:</span> <span class="s1">'id'</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -936,8 +936,8 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">"ignore"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -959,15 +959,15 @@ document.write(`
 <p>Una <strong>gráfica de densidad</strong> es una representación gráfica suave de la distribución de una variable continua. Se basa en la estimación de la función de densidad de probabilidad (KDE, por sus siglas en inglés), lo que permite visualizar la forma general de la distribución sin depender de intervalos rígidos como en los histogramas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="c1"># Gráfico de densidad</span>
 <span class="c1"># TU CODIGO</span>
 <span class="c1"># TU CODIGO</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Gráfica de densidad de precio del combustible (Seaborn)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Precio USD por litro&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Densidad&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Gráfica de densidad de precio del combustible (Seaborn)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Precio USD por litro'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Densidad'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -984,9 +984,9 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfico</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="c1"># TU CODIGO</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histograma con curva de densidad (Seaborn)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Precio USD por litro&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Densidad&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Histograma con curva de densidad (Seaborn)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Precio USD por litro'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Densidad'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -1004,10 +1004,10 @@ muestra los valores transformados en logaritmos de la variable del precio, y vem
 
 <span class="c1"># Gráfico</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">log_data</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgreen&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histograma con Curva de Densidad (Log Precios)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Log(Precio USD por litro)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Densidad&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">log_data</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'lightgreen'</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Histograma con Curva de Densidad (Log Precios)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Log(Precio USD por litro)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Densidad'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -1024,11 +1024,11 @@ muestra los valores transformados en logaritmos de la variable del precio, y vem
 <span class="c1"># TU CODIGO</span>
 
 <span class="c1"># Remover el nombre de la columna del eje X</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">])</span>  
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s1">''</span><span class="p">])</span>  
 
 <span class="c1"># Agregar título y etiquetas</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Gráfico de Cajas y Bigotes&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Temperatura (°F)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Gráfico de Cajas y Bigotes'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Temperatura (°F)'</span><span class="p">)</span>
 
 <span class="c1"># Mostrar el gráfico</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1042,11 +1042,11 @@ muestra los valores transformados en logaritmos de la variable del precio, y vem
 <span class="c1"># TU CODIGO</span>
 
 <span class="c1"># Remover el nombre de la columna del eje X</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="s1">''</span><span class="p">])</span>
 
 <span class="c1"># Agregar título y etiquetas</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Gráfico de Cajas y Bigotes&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Temperatura (°C)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Gráfico de Cajas y Bigotes'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Temperatura (°C)'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1073,9 +1073,9 @@ muestra los valores transformados en logaritmos de la variable del precio, y vem
 <span class="c1"># TU CODIGO</span>
 
 <span class="c1"># Agregar título y etiquetas si lo deseas</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Conteo de tipos de tienda&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tipo de tienda&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Conteo de tipos de tienda'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Tipo de tienda'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Frecuencia'</span><span class="p">)</span>
 
 <span class="c1"># Mostrar el gráfico</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1102,15 +1102,15 @@ muestra los valores transformados en logaritmos de la variable del precio, y vem
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Contar el tipo de festividad</span>
 <span class="n">conteo_festivo</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
-<span class="n">conteo_festivo</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Festivo&#39;</span><span class="p">,</span> <span class="s1">&#39;Conteo&#39;</span><span class="p">]</span>
+<span class="n">conteo_festivo</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Festivo'</span><span class="p">,</span> <span class="s1">'Conteo'</span><span class="p">]</span>
 
 <span class="c1"># Graficar el conteo de festividades en un gráfico de barras horizontal con Seaborn</span>
 <span class="c1"># TU CODIGO</span>
 
 <span class="c1"># Agregar título y etiquetas si lo deseas</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Conteo de festividades&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Conteo&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Festivo&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Conteo de festividades'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Conteo'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Festivo'</span><span class="p">)</span>
 
 <span class="c1"># Mostrar el gráfico</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1124,9 +1124,9 @@ muestra los valores transformados en logaritmos de la variable del precio, y vem
 <p>Aprenderemos a crear una tabla utilizando la función <code class="docutils literal notranslate"><span class="pre">pandas</span> <span class="pre">crosstab</span></code>. Utilizaremos una tabla para generar un gráfico de barras. A continuación, exploraremos un gráfico de barras generado con la biblioteca <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> y calcularemos la distribución del promedio de <code class="docutils literal notranslate"><span class="pre">weekly_sales</span></code> según el <code class="docutils literal notranslate"><span class="pre">store</span></code>. Para ello, vamos a realizar los siguientes pasos:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">median</span><span class="p">,</span> <span class="n">mean</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">median</span><span class="p">,</span> <span class="n">mean</span>
 
-<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span> <span class="o">=</span> <span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span> <span class="o">=</span> <span class="s2">"whitegrid"</span><span class="p">)</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="c1"># TU CODIGO);</span>
 </pre></div>
 </div>
@@ -1147,23 +1147,23 @@ muestra los valores transformados en logaritmos de la variable del precio, y vem
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">mean</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">mean</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
-<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">"whitegrid"</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;store&quot;</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;weekly_sales&quot;</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"store"</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">"weekly_sales"</span><span class="p">,</span>
     <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
     <span class="n">estimator</span><span class="o">=</span><span class="n">mean</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#8FD694&quot;</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"#8FD694"</span>
 <span class="p">)</span>
 
 <span class="c1"># Encuentra la tienda con mayores ventas promedio</span>
-<span class="n">mean_sales</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;store&quot;</span><span class="p">)[</span><span class="s2">&quot;weekly_sales&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">mean_sales</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"store"</span><span class="p">)[</span><span class="s2">"weekly_sales"</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="n">top_store</span> <span class="o">=</span> <span class="n">mean_sales</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
 <span class="n">top_value</span> <span class="o">=</span> <span class="n">mean_sales</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 <span class="n">x</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">mean_sales</span><span class="o">.</span><span class="n">index</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">top_store</span><span class="p">)</span>  <span class="c1"># posición de la barra en el eje x</span>
@@ -1171,17 +1171,17 @@ muestra los valores transformados en logaritmos de la variable del precio, y vem
 
 <span class="c1"># Anotación con nota visual</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
-    <span class="s1">&#39;Excelente desempeño máximas ventas promedio&#39;</span><span class="p">,</span>
+    <span class="s1">'Excelente desempeño máximas ventas promedio'</span><span class="p">,</span>
     <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span>
     <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">2000</span><span class="p">),</span>
-    <span class="n">bbox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">boxstyle</span><span class="o">=</span><span class="s1">&#39;round,pad=0.5&#39;</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s1">&#39;lightyellow&#39;</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;gold&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">),</span>
+    <span class="n">bbox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">boxstyle</span><span class="o">=</span><span class="s1">'round,pad=0.5'</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s1">'lightyellow'</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s1">'gold'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">),</span>
     <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-    <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+    <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s1">'-&gt;'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
 <span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Promedio de ventas semanales por tienda&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Tienda&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Weekly Sales&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Promedio de ventas semanales por tienda"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Tienda"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"Weekly Sales"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1196,8 +1196,8 @@ muestra los valores transformados en logaritmos de la variable del precio, y vem
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tipo</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
 
 <span class="c1"># Graficar el conteo de tipos de tienda en un diagrama circular</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">tipo</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">tipo</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%1.1f%%</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">startangle</span><span class="o">=</span><span class="mi">140</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Paired</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tipo</span><span class="p">))))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de tipos de tienda&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">tipo</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">tipo</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">autopct</span><span class="o">=</span><span class="s1">'</span><span class="si">%1.1f%%</span><span class="s1">'</span><span class="p">,</span> <span class="n">startangle</span><span class="o">=</span><span class="mi">140</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Paired</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tipo</span><span class="p">))))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Distribución de tipos de tienda'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1211,7 +1211,7 @@ muestra los valores transformados en logaritmos de la variable del precio, y vem
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convertir la columna date a formato de fecha</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span><span class="c1"># TU CODIGO</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'date'</span><span class="p">]</span> <span class="o">=</span><span class="c1"># TU CODIGO</span>
 
 <span class="c1"># Agrupar las ventas por fecha, sumando las ventas semanales en las fechas repetidas</span>
 <span class="n">df_grouped</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
@@ -1244,9 +1244,9 @@ muestra los valores transformados en logaritmos de la variable del precio, y vem
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
 
 <span class="c1"># Agregar título y etiquetas si lo deseas</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Ventas semanales agrupadas por fecha&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Fecha&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Ventas semanales&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Ventas semanales agrupadas por fecha'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Fecha'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Ventas semanales'</span><span class="p">)</span>
 
 <span class="c1"># Mostrar el gráfico</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1265,9 +1265,9 @@ muestra los valores transformados en logaritmos de la variable del precio, y vem
 <span class="c1"># TU CODIGO</span>
 
 <span class="c1"># Agregar título y etiquetas</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Relación entre ventas semanales y precio de la gasolina&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ventas semanales ($)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Precio de la gasolina (USD por litro)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Relación entre ventas semanales y precio de la gasolina'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Ventas semanales ($)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Precio de la gasolina (USD por litro)'</span><span class="p">)</span>
 
 <span class="c1"># Mostrar el gráfico</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1284,16 +1284,16 @@ muestra los valores transformados en logaritmos de la variable del precio, y vem
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear una superposición de histogramas de las ventas semanales según el tipo de tienda utilizando Seaborn</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>  <span class="c1"># Ajustar el tamaño del gráfico</span>
 
-<span class="c1"># Histograma para el tipo &#39;A&#39;</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="c1"># TU CODIGO, color=&#39;blue&#39;, label=&#39;A&#39;, kde=False, alpha=0.7)</span>
+<span class="c1"># Histograma para el tipo 'A'</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="c1"># TU CODIGO, color='blue', label='A', kde=False, alpha=0.7)</span>
 
-<span class="c1"># Histograma para el tipo &#39;B&#39;</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="c1"># TU CODIGO, color=&#39;red&#39;, label=&#39;B&#39;, kde=False, alpha=0.7)</span>
+<span class="c1"># Histograma para el tipo 'B'</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="c1"># TU CODIGO, color='red', label='B', kde=False, alpha=0.7)</span>
 
 <span class="c1"># Agregar título y etiquetas</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de las ventas semanales según el tipo&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ventas semanales ($)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Distribución de las ventas semanales según el tipo'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Ventas semanales ($)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Frecuencia'</span><span class="p">)</span>
 
 <span class="c1"># Mostrar la leyenda</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
@@ -1311,13 +1311,13 @@ muestra los valores transformados en logaritmos de la variable del precio, y vem
 <span class="n">u_a</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
 <span class="n">u_b</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
 
-<span class="c1"># Crear un diagrama de cajas y bigotes para &#39;height_cm&#39; vs &#39;sex&#39; usando pandas</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">boxplot</span><span class="p">([</span><span class="n">u_a</span><span class="p">,</span> <span class="n">u_b</span><span class="p">],</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">])</span>
+<span class="c1"># Crear un diagrama de cajas y bigotes para 'height_cm' vs 'sex' usando pandas</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">boxplot</span><span class="p">([</span><span class="n">u_a</span><span class="p">,</span> <span class="n">u_b</span><span class="p">],</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">'A'</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">])</span>
 
 <span class="c1"># Agregar título y etiquetas</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Diagrama de cajas y bigotes: tasa de desempleo según el tipo&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Sexo&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Altura (cm)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Diagrama de cajas y bigotes: tasa de desempleo según el tipo'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Sexo'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Altura (cm)'</span><span class="p">)</span>
 
 <span class="c1"># Mostrar el gráfico</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1327,15 +1327,15 @@ muestra los valores transformados en logaritmos de la variable del precio, y vem
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear un diagrama de cajas y bigotes para &#39;unemployment&#39; vs &#39;type&#39; usando Seaborn</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear un diagrama de cajas y bigotes para 'unemployment' vs 'type' usando Seaborn</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>  <span class="c1"># Ajustar el tamaño del gráfico</span>
 
 <span class="c1"># TU CODIGO</span>
 
 <span class="c1"># Agregar título y etiquetas</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Diagrama de cajas y bigotes: tasa de desempleo según el tipo&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tipo de tienda&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tasa de desempleo&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Diagrama de cajas y bigotes: tasa de desempleo según el tipo'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Tipo de tienda'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Tasa de desempleo'</span><span class="p">)</span>
 
 <span class="c1"># Mostrar el gráfico</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1348,15 +1348,15 @@ muestra los valores transformados en logaritmos de la variable del precio, y vem
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear un diagrama de violín para &#39;unemployment&#39; vs &#39;type&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear un diagrama de violín para 'unemployment' vs 'type'</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>  <span class="c1"># Tamaño del gráfico</span>
 
-<span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;unemployment&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">inner</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;pastel&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'type'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'unemployment'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">inner</span><span class="o">=</span><span class="s1">'box'</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">'pastel'</span><span class="p">)</span>
 
 <span class="c1"># Agregar título y etiquetas</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de la tasa de desempleo según el tipo de tienda&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tipo de tienda&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tasa de desempleo&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Distribución de la tasa de desempleo según el tipo de tienda'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Tipo de tienda'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Tasa de desempleo'</span><span class="p">)</span>
 
 <span class="c1"># Mostrar el gráfico</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1370,24 +1370,24 @@ muestra los valores transformados en logaritmos de la variable del precio, y vem
 <p>Realizaremos un diagrama de barras con dos variables categóricas</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convertimos &#39;is_holiday&#39; a categoría con valores &#39;Holiday&#39; y &#39;Non-Holiday&#39;</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;is_holiday&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convertimos 'is_holiday' a categoría con valores 'Holiday' y 'Non-Holiday'</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'is_holiday'</span><span class="p">]</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Contar la frecuencia de cada combinación de &#39;type&#39; y &#39;is_holiday&#39; y desapilamos</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Contar la frecuencia de cada combinación de 'type' y 'is_holiday' y desapilamos</span>
 <span class="n">grouped_data</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
 
 <span class="c1"># Crear el gráfico de barras sin apilar</span>
-<span class="n">grouped_data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">stacked</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">grouped_data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">'bar'</span><span class="p">,</span> <span class="n">stacked</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="c1"># Personalización del gráfico</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frecuencia de tipo en función de los dias feriados o no&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tipo&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Frecuencia de tipo en función de los dias feriados o no'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Tipo'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Frecuencia'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c1"># Mostrar el gráfico</span>
@@ -1399,23 +1399,23 @@ muestra los valores transformados en logaritmos de la variable del precio, y vem
 <p>Para exportar las gráficas en formato png. Usamos <code class="docutils literal notranslate"><span class="pre">savefig</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Contar la frecuencia de cada combinación de &#39;type&#39; y &#39;is_holiday&#39; y desapilamos</span>
-<span class="n">grouped_data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;is_holiday&#39;</span><span class="p">],</span> <span class="n">observed</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Contar la frecuencia de cada combinación de 'type' y 'is_holiday' y desapilamos</span>
+<span class="n">grouped_data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'type'</span><span class="p">,</span> <span class="s1">'is_holiday'</span><span class="p">],</span> <span class="n">observed</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
 
 <span class="c1"># Crear el gráfico de barras sin apilar</span>
-<span class="n">grouped_data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">stacked</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">grouped_data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">'bar'</span><span class="p">,</span> <span class="n">stacked</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="c1"># Personalización del gráfico</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frecuencia de tipo en función de los dias feriados o no&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tipo&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Frecuencia de tipo en función de los dias feriados o no'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Tipo'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Frecuencia'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c1"># exportar la figura</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;_image/grafica_1.png&#39;</span><span class="p">,</span><span class="n">transparent</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'_image/grafica_1.png'</span><span class="p">,</span><span class="n">transparent</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="c1"># exportar la figura con transparencia</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;_image/grafica_2.png&#39;</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'_image/grafica_2.png'</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1429,8 +1429,8 @@ muestra los valores transformados en logaritmos de la variable del precio, y vem
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
@@ -1440,11 +1440,11 @@ muestra los valores transformados en logaritmos de la variable del precio, y vem
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">"ignore"</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
 
 <span class="c1"># Establecer el estilo de los gráficos</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;ticks&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">"ticks"</span><span class="p">)</span>
 
 <span class="c1"># Crear el gráfico hexbin</span>
 <span class="c1"># TU CODIGO</span>
@@ -1464,8 +1464,8 @@ muestra los valores transformados en logaritmos de la variable del precio, y vem
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
@@ -1475,19 +1475,19 @@ muestra los valores transformados en logaritmos de la variable del precio, y vem
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">"ignore"</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
 
 <span class="c1"># Establecer el estilo de los gráficos</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">"white"</span><span class="p">)</span>
 
 <span class="c1"># Crear el gráfico de contorno con densidad del núcleo (KDE)</span>
 <span class="c1"># TU CODIGO</span>
 
 <span class="c1"># Añadir título y etiquetas descriptivas</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Relación entre ventas semanales y precio de la gasolina&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ventas semanales ($)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Precio de la gasolina (USD por litro)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Relación entre ventas semanales y precio de la gasolina'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Ventas semanales ($)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Precio de la gasolina (USD por litro)'</span><span class="p">)</span>
 
 <span class="c1"># Mostrar el gráfico</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1528,13 +1528,13 @@ muestra los valores transformados en logaritmos de la variable del precio, y vem
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">ydata_profiling</span> <span class="kn">import</span> <span class="n">ProfileReport</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ydata_profiling</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProfileReport</span>
 
-<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;C:/GitHub/Datos/datamanip/bank/bank-full.csv&#39;</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">'C:/GitHub/Datos/datamanip/bank/bank-full.csv'</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s1">';'</span><span class="p">)</span>
 
-<span class="n">profile</span> <span class="o">=</span> <span class="n">ProfileReport</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Informe de los datos&#39;</span><span class="p">,</span> <span class="n">explorative</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">profile</span> <span class="o">=</span> <span class="n">ProfileReport</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">'Informe de los datos'</span><span class="p">,</span> <span class="n">explorative</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 <span class="n">profile</span><span class="o">.</span><span class="n">to_notebook_iframe</span><span class="p">()</span>
 </pre></div>
 </div>

@@ -28,13 +28,13 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=8c6b312c" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=6c7211e7" />
   
@@ -52,7 +52,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -454,11 +454,11 @@ document.write(`
 <h2><strong>Tratamiento de datos faltantes y atípicos</strong><a class="headerlink" href="#tratamiento-de-datos-faltantes-y-atipicos" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="c1"># Cargar el archivo CSV proporcionado</span>
-<span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;_data/dataviz/ds_salaries.csv&#39;</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s1">'_data/dataviz/ds_salaries.csv'</span>
 <span class="n">df</span> <span class="o">=</span>  <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -472,7 +472,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 607 entries, 0 to 606
 Data columns (total 8 columns):
  #   Column                Non-Null Count  Dtype  
@@ -504,8 +504,8 @@ memory usage: 38.1+ KB
 
 <span class="c1"># Crear un DataFrame con el análisis de datos faltantes</span>
 <span class="n">missing_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-    <span class="s1">&#39;Valores Faltantes&#39;</span><span class="p">:</span> <span class="n">missing_values</span><span class="p">,</span>
-    <span class="s1">&#39;Porcentaje Faltante (%)&#39;</span><span class="p">:</span> <span class="n">missing_percentage</span>
+    <span class="s1">'Valores Faltantes'</span><span class="p">:</span> <span class="n">missing_values</span><span class="p">,</span>
+    <span class="s1">'Porcentaje Faltante (%)'</span><span class="p">:</span> <span class="n">missing_percentage</span>
 <span class="p">})</span>
 
 <span class="n">missing_data</span>
@@ -603,7 +603,7 @@ memory usage: 38.1+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 607 entries, 0 to 606
 Data columns (total 8 columns):
  #   Column                Non-Null Count  Dtype  
@@ -630,7 +630,7 @@ memory usage: 38.1+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class 'pandas.core.frame.DataFrame'&gt;
 Index: 578 entries, 0 to 606
 Data columns (total 8 columns):
  #   Column                Non-Null Count  Dtype  
@@ -659,8 +659,8 @@ memory usage: 40.6+ KB
 
 <span class="c1"># Crear un DataFrame con el análisis de datos faltantes</span>
 <span class="n">missing_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-    <span class="s1">&#39;Valores Faltantes&#39;</span><span class="p">:</span> <span class="n">missing_values</span><span class="p">,</span>
-    <span class="s1">&#39;Porcentaje Faltante (%)&#39;</span><span class="p">:</span> <span class="n">missing_percentage</span>
+    <span class="s1">'Valores Faltantes'</span><span class="p">:</span> <span class="n">missing_values</span><span class="p">,</span>
+    <span class="s1">'Porcentaje Faltante (%)'</span><span class="p">:</span> <span class="n">missing_percentage</span>
 <span class="p">})</span>
 
 <span class="n">missing_data</span>
@@ -754,7 +754,7 @@ memory usage: 40.6+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class 'pandas.core.frame.DataFrame'&gt;
 Index: 578 entries, 0 to 606
 Data columns (total 8 columns):
  #   Column                Non-Null Count  Dtype  
@@ -783,8 +783,8 @@ memory usage: 40.6+ KB
 <span class="n">missing_percentage</span> <span class="o">=</span> <span class="p">(</span><span class="n">missing_values</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_clean</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span>
 <span class="c1"># Crear un DataFrame con el análisis de datos faltantes</span>
 <span class="n">missing_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-    <span class="s1">&#39;Valores Faltantes&#39;</span><span class="p">:</span> <span class="n">missing_values</span><span class="p">,</span>
-    <span class="s1">&#39;Porcentaje Faltante (%)&#39;</span><span class="p">:</span> <span class="n">missing_percentage</span>
+    <span class="s1">'Valores Faltantes'</span><span class="p">:</span> <span class="n">missing_values</span><span class="p">,</span>
+    <span class="s1">'Porcentaje Faltante (%)'</span><span class="p">:</span> <span class="n">missing_percentage</span>
 <span class="p">})</span>
 
 <span class="n">missing_data</span>
@@ -866,7 +866,7 @@ memory usage: 40.6+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 607 entries, 0 to 606
 Data columns (total 8 columns):
  #   Column                Non-Null Count  Dtype  
@@ -887,28 +887,28 @@ memory usage: 38.1+ KB
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="c1"># Contar frecuencias en cada DataFrame</span>
-<span class="n">original_counts</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Experience&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-<span class="n">clean_counts</span> <span class="o">=</span> <span class="n">df_clean</span><span class="p">[</span><span class="s1">&#39;Experience&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">original_counts</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'Experience'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">clean_counts</span> <span class="o">=</span> <span class="n">df_clean</span><span class="p">[</span><span class="s1">'Experience'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 
 <span class="c1"># Unir ambos conteos en un solo DataFrame</span>
 <span class="n">comparison</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">original_counts</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;Original&quot;</span><span class="p">),</span> <span class="n">clean_counts</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;Limpio&quot;</span><span class="p">)],</span>
+    <span class="p">[</span><span class="n">original_counts</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">"Original"</span><span class="p">),</span> <span class="n">clean_counts</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">"Limpio"</span><span class="p">)],</span>
     <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
 <span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c1"># Crear gráfico de barras agrupado</span>
-<span class="n">comparison</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">comparison</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">'bar'</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Comparación de valores en &#39;Experience&#39; antes y después de eliminar NaN&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Nivel de experiencia&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Frecuencia&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Comparación de valores en 'Experience' antes y después de eliminar NaN"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Nivel de experiencia"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"Frecuencia"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Dataset&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">"Dataset"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">'y'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">'--'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -920,19 +920,19 @@ memory usage: 38.1+ KB
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">chi2_contingency</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">chi2_contingency</span>
 
 <span class="c1"># Alinear categorías para evitar errores</span>
-<span class="n">comparison_table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">original_counts</span><span class="p">,</span> <span class="n">clean_counts</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">keys</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Original&#39;</span><span class="p">,</span> <span class="s1">&#39;Limpio&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">comparison_table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">original_counts</span><span class="p">,</span> <span class="n">clean_counts</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">keys</span><span class="o">=</span><span class="p">[</span><span class="s1">'Original'</span><span class="p">,</span> <span class="s1">'Limpio'</span><span class="p">])</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c1"># Prueba chi-cuadrado</span>
 <span class="n">chi2</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">dof</span><span class="p">,</span> <span class="n">expected</span> <span class="o">=</span> <span class="n">chi2_contingency</span><span class="p">(</span><span class="n">comparison_table</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
 
 <span class="c1"># Mostrar resultados</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Prueba Chi-cuadrado de homogeneidad&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Estadístico chi²:&quot;</span><span class="p">,</span> <span class="n">chi2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Grados de libertad:&quot;</span><span class="p">,</span> <span class="n">dof</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valor p:&quot;</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Prueba Chi-cuadrado de homogeneidad"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Estadístico chi²:"</span><span class="p">,</span> <span class="n">chi2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Grados de libertad:"</span><span class="p">,</span> <span class="n">dof</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Valor p:"</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -947,23 +947,23 @@ Valor p: 0.9950192620159025
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 
 <span class="c1"># Ignorar warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">"ignore"</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
 
 <span class="c1"># Crear gráfico de densidad</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Remote_Working_Ratio&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Original&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">df_clean</span><span class="p">[</span><span class="s1">&#39;Remote_Working_Ratio&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Limpio&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'Remote_Working_Ratio'</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Original'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">df_clean</span><span class="p">[</span><span class="s1">'Remote_Working_Ratio'</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Limpio'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">'--'</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Distribución de &#39;Remote_Working_Ratio&#39; antes y después de eliminar NaN&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Remote Working Ratio&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Densidad&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Dataset&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Distribución de 'Remote_Working_Ratio' antes y después de eliminar NaN"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Remote Working Ratio"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"Densidad"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">"Dataset"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -976,22 +976,22 @@ Valor p: 0.9950192620159025
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># PRUEBA KS </span>
-<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">ks_2samp</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">ks_2samp</span>
 
-<span class="n">stat</span><span class="p">,</span> <span class="n">p_value</span> <span class="o">=</span> <span class="n">ks_2samp</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Remote_Working_Ratio&#39;</span><span class="p">],</span> <span class="n">df_clean</span><span class="p">[</span><span class="s1">&#39;Remote_Working_Ratio&#39;</span><span class="p">])</span>
+<span class="n">stat</span><span class="p">,</span> <span class="n">p_value</span> <span class="o">=</span> <span class="n">ks_2samp</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'Remote_Working_Ratio'</span><span class="p">],</span> <span class="n">df_clean</span><span class="p">[</span><span class="s1">'Remote_Working_Ratio'</span><span class="p">])</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Prueba Kolmogorov-Smirnov (KS) para &#39;Remote_Working_Ratio&#39; &quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Estadístico KS:&quot;</span><span class="p">,</span> <span class="n">stat</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valor p:&quot;</span><span class="p">,</span> <span class="n">p_value</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Prueba Kolmogorov-Smirnov (KS) para 'Remote_Working_Ratio' "</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Estadístico KS:"</span><span class="p">,</span> <span class="n">stat</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Valor p:"</span><span class="p">,</span> <span class="n">p_value</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">p_value</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✅ Hay diferencias significativas entre las dos distribuciones.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"✅ Hay diferencias significativas entre las dos distribuciones."</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;❌ No hay evidencia significativa de que las distribuciones sean diferentes.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"❌ No hay evidencia significativa de que las distribuciones sean diferentes."</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Prueba Kolmogorov-Smirnov (KS) para &#39;Remote_Working_Ratio&#39; 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Prueba Kolmogorov-Smirnov (KS) para 'Remote_Working_Ratio' 
 Estadístico KS: 0.0018469641951169458
 Valor p: 1.0
 ❌ No hay evidencia significativa de que las distribuciones sean diferentes.
@@ -1011,7 +1011,7 @@ Valor p: 1.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 607 entries, 0 to 606
 Data columns (total 8 columns):
  #   Column                Non-Null Count  Dtype  
@@ -1044,7 +1044,7 @@ memory usage: 38.1+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 607 entries, 0 to 606
 Data columns (total 8 columns):
  #   Column                Non-Null Count  Dtype  
@@ -1071,7 +1071,7 @@ memory usage: 38.1+ KB
 <span class="c1"># Iterar sobre cada columna del DataFrame</span>
 <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df_3</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
     <span class="c1"># Comprobar si la columna es de tipo objeto (categórica)</span>
-    <span class="k">if</span>  <span class="n">df_3</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">dtypes</span><span class="o">==</span><span class="s1">&#39;object&#39;</span><span class="p">:</span>
+    <span class="k">if</span>  <span class="n">df_3</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">dtypes</span><span class="o">==</span><span class="s1">'object'</span><span class="p">:</span>
         <span class="c1"># Imputar los valores faltantes con la moda (categoría más frecuente)</span>
         <span class="n">df_3</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df_3</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
@@ -1089,7 +1089,7 @@ memory usage: 38.1+ KB
 <span class="c1"># Iterar sobre cada columna de df_4</span>
 <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df_4</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
     <span class="c1"># Comprobar si la columna es de tipo objeto (categórica)</span>
-    <span class="k">if</span> <span class="n">df_4</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">dtypes</span> <span class="o">==</span> <span class="s1">&#39;object&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">df_4</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">dtypes</span> <span class="o">==</span> <span class="s1">'object'</span><span class="p">:</span>
         <span class="c1"># Obtener las categorías no faltantes de la columna</span>
         <span class="n">categorias_no_nan</span> <span class="o">=</span>  <span class="n">df_4</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
         <span class="c1"># Reemplazar valores faltantes con una categoría seleccionada aleatoriamente</span>
@@ -1136,7 +1136,7 @@ memory usage: 38.1+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 607 entries, 0 to 606
 Data columns (total 8 columns):
  #   Column                Non-Null Count  Dtype  
@@ -1159,16 +1159,16 @@ memory usage: 38.1+ KB
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Libreria</span>
-<span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">SimpleImputer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.impute</span><span class="w"> </span><span class="kn">import</span> <span class="n">SimpleImputer</span>
 
 <span class="c1"># Copia del dataset</span>
 <span class="n">df_8</span> <span class="o">=</span> <span class="n">df_4</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
 <span class="c1"># Crear la instancia para imputar con la media</span>
-<span class="n">imputer</span> <span class="o">=</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+<span class="n">imputer</span> <span class="o">=</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s1">'mean'</span><span class="p">)</span>
 
 <span class="c1"># Imputar los valores faltantes</span>
-<span class="n">df_8</span><span class="p">[[</span><span class="s1">&#39;Working_Year&#39;</span><span class="p">,</span><span class="s1">&#39;Salary_USD&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">imputer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df_8</span><span class="p">[[</span><span class="s1">&#39;Working_Year&#39;</span><span class="p">,</span><span class="s1">&#39;Salary_USD&#39;</span><span class="p">]])</span>
+<span class="n">df_8</span><span class="p">[[</span><span class="s1">'Working_Year'</span><span class="p">,</span><span class="s1">'Salary_USD'</span><span class="p">]]</span> <span class="o">=</span> <span class="n">imputer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df_8</span><span class="p">[[</span><span class="s1">'Working_Year'</span><span class="p">,</span><span class="s1">'Salary_USD'</span><span class="p">]])</span>
 </pre></div>
 </div>
 </div>
@@ -1180,7 +1180,7 @@ memory usage: 38.1+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 607 entries, 0 to 606
 Data columns (total 8 columns):
  #   Column                Non-Null Count  Dtype  
@@ -1211,7 +1211,7 @@ memory usage: 38.1+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 607 entries, 0 to 606
 Data columns (total 8 columns):
  #   Column                Non-Null Count  Dtype  
@@ -1235,12 +1235,12 @@ memory usage: 38.1+ KB
 <p>Vamos a crear un gráfico de caja para comprobar si nuestro conjunto de datos contiene valores atípicos. Vamos a utilizar el conjunto de datos <code class="docutils literal notranslate"><span class="pre">gym.csv</span></code>, que contiene información sobre los clientes de un determinado gimnasio.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">'ignore'</span><span class="p">)</span>
 
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
 </pre></div>
 </div>
 </div>
@@ -1259,12 +1259,12 @@ memory usage: 38.1+ KB
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importar plotly</span>
-<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
-<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
-<span class="kn">import</span> <span class="nn">plotly.io</span> <span class="k">as</span> <span class="nn">pio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">plotly.graph_objects</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">go</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">plotly.io</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pio</span>
 
 <span class="c1"># Configurar el renderizador para notebook o Jupyter Book</span>
-<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s1">&#39;notebook&#39;</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s1">'notebook'</span>
 </pre></div>
 </div>
 </div>
@@ -1286,7 +1286,7 @@ memory usage: 38.1+ KB
 <span class="n">outliers</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="c1"># Función para detectar valores atípicos utilizando el rango intercuartil (IQR)</span>
-<span class="k">def</span> <span class="nf">detect_outliers_iqr</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">detect_outliers_iqr</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
     <span class="n">data</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>  <span class="c1"># Ordenar los datos de menor a mayor</span>
     <span class="n">q1</span> <span class="o">=</span> <span class="c1"># TU CODIGO AQUI  # Calcular el primer cuartil (Q1)</span>
     <span class="n">q3</span> <span class="o">=</span> <span class="c1"># TU CODIGO AQUI  # Calcular el tercer cuartil (Q3)</span>
@@ -1302,11 +1302,11 @@ memory usage: 38.1+ KB
             <span class="n">outliers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># Añadir el valor atípico a la lista</span>
     <span class="k">return</span> <span class="n">outliers</span>  <span class="c1"># Retornar la lista de valores atípicos</span>
 
-<span class="c1"># Aplicar la función a la columna &#39;weight&#39; del DataFrame gym</span>
+<span class="c1"># Aplicar la función a la columna 'weight' del DataFrame gym</span>
 <span class="n">sample_outliers</span> <span class="o">=</span> <span class="n">detect_outliers_iqr</span><span class="p">(</span><span class="n">gym</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span>
 
 <span class="c1"># Imprimir los valores atípicos detectados utilizando el método del rango intercuartil (IQR)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valores atípicos detectados por el método del IQR:&quot;</span><span class="p">,</span> <span class="n">sample_outliers</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Valores atípicos detectados por el método del IQR:"</span><span class="p">,</span> <span class="n">sample_outliers</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1342,17 +1342,17 @@ memory usage: 38.1+ KB
 
 <span class="c1"># Configurar fondo blanco y rejilla gris</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
-    <span class="n">paper_bgcolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>  <span class="c1"># Fondo del gráfico</span>
-    <span class="n">plot_bgcolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>   <span class="c1"># Fondo de la parte de trazado</span>
-    <span class="c1"># xaxis=dict(showgrid=True, gridcolor=&#39;lightgrey&#39;),  # Rejilla gris en el eje x</span>
-    <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">showgrid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">gridcolor</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">)</span>   <span class="c1"># Rejilla gris en el eje y</span>
+    <span class="n">paper_bgcolor</span><span class="o">=</span><span class="s1">'white'</span><span class="p">,</span>  <span class="c1"># Fondo del gráfico</span>
+    <span class="n">plot_bgcolor</span><span class="o">=</span><span class="s1">'white'</span><span class="p">,</span>   <span class="c1"># Fondo de la parte de trazado</span>
+    <span class="c1"># xaxis=dict(showgrid=True, gridcolor='lightgrey'),  # Rejilla gris en el eje x</span>
+    <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">showgrid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">gridcolor</span><span class="o">=</span><span class="s1">'lightgrey'</span><span class="p">)</span>   <span class="c1"># Rejilla gris en el eje y</span>
 <span class="p">)</span>
 
 <span class="c1"># Actualizar el color de la caja a rojo y agregar línea del promedio más gruesa</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span>
-    <span class="n">box</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">),</span>     <span class="c1"># Color de la caja (rojo)</span>
+    <span class="n">box</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">line_color</span><span class="o">=</span><span class="s1">'red'</span><span class="p">),</span>     <span class="c1"># Color de la caja (rojo)</span>
     <span class="n">meanline_visible</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>          <span class="c1"># Mostrar línea del promedio</span>
-    <span class="n">meanline</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkgreen&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># Línea del promedio más gruesa y en rojo</span>
+    <span class="n">meanline</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">'darkgreen'</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># Línea del promedio más gruesa y en rojo</span>
 <span class="p">)</span>
 
 <span class="c1"># Mostrar el gráfico</span>
@@ -1368,8 +1368,8 @@ memory usage: 38.1+ KB
 <h2><strong>Aplicación de <code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code></strong><a class="headerlink" href="#aplicacion-de-iterativeimputer" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </pre></div>
 </div>
 </div>
@@ -1377,7 +1377,7 @@ memory usage: 38.1+ KB
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="c1"># TU CODIGO AQUI</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">na_values</span><span class="o">=</span><span class="s1">&#39;?&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">na_values</span><span class="o">=</span><span class="s1">'?'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1406,8 +1406,8 @@ memory usage: 38.1+ KB
 
 <span class="c1"># Crear un DataFrame con el análisis de datos faltantes</span>
 <span class="n">missing_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-    <span class="s1">&#39;Valores Faltantes&#39;</span><span class="p">:</span> <span class="n">missing_values</span><span class="p">,</span>
-    <span class="s1">&#39;Porcentaje Faltante (%)&#39;</span><span class="p">:</span> <span class="n">missing_percentage</span>
+    <span class="s1">'Valores Faltantes'</span><span class="p">:</span> <span class="n">missing_values</span><span class="p">,</span>
+    <span class="s1">'Porcentaje Faltante (%)'</span><span class="p">:</span> <span class="n">missing_percentage</span>
 <span class="p">})</span>
 
 <span class="n">missing_data</span>
@@ -1417,10 +1417,10 @@ memory usage: 38.1+ KB
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">isnan</span>
-<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">read_csv</span>
-<span class="kn">from</span> <span class="nn">sklearn.experimental</span> <span class="kn">import</span> <span class="n">enable_iterative_imputer</span>
-<span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">IterativeImputer</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">isnan</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_csv</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.experimental</span><span class="w"> </span><span class="kn">import</span> <span class="n">enable_iterative_imputer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.impute</span><span class="w"> </span><span class="kn">import</span> <span class="n">IterativeImputer</span>
 </pre></div>
 </div>
 </div>
@@ -1431,7 +1431,7 @@ memory usage: 38.1+ KB
 <span class="n">ix</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">23</span><span class="p">]</span>
 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="c1"># TU CODIGO AQUI</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Missing: </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="nb">sum</span><span class="p">(</span><span class="n">isnan</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Missing: </span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="nb">sum</span><span class="p">(</span><span class="n">isnan</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()))</span>
 </pre></div>
 </div>
 </div>
@@ -1442,7 +1442,7 @@ memory usage: 38.1+ KB
 <span class="c1"># TU CODIGO AQUI</span>
 <span class="n">Xtrans</span> <span class="o">=</span> <span class="c1"># TU CODIGO AQUI</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Missing: </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="nb">sum</span><span class="p">(</span><span class="n">isnan</span><span class="p">(</span><span class="n">Xtrans</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Missing: </span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="nb">sum</span><span class="p">(</span><span class="n">isnan</span><span class="p">(</span><span class="n">Xtrans</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()))</span>
 </pre></div>
 </div>
 </div>
@@ -1452,15 +1452,15 @@ memory usage: 38.1+ KB
 <h2><strong><code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code> y evaluación de modelos</strong><a class="headerlink" href="#iterativeimputer-y-evaluacion-de-modelos" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">mean</span>
-<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">std</span>
-<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">read_csv</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.experimental</span> <span class="kn">import</span> <span class="n">enable_iterative_imputer</span>
-<span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">IterativeImputer</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">RepeatedStratifiedKFold</span>
-<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">mean</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">std</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_csv</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.experimental</span><span class="w"> </span><span class="kn">import</span> <span class="n">enable_iterative_imputer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.impute</span><span class="w"> </span><span class="kn">import</span> <span class="n">IterativeImputer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">cross_val_score</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">RepeatedStratifiedKFold</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pipeline</span>
 </pre></div>
 </div>
 </div>
@@ -1469,7 +1469,7 @@ memory usage: 38.1+ KB
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="c1"># TU CODIGO AQUI</span>
 <span class="n">imputer</span> <span class="o">=</span> <span class="c1"># TU CODIGO AQUI</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="n">imputer</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="n">model</span><span class="p">)])</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[(</span><span class="s1">'i'</span><span class="p">,</span> <span class="n">imputer</span><span class="p">),</span> <span class="p">(</span><span class="s1">'m'</span><span class="p">,</span> <span class="n">model</span><span class="p">)])</span>
 </pre></div>
 </div>
 </div>
@@ -1478,8 +1478,8 @@ memory usage: 38.1+ KB
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cv</span> <span class="o">=</span> <span class="n">RepeatedStratifiedKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">n_repeats</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="n">scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">cv</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">error_score</span><span class="o">=</span><span class="s1">&#39;raise&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mean Accuracy: </span><span class="si">%.3f</span><span class="s1"> (</span><span class="si">%.3f</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">),</span> <span class="n">std</span><span class="p">(</span><span class="n">scores</span><span class="p">)))</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">'accuracy'</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">cv</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">error_score</span><span class="o">=</span><span class="s1">'raise'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Mean Accuracy: </span><span class="si">%.3f</span><span class="s1"> (</span><span class="si">%.3f</span><span class="s1">)'</span> <span class="o">%</span> <span class="p">(</span><span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">),</span> <span class="n">std</span><span class="p">(</span><span class="n">scores</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
@@ -1489,16 +1489,16 @@ memory usage: 38.1+ KB
 <h2><strong><code class="docutils literal notranslate"><span class="pre">IterativeImputer</span></code> y diferentes órdenes de imputación</strong><a class="headerlink" href="#iterativeimputer-y-diferentes-ordenes-de-imputacion" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">mean</span>
-<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">std</span>
-<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">read_csv</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.experimental</span> <span class="kn">import</span> <span class="n">enable_iterative_imputer</span>
-<span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">IterativeImputer</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">RepeatedStratifiedKFold</span>
-<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">mean</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">std</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_csv</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.experimental</span><span class="w"> </span><span class="kn">import</span> <span class="n">enable_iterative_imputer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.impute</span><span class="w"> </span><span class="kn">import</span> <span class="n">IterativeImputer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">cross_val_score</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">RepeatedStratifiedKFold</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pipeline</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span>
 </pre></div>
 </div>
 </div>
@@ -1508,35 +1508,35 @@ memory usage: 38.1+ KB
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
 <span class="n">strategies</span> <span class="o">=</span> <span class="c1"># TU CODIGO AQUI</span>
 <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">strategies</span><span class="p">:</span>
- <span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="n">IterativeImputer</span><span class="p">(</span><span class="n">imputation_order</span><span class="o">=</span><span class="n">s</span><span class="p">)),</span> <span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="n">RandomForestClassifier</span><span class="p">())])</span>
+ <span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[(</span><span class="s1">'i'</span><span class="p">,</span> <span class="n">IterativeImputer</span><span class="p">(</span><span class="n">imputation_order</span><span class="o">=</span><span class="n">s</span><span class="p">)),</span> <span class="p">(</span><span class="s1">'m'</span><span class="p">,</span> <span class="n">RandomForestClassifier</span><span class="p">())])</span>
  <span class="n">cv</span> <span class="o">=</span> <span class="n">RepeatedStratifiedKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">n_repeats</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
- <span class="n">scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">cv</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+ <span class="n">scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">'accuracy'</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">cv</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
  <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
- <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&gt;</span><span class="si">%s</span><span class="s1"> </span><span class="si">%.3f</span><span class="s1"> (</span><span class="si">%.3f</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">),</span> <span class="n">std</span><span class="p">(</span><span class="n">scores</span><span class="p">)))</span>
+ <span class="nb">print</span><span class="p">(</span><span class="s1">'&gt;</span><span class="si">%s</span><span class="s1"> </span><span class="si">%.3f</span><span class="s1"> (</span><span class="si">%.3f</span><span class="s1">)'</span> <span class="o">%</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">),</span> <span class="n">std</span><span class="p">(</span><span class="n">scores</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
-<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">plotly.graph_objects</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">go</span>
 
 <span class="c1"># results: lista de arrays/listas (scores por estrategia)</span>
 <span class="c1"># strategies: lista de nombres (mismo orden que results)</span>
 
 <span class="n">df_plot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-    <span class="s2">&quot;strategy&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">scores</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">strategies</span><span class="p">,</span> <span class="n">results</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">],</span>
-    <span class="s2">&quot;accuracy&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">score</span> <span class="k">for</span> <span class="n">scores</span> <span class="ow">in</span> <span class="n">results</span> <span class="k">for</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">]</span>
+    <span class="s2">"strategy"</span><span class="p">:</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">scores</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">strategies</span><span class="p">,</span> <span class="n">results</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">],</span>
+    <span class="s2">"accuracy"</span><span class="p">:</span> <span class="p">[</span><span class="n">score</span> <span class="k">for</span> <span class="n">scores</span> <span class="ow">in</span> <span class="n">results</span> <span class="k">for</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">]</span>
 <span class="p">})</span>
 
 <span class="c1"># Boxplot (con puntos)</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">box</span><span class="p">(</span>
     <span class="c1"># TU CODIGO AQUI,</span>
-    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;strategy&quot;</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;accuracy&quot;</span><span class="p">,</span>
-    <span class="n">points</span><span class="o">=</span><span class="s2">&quot;all&quot;</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"strategy"</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">"accuracy"</span><span class="p">,</span>
+    <span class="n">points</span><span class="o">=</span><span class="s2">"all"</span>
 <span class="p">)</span>
 
 <span class="c1"># Media por estrategia como MARCADOR (no línea)</span>
@@ -1544,17 +1544,17 @@ memory usage: 38.1+ KB
 
 <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span>
     <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
-        <span class="n">x</span><span class="o">=</span><span class="n">means</span><span class="p">[</span><span class="s2">&quot;strategy&quot;</span><span class="p">],</span>
-        <span class="n">y</span><span class="o">=</span><span class="n">means</span><span class="p">[</span><span class="s2">&quot;accuracy&quot;</span><span class="p">],</span>
-        <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;markers&quot;</span><span class="p">,</span>
-        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Media&quot;</span><span class="p">,</span>
-        <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">symbol</span><span class="o">=</span><span class="s2">&quot;diamond&quot;</span><span class="p">)</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">means</span><span class="p">[</span><span class="s2">"strategy"</span><span class="p">],</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">means</span><span class="p">[</span><span class="s2">"accuracy"</span><span class="p">],</span>
+        <span class="n">mode</span><span class="o">=</span><span class="s2">"markers"</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">"Media"</span><span class="p">,</span>
+        <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">symbol</span><span class="o">=</span><span class="s2">"diamond"</span><span class="p">)</span>
     <span class="p">)</span>
 <span class="p">)</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
-    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">&quot;Estrategia de imputación&quot;</span><span class="p">,</span>
-    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;Accuracy&quot;</span><span class="p">,</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">"Estrategia de imputación"</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">"Accuracy"</span><span class="p">,</span>
     <span class="n">xaxis_tickangle</span><span class="o">=</span><span class="mi">45</span>
 <span class="p">)</span>
 
@@ -1578,8 +1578,8 @@ memory usage: 38.1+ KB
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </pre></div>
 </div>
 </div>
@@ -1621,7 +1621,7 @@ memory usage: 38.1+ KB
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gm</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="c1"># TU CODIGO AQUI</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gm</span><span class="p">[</span><span class="s1">'Year'</span><span class="p">]</span><span class="o">.</span><span class="c1"># TU CODIGO AQUI</span>
 </pre></div>
 </div>
 </div>
@@ -1642,12 +1642,12 @@ memory usage: 38.1+ KB
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fusionamos el DataFrame &#39;co2&#39; con el DataFrame &#39;df_gm&#39; utilizando &#39;country&#39; y &#39;Country&#39; como claves</span>
-<span class="c1"># La fusión es interna (&#39;inner join&#39;) para mantener solo las filas comunes a ambos DataFrames</span>
-<span class="n">df_w_regions</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">co2</span><span class="p">,</span> <span class="n">df_gm</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;country&#39;</span><span class="p">,</span><span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fusionamos el DataFrame 'co2' con el DataFrame 'df_gm' utilizando 'country' y 'Country' como claves</span>
+<span class="c1"># La fusión es interna ('inner join') para mantener solo las filas comunes a ambos DataFrames</span>
+<span class="n">df_w_regions</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">co2</span><span class="p">,</span> <span class="n">df_gm</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">'country'</span><span class="p">,</span><span class="n">right_on</span><span class="o">=</span><span class="s1">'Country'</span><span class="p">,</span><span class="n">how</span><span class="o">=</span><span class="s1">'inner'</span><span class="p">)</span>
 
-<span class="c1"># Eliminamos la columna duplicada &#39;Country&#39; ya que &#39;country&#39; contiene la misma información</span>
-<span class="n">df_w_regions</span> <span class="o">=</span> <span class="n">df_w_regions</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">)</span>
+<span class="c1"># Eliminamos la columna duplicada 'Country' ya que 'country' contiene la misma información</span>
+<span class="n">df_w_regions</span> <span class="o">=</span> <span class="n">df_w_regions</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">'Country'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">'columns'</span><span class="p">)</span>
 
 <span class="c1"># Mostramos las primeras 5 filas del DataFrame resultante para verificar la fusión</span>
 <span class="n">df_w_regions</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -1660,14 +1660,14 @@ memory usage: 38.1+ KB
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Aplicamos la función pd.melt() al DataFrame &#39;df_w_regions&#39;</span>
-<span class="c1"># &#39;id_vars&#39; indica las columnas que queremos mantener como identificadoras (en este caso, &#39;country&#39; y &#39;region&#39;)</span>
-<span class="c1"># El resto de las columnas (años) se transforman en una sola columna &#39;variable&#39; con sus respectivos valores en otra columna &#39;value&#39;</span>
-<span class="n">new_co2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">df_w_regions</span><span class="p">,</span> <span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">,</span><span class="s1">&#39;region&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Aplicamos la función pd.melt() al DataFrame 'df_w_regions'</span>
+<span class="c1"># 'id_vars' indica las columnas que queremos mantener como identificadoras (en este caso, 'country' y 'region')</span>
+<span class="c1"># El resto de las columnas (años) se transforman en una sola columna 'variable' con sus respectivos valores en otra columna 'value'</span>
+<span class="n">new_co2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">df_w_regions</span><span class="p">,</span> <span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s1">'country'</span><span class="p">,</span><span class="s1">'region'</span><span class="p">])</span>
 
 <span class="c1"># Renombramos las columnas del DataFrame resultante para mayor claridad</span>
-<span class="c1"># &#39;variable&#39; ahora se llamará &#39;year&#39; para representar los años, y &#39;value&#39; se renombra a &#39;co2&#39; para las emisiones de CO2</span>
-<span class="n">new_co2</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;co2&#39;</span><span class="p">]</span>
+<span class="c1"># 'variable' ahora se llamará 'year' para representar los años, y 'value' se renombra a 'co2' para las emisiones de CO2</span>
+<span class="n">new_co2</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'country'</span><span class="p">,</span> <span class="s1">'region'</span><span class="p">,</span> <span class="s1">'year'</span><span class="p">,</span> <span class="s1">'co2'</span><span class="p">]</span>
 
 <span class="c1"># muestra las 5 primeras</span>
 <span class="n">new_co2</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
@@ -1680,15 +1680,15 @@ memory usage: 38.1+ KB
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filtramos el DataFrame &#39;new_co2&#39; para mantener solo los registros donde el valor de &#39;year&#39; es mayor a 1963</span>
-<span class="c1"># Convertimos los valores de la columna &#39;year&#39; al tipo int64 para asegurar que los años sean tratados como enteros</span>
-<span class="c1"># Luego, ordenamos el DataFrame resultante por las columnas &#39;country&#39; y &#39;year&#39;</span>
-<span class="n">df_co2</span> <span class="o">=</span> <span class="n">new_co2</span><span class="p">[</span><span class="n">new_co2</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int64&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1963</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filtramos el DataFrame 'new_co2' para mantener solo los registros donde el valor de 'year' es mayor a 1963</span>
+<span class="c1"># Convertimos los valores de la columna 'year' al tipo int64 para asegurar que los años sean tratados como enteros</span>
+<span class="c1"># Luego, ordenamos el DataFrame resultante por las columnas 'country' y 'year'</span>
+<span class="n">df_co2</span> <span class="o">=</span> <span class="n">new_co2</span><span class="p">[</span><span class="n">new_co2</span><span class="p">[</span><span class="s1">'year'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'int64'</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1963</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'country'</span><span class="p">,</span> <span class="s1">'year'</span><span class="p">])</span>
 
-<span class="c1"># Convertimos nuevamente la columna &#39;year&#39; al tipo int64 para asegurarnos de que los valores tengan el formato adecuado</span>
-<span class="n">df_co2</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="c1"># TU CODIGO AQUI</span>
+<span class="c1"># Convertimos nuevamente la columna 'year' al tipo int64 para asegurarnos de que los valores tengan el formato adecuado</span>
+<span class="n">df_co2</span><span class="p">[</span><span class="s1">'year'</span><span class="p">]</span> <span class="o">=</span> <span class="c1"># TU CODIGO AQUI</span>
 
-<span class="c1"># Mostramos las primeras 5 filas del DataFrame &#39;df_co2&#39; para verificar que todo se ha realizado correctamente</span>
+<span class="c1"># Mostramos las primeras 5 filas del DataFrame 'df_co2' para verificar que todo se ha realizado correctamente</span>
 <span class="n">df_co2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1699,15 +1699,15 @@ memory usage: 38.1+ KB
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Seleccionamos las columnas &#39;Country&#39;, &#39;Year&#39; y &#39;gdp&#39; del DataFrame &#39;gm&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Seleccionamos las columnas 'Country', 'Year' y 'gdp' del DataFrame 'gm'</span>
 <span class="c1"># Estas columnas contienen la información del país, año y PIB (gdp)</span>
 <span class="n">df_gdp</span> <span class="o">=</span> <span class="c1"># TU CODIGO AQUI</span>
 
 <span class="c1"># Renombramos las columnas para mantener consistencia en el formato</span>
-<span class="c1"># Cambiamos &#39;Country&#39; a &#39;country&#39; y &#39;Year&#39; a &#39;year&#39; para alinearlas con el formato del DataFrame &#39;df_co2&#39;</span>
-<span class="n">df_gdp</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">,</span><span class="s1">&#39;year&#39;</span><span class="p">,</span><span class="s1">&#39;gdp&#39;</span><span class="p">]</span>
+<span class="c1"># Cambiamos 'Country' a 'country' y 'Year' a 'year' para alinearlas con el formato del DataFrame 'df_co2'</span>
+<span class="n">df_gdp</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'country'</span><span class="p">,</span><span class="s1">'year'</span><span class="p">,</span><span class="s1">'gdp'</span><span class="p">]</span>
 
-<span class="c1"># Mostramos las primeras 5 filas del DataFrame &#39;df_gdp&#39; para verificar que los nombres de columnas y los datos son correctos</span>
+<span class="c1"># Mostramos las primeras 5 filas del DataFrame 'df_gdp' para verificar que los nombres de columnas y los datos son correctos</span>
 <span class="n">df_gdp</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1735,16 +1735,16 @@ memory usage: 38.1+ KB
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Combinamos los DataFrames &#39;df_co2&#39; y &#39;df_gdp&#39; utilizando un &#39;merge&#39; en las columnas &#39;country&#39; y &#39;year&#39;</span>
-<span class="c1"># Se utiliza &#39;how=left&#39; para hacer un left join, lo que asegura que se mantengan todos los registros de &#39;df_co2&#39;</span>
-<span class="c1"># y solo se añadan los datos de &#39;gdp&#39; donde haya coincidencias en país y año</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Combinamos los DataFrames 'df_co2' y 'df_gdp' utilizando un 'merge' en las columnas 'country' y 'year'</span>
+<span class="c1"># Se utiliza 'how=left' para hacer un left join, lo que asegura que se mantengan todos los registros de 'df_co2'</span>
+<span class="c1"># y solo se añadan los datos de 'gdp' donde haya coincidencias en país y año</span>
 <span class="n">data</span> <span class="o">=</span> <span class="c1"># TU CODIGO AQUI</span>
 
-<span class="c1"># Eliminamos las filas que contienen valores NaN en cualquier columna utilizando &#39;dropna()&#39;</span>
+<span class="c1"># Eliminamos las filas que contienen valores NaN en cualquier columna utilizando 'dropna()'</span>
 <span class="c1"># Esto es necesario para asegurarnos de que trabajamos solo con datos completos</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
 
-<span class="c1"># Mostramos las primeras 5 filas del DataFrame &#39;data&#39; para verificar que la combinación y la limpieza se realizaron correctamente</span>
+<span class="c1"># Mostramos las primeras 5 filas del DataFrame 'data' para verificar que la combinación y la limpieza se realizaron correctamente</span>
 <span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1762,18 +1762,18 @@ memory usage: 38.1+ KB
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convertimos la columna &#39;co2&#39; del DataFrame &#39;data&#39; en un array de NumPy</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convertimos la columna 'co2' del DataFrame 'data' en un array de NumPy</span>
 <span class="c1"># Esto facilita la manipulación y el cálculo de correlaciones entre los valores</span>
-<span class="n">np_co2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;co2&#39;</span><span class="p">])</span>
+<span class="n">np_co2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'co2'</span><span class="p">])</span>
 
-<span class="c1"># Convertimos la columna &#39;gdp&#39; del DataFrame &#39;data&#39; en un array de NumPy</span>
+<span class="c1"># Convertimos la columna 'gdp' del DataFrame 'data' en un array de NumPy</span>
 <span class="c1"># Este paso es similar al anterior para preparar los datos para el análisis</span>
-<span class="n">np_gdp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;gdp&#39;</span><span class="p">])</span>
+<span class="n">np_gdp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'gdp'</span><span class="p">])</span>
 
-<span class="c1"># Calculamos el coeficiente de correlación entre los arrays &#39;np_co2&#39; y &#39;np_gdp&#39;</span>
-<span class="c1"># Utilizamos la función &#39;corrcoef()&#39; de NumPy, que devuelve una matriz de correlación</span>
-<span class="c1"># El valor en la posición [0, 1] o [1, 0] será el coeficiente de correlación entre &#39;co2&#39; y &#39;gdp&#39;</span>
-<span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;co2&#39;</span><span class="p">]),</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;gdp&#39;</span><span class="p">]))</span>
+<span class="c1"># Calculamos el coeficiente de correlación entre los arrays 'np_co2' y 'np_gdp'</span>
+<span class="c1"># Utilizamos la función 'corrcoef()' de NumPy, que devuelve una matriz de correlación</span>
+<span class="c1"># El valor en la posición [0, 1] o [1, 0] será el coeficiente de correlación entre 'co2' y 'gdp'</span>
+<span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'co2'</span><span class="p">]),</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'gdp'</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
@@ -1784,23 +1784,23 @@ memory usage: 38.1+ KB
 <h3><strong>Creación del gráfico estático con visualización interactiva</strong><a class="headerlink" href="#creacion-del-grafico-estatico-con-visualizacion-interactiva" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importamos la función &#39;curdoc&#39; que maneja el documento gráfico actual en Bokeh</span>
-<span class="kn">from</span> <span class="nn">bokeh.io</span> <span class="kn">import</span> <span class="n">curdoc</span><span class="p">,</span> <span class="n">output_notebook</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importamos la función 'curdoc' que maneja el documento gráfico actual en Bokeh</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">curdoc</span><span class="p">,</span> <span class="n">output_notebook</span>
 
 <span class="c1"># Importamos las herramientas y métodos de Bokeh para crear interactividad</span>
-<span class="kn">from</span> <span class="nn">bokeh.models</span> <span class="kn">import</span> <span class="n">HoverTool</span><span class="p">,</span> <span class="n">ColumnDataSource</span><span class="p">,</span> <span class="n">CategoricalColorMapper</span><span class="p">,</span> <span class="n">Slider</span><span class="p">,</span> <span class="n">CustomJS</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">HoverTool</span><span class="p">,</span> <span class="n">ColumnDataSource</span><span class="p">,</span> <span class="n">CategoricalColorMapper</span><span class="p">,</span> <span class="n">Slider</span><span class="p">,</span> <span class="n">CustomJS</span>
 
-<span class="c1"># Importamos la paleta de colores &#39;Spectral6&#39; que usaremos para colorear las regiones</span>
-<span class="kn">from</span> <span class="nn">bokeh.palettes</span> <span class="kn">import</span> <span class="n">Spectral6</span>
+<span class="c1"># Importamos la paleta de colores 'Spectral6' que usaremos para colorear las regiones</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.palettes</span><span class="w"> </span><span class="kn">import</span> <span class="n">Spectral6</span>
 
-<span class="c1"># Importamos &#39;widgetbox&#39; para agrupar herramientas, y &#39;row&#39; para organizar objetos visuales en filas</span>
-<span class="kn">from</span> <span class="nn">bokeh.layouts</span> <span class="kn">import</span> <span class="n">row</span><span class="p">,</span> <span class="n">column</span>
+<span class="c1"># Importamos 'widgetbox' para agrupar herramientas, y 'row' para organizar objetos visuales en filas</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">row</span><span class="p">,</span> <span class="n">column</span>
 
-<span class="c1"># Importamos la clase &#39;Figure&#39; para crear gráficos en Bokeh</span>
-<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">show</span><span class="p">,</span> <span class="n">output_notebook</span><span class="p">,</span> <span class="n">output_file</span>
+<span class="c1"># Importamos la clase 'Figure' para crear gráficos en Bokeh</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">show</span><span class="p">,</span> <span class="n">output_notebook</span><span class="p">,</span> <span class="n">output_file</span>
 
-<span class="c1"># Importamos &#39;interact&#39; para permitir la interactividad en el Jupyter notebook</span>
-<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span>
+<span class="c1"># Importamos 'interact' para permitir la interactividad en el Jupyter notebook</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">interact</span>
 </pre></div>
 </div>
 </div>
@@ -2146,10 +2146,10 @@ function(Bokeh) {
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creamos una lista de regiones únicas a partir de la columna &#39;region&#39; del DataFrame &#39;data&#39;</span>
-<span class="n">regions_list</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;region&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creamos una lista de regiones únicas a partir de la columna 'region' del DataFrame 'data'</span>
+<span class="n">regions_list</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">'region'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 
-<span class="c1"># Usamos &#39;CategoricalColorMapper&#39; para asignar un color de la paleta &#39;Spectral6&#39; a cada región</span>
+<span class="c1"># Usamos 'CategoricalColorMapper' para asignar un color de la paleta 'Spectral6' a cada región</span>
 <span class="n">color_mapper</span> <span class="o">=</span> <span class="n">CategoricalColorMapper</span><span class="p">(</span><span class="n">factors</span><span class="o">=</span><span class="n">regions_list</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="n">Spectral6</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2162,11 +2162,11 @@ function(Bokeh) {
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear el ColumnDataSource inicial con datos del primer año disponible</span>
 <span class="n">source_init</span> <span class="o">=</span> <span class="n">ColumnDataSource</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span>
-    <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">gdp</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="nb">min</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">year</span><span class="p">)],</span>        <span class="c1"># Eje X: PIB del año mínimo</span>
-    <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">co2</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="nb">min</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">year</span><span class="p">)],</span>       <span class="c1"># Eje Y: emisiones de CO₂ del año mínimo</span>
-    <span class="s1">&#39;country&#39;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">country</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="nb">min</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">year</span><span class="p">)],</span>  <span class="c1"># País correspondiente</span>
-    <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">region</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="nb">min</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">year</span><span class="p">)],</span>    <span class="c1"># Región correspondiente</span>
-    <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">year</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="nb">min</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">year</span><span class="p">)]</span>         <span class="c1"># Año (mínimo en el dataset)</span>
+    <span class="s1">'x'</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">gdp</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="nb">min</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">year</span><span class="p">)],</span>        <span class="c1"># Eje X: PIB del año mínimo</span>
+    <span class="s1">'y'</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">co2</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="nb">min</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">year</span><span class="p">)],</span>       <span class="c1"># Eje Y: emisiones de CO₂ del año mínimo</span>
+    <span class="s1">'country'</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">country</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="nb">min</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">year</span><span class="p">)],</span>  <span class="c1"># País correspondiente</span>
+    <span class="s1">'region'</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">region</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="nb">min</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">year</span><span class="p">)],</span>    <span class="c1"># Región correspondiente</span>
+    <span class="s1">'year'</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">year</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="nb">min</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">year</span><span class="p">)]</span>         <span class="c1"># Año (mínimo en el dataset)</span>
 <span class="p">})</span>
 </pre></div>
 </div>
@@ -2174,7 +2174,7 @@ function(Bokeh) {
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">source_last</span> <span class="o">=</span> <span class="n">ColumnDataSource</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">gdp</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">co2</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">year</span><span class="p">})</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">source_last</span> <span class="o">=</span> <span class="n">ColumnDataSource</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">'x'</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">gdp</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">co2</span><span class="p">,</span> <span class="s1">'year'</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">year</span><span class="p">})</span>
 </pre></div>
 </div>
 </div>
@@ -2190,7 +2190,7 @@ function(Bokeh) {
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;CO2 Emissions vs GDP in 1964&#39;</span><span class="p">,</span> <span class="n">y_axis_type</span><span class="o">=</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'CO2 Emissions vs GDP in 1964'</span><span class="p">,</span> <span class="n">y_axis_type</span><span class="o">=</span><span class="s1">'log'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2200,11 +2200,11 @@ function(Bokeh) {
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'x'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'y'</span><span class="p">,</span> 
             <span class="n">fill_alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> 
             <span class="n">source</span><span class="o">=</span><span class="n">source_init</span><span class="p">,</span> 
-            <span class="n">legend_label</span><span class="o">=</span><span class="s1">&#39;region&#39;</span><span class="p">,</span> 
-            <span class="n">color</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="s1">&#39;region&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">color_mapper</span><span class="p">),</span>
+            <span class="n">legend_label</span><span class="o">=</span><span class="s1">'region'</span><span class="p">,</span> 
+            <span class="n">color</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="s1">'region'</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">color_mapper</span><span class="p">),</span>
             <span class="n">size</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2233,9 +2233,9 @@ function(Bokeh) {
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="o">.</span><span class="n">legend</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="s1">&#39;bottom_right&#39;</span>
-<span class="n">plot</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">axis_label</span> <span class="o">=</span> <span class="s1">&#39;Income Per Person&#39;</span>
-<span class="n">plot</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">axis_label</span> <span class="o">=</span> <span class="s1">&#39;CO2 Emissions (tons per person)&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="o">.</span><span class="n">legend</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="s1">'bottom_right'</span>
+<span class="n">plot</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">axis_label</span> <span class="o">=</span> <span class="s1">'Income Per Person'</span>
+<span class="n">plot</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">axis_label</span> <span class="o">=</span> <span class="s1">'CO2 Emissions (tons per person)'</span>
 </pre></div>
 </div>
 </div>
@@ -2252,7 +2252,7 @@ function(Bokeh) {
 <h3><strong>Añadiendo la herramienta Hover</strong><a class="headerlink" href="#anadiendo-la-herramienta-hover" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hover</span> <span class="o">=</span> <span class="n">HoverTool</span><span class="p">(</span><span class="n">tooltips</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span><span class="s1">&#39;@country&#39;</span><span class="p">),(</span><span class="s1">&#39;GDP&#39;</span><span class="p">,</span><span class="s1">&#39;@x&#39;</span><span class="p">),(</span><span class="s1">&#39;CO2&#39;</span><span class="p">,</span><span class="s1">&#39;@y&#39;</span><span class="p">)])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hover</span> <span class="o">=</span> <span class="n">HoverTool</span><span class="p">(</span><span class="n">tooltips</span><span class="o">=</span><span class="p">[(</span><span class="s1">'Country'</span><span class="p">,</span><span class="s1">'@country'</span><span class="p">),(</span><span class="s1">'GDP'</span><span class="p">,</span><span class="s1">'@x'</span><span class="p">),(</span><span class="s1">'CO2'</span><span class="p">,</span><span class="s1">'@y'</span><span class="p">)])</span>
 <span class="n">plot</span><span class="o">.</span><span class="n">add_tools</span><span class="p">(</span><span class="n">hover</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2273,7 +2273,7 @@ function(Bokeh) {
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output_file</span><span class="p">(</span><span class="s1">&#39;iframe_figures/co2_emissions.html&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output_file</span><span class="p">(</span><span class="s1">'iframe_figures/co2_emissions.html'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2285,7 +2285,7 @@ function(Bokeh) {
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">callback</span> <span class="o">=</span> <span class="n">CustomJS</span><span class="p">(</span>
     <span class="n">args</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">source_last</span><span class="o">=</span><span class="n">source_last</span><span class="p">,</span> <span class="n">source_init</span><span class="o">=</span><span class="n">source_init</span><span class="p">),</span> 
-    <span class="n">code</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
+    <span class="n">code</span><span class="o">=</span><span class="s2">"""</span>
 <span class="s2">    // Acceso a los datos del source inicial (el que se muestra en la gráfica)</span>
 <span class="s2">    var data_init = source_init.data;</span>
 
@@ -2293,7 +2293,7 @@ function(Bokeh) {
 <span class="s2">    var yr = cb_obj.value;</span>
 
 <span class="s2">    // Obtener todos los años del source completo</span>
-<span class="s2">    var year = source_last.data[&#39;year&#39;];</span>
+<span class="s2">    var year = source_last.data['year'];</span>
 
 <span class="s2">    // Crear arrays vacíos para los nuevos valores</span>
 <span class="s2">    var x_new = [];</span>
@@ -2303,18 +2303,18 @@ function(Bokeh) {
 <span class="s2">    for(var i = 0; i &lt; year.length; i++) {</span>
 <span class="s2">        // Si el año coincide con el seleccionado, guardar los datos</span>
 <span class="s2">        if(year[i] == yr) {</span>
-<span class="s2">            x_new.push(source_last.data[&#39;x&#39;][i]);</span>
-<span class="s2">            y_new.push(source_last.data[&#39;y&#39;][i]);</span>
+<span class="s2">            x_new.push(source_last.data['x'][i]);</span>
+<span class="s2">            y_new.push(source_last.data['y'][i]);</span>
 <span class="s2">        }</span>
 <span class="s2">    }</span>
 
 <span class="s2">    // Actualizar la fuente inicial con los valores filtrados</span>
-<span class="s2">    data_init[&#39;x&#39;] = x_new;</span>
-<span class="s2">    data_init[&#39;y&#39;] = y_new;</span>
+<span class="s2">    data_init['x'] = x_new;</span>
+<span class="s2">    data_init['y'] = y_new;</span>
 
 <span class="s2">    // Notificar a Bokeh que los datos cambiaron → refrescar gráfica</span>
 <span class="s2">    source_init.change.emit();</span>
-<span class="s2">    &quot;&quot;&quot;</span>
+<span class="s2">    """</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -2329,11 +2329,11 @@ function(Bokeh) {
     <span class="n">end</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">year</span><span class="p">),</span>     <span class="c1"># Año final (máximo del dataset)</span>
     <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>                 <span class="c1"># Avance de 1 en 1 año</span>
     <span class="n">value</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">year</span><span class="p">),</span>   <span class="c1"># Valor inicial del deslizador</span>
-    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span>            <span class="c1"># Título que aparece en el control</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">'Year'</span>            <span class="c1"># Título que aparece en el control</span>
 <span class="p">)</span>
 
 <span class="c1"># Conectar el deslizador con la función de actualización (callback)</span>
-<span class="n">slider</span><span class="o">.</span><span class="n">js_on_change</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">,</span><span class="n">callback</span><span class="p">)</span>
+<span class="n">slider</span><span class="o">.</span><span class="n">js_on_change</span><span class="p">(</span><span class="s1">'value'</span><span class="p">,</span><span class="n">callback</span><span class="p">)</span>
 
 <span class="c1"># Organizar el deslizador y el gráfico en una misma columna</span>
 <span class="n">layout</span> <span class="o">=</span> <span class="n">column</span><span class="p">(</span><span class="n">slider</span><span class="p">,</span> <span class="n">plot</span><span class="p">)</span>
@@ -2360,7 +2360,7 @@ function(Bokeh) {
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">altair</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">alt</span>
 </pre></div>
 </div>
 </div>
@@ -2370,10 +2370,10 @@ function(Bokeh) {
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
 <span class="n">filename</span> <span class="o">=</span> <span class="c1"># TU CODIGO</span>
-<span class="n">hpi_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">hpi_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2391,10 +2391,10 @@ function(Bokeh) {
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">hpi_df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;# TU CODIGO&#39;</span><span class="p">,</span>  <span class="c1"># Asigna la variable cuantitativa &#39;Wellbeing (0-10)&#39; al eje x.</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;# TU CODIGO&#39;</span><span class="p">,</span>  <span class="c1"># Asigna la variable cuantitativa &#39;Happy Planet Index&#39; al eje y.</span>
-    <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;# TU CODIGO&#39;</span><span class="p">,</span>  <span class="c1"># Colorea los puntos de datos según la variable categórica &#39;Region&#39;.</span>
-    <span class="n">tooltip</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;Region&#39;</span><span class="p">,</span> <span class="s1">&#39;Wellbeing (0-10)&#39;</span><span class="p">,</span> <span class="s1">&#39;Happy Planet Index&#39;</span><span class="p">,</span> <span class="s1">&#39;Life Expectancy (years)&#39;</span><span class="p">]</span>  <span class="c1"># Muestra información adicional al pasar el cursor sobre los puntos.</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="s1">'# TU CODIGO'</span><span class="p">,</span>  <span class="c1"># Asigna la variable cuantitativa 'Wellbeing (0-10)' al eje x.</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="s1">'# TU CODIGO'</span><span class="p">,</span>  <span class="c1"># Asigna la variable cuantitativa 'Happy Planet Index' al eje y.</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="s1">'# TU CODIGO'</span><span class="p">,</span>  <span class="c1"># Colorea los puntos de datos según la variable categórica 'Region'.</span>
+    <span class="n">tooltip</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Country'</span><span class="p">,</span> <span class="s1">'Region'</span><span class="p">,</span> <span class="s1">'Wellbeing (0-10)'</span><span class="p">,</span> <span class="s1">'Happy Planet Index'</span><span class="p">,</span> <span class="s1">'Life Expectancy (years)'</span><span class="p">]</span>  <span class="c1"># Muestra información adicional al pasar el cursor sobre los puntos.</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -2408,15 +2408,15 @@ function(Bokeh) {
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">input_dropdown</span> <span class="o">=</span> <span class="c1"># TU CODIGO  # Crea un menú desplegable con las regiones únicas del DataFrame.</span>
-<span class="n">selected_points</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_single</span><span class="p">(</span><span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Region&#39;</span><span class="p">],</span> <span class="n">bind</span> <span class="o">=</span> <span class="n">input_dropdown</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Select&#39;</span><span class="p">)</span>  <span class="c1"># Define una selección simple vinculada al menú desplegable por la variable &#39;Region&#39;.</span>
+<span class="n">selected_points</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_single</span><span class="p">(</span><span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Region'</span><span class="p">],</span> <span class="n">bind</span> <span class="o">=</span> <span class="n">input_dropdown</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">'Select'</span><span class="p">)</span>  <span class="c1"># Define una selección simple vinculada al menú desplegable por la variable 'Region'.</span>
 <span class="n">color</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">selected_points</span><span class="p">,</span>  <span class="c1"># Establece la condición para el color basado en la selección.</span>
-                      <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;Region:N&#39;</span><span class="p">),</span>  <span class="c1"># Si está seleccionada, se usa el color de &#39;Region&#39;.</span>
-                      <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s1">&#39;lightgray&#39;</span><span class="p">))</span>  <span class="c1"># Si no está seleccionada, los puntos se muestran en gris.</span>
+                      <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">'Region:N'</span><span class="p">),</span>  <span class="c1"># Si está seleccionada, se usa el color de 'Region'.</span>
+                      <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s1">'lightgray'</span><span class="p">))</span>  <span class="c1"># Si no está seleccionada, los puntos se muestran en gris.</span>
 <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">hpi_df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Wellbeing (0-10):Q&#39;</span><span class="p">,</span>  <span class="c1"># Asigna &#39;Wellbeing (0-10)&#39; al eje x.</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;Happy Planet Index:Q&#39;</span><span class="p">,</span>  <span class="c1"># Asigna &#39;Happy Planet Index&#39; al eje y.</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="s1">'Wellbeing (0-10):Q'</span><span class="p">,</span>  <span class="c1"># Asigna 'Wellbeing (0-10)' al eje x.</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="s1">'Happy Planet Index:Q'</span><span class="p">,</span>  <span class="c1"># Asigna 'Happy Planet Index' al eje y.</span>
     <span class="n">color</span> <span class="o">=</span> <span class="n">color</span><span class="p">,</span>  <span class="c1"># Aplica la condición de color basada en la selección.</span>
-    <span class="n">tooltip</span> <span class="o">=</span> <span class="s1">&#39;Region:N&#39;</span>  <span class="c1"># Muestra la región en el tooltip al pasar el cursor sobre un punto.</span>
+    <span class="n">tooltip</span> <span class="o">=</span> <span class="s1">'Region:N'</span>  <span class="c1"># Muestra la región en el tooltip al pasar el cursor sobre un punto.</span>
 <span class="p">)</span><span class="o">.</span><span class="n">add_selection</span><span class="p">(</span>
     <span class="n">selected_points</span>  <span class="c1"># Añade la selección al gráfico.</span>
 <span class="p">)</span>
@@ -2432,17 +2432,17 @@ function(Bokeh) {
 
 <span class="c1"># Gráfico de barras con el promedio del Happy Planet Index y la selección interactiva</span>
 <span class="n">bar_chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">hpi_df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Region:N&#39;</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;mean(Happy Planet Index):Q&#39;</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">highlight</span><span class="p">,</span> <span class="s1">&#39;Region:N&#39;</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s1">&#39;lightgray&#39;</span><span class="p">))</span>  <span class="c1"># Colorea las barras seleccionadas</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">'Region:N'</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">'mean(Happy Planet Index):Q'</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">highlight</span><span class="p">,</span> <span class="s1">'Region:N'</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s1">'lightgray'</span><span class="p">))</span>  <span class="c1"># Colorea las barras seleccionadas</span>
 <span class="p">)</span><span class="o">.</span><span class="n">add_selection</span><span class="p">(</span>
     <span class="n">highlight</span>  <span class="c1"># Añadir selección interactiva</span>
 <span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>  <span class="c1"># Ajusta el ancho del gráfico</span>
 
 <span class="c1"># Añadir barras de error con intervalo de confianza (ci) en color negro</span>
-<span class="n">error_bars</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">hpi_df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_errorbar</span><span class="p">(</span><span class="n">extent</span><span class="o">=</span><span class="s1">&#39;ci&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Region:N&#39;</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;mean(Happy Planet Index):Q&#39;</span><span class="p">)</span>
+<span class="n">error_bars</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">hpi_df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_errorbar</span><span class="p">(</span><span class="n">extent</span><span class="o">=</span><span class="s1">'ci'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">'Region:N'</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">'mean(Happy Planet Index):Q'</span><span class="p">)</span>
 <span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>  <span class="c1"># Ajusta el ancho de las barras de error</span>
 
 <span class="c1"># Combinar ambos gráficos</span>
@@ -2458,9 +2458,9 @@ function(Bokeh) {
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">hpi_df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_rect</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;Happy Planet Index:Q&#39;</span><span class="p">,</span> <span class="nb">bin</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>  <span class="c1"># Eje X con &#39;Happy Planet Index&#39;, agrupado en intervalos (binning)</span>
-    <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;Wellbeing (0-10):Q&#39;</span><span class="p">,</span> <span class="nb">bin</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>  <span class="c1"># Eje Y con &#39;Wellbeing&#39;, también agrupado en intervalos</span>
-    <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;count()&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;greenblue&#39;</span><span class="p">),</span> <span class="n">legend</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Total Countries&#39;</span><span class="p">))</span>  <span class="c1"># Colorea los rectángulos según el recuento de países, con un esquema de color verde-azul</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">'Happy Planet Index:Q'</span><span class="p">,</span> <span class="nb">bin</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>  <span class="c1"># Eje X con 'Happy Planet Index', agrupado en intervalos (binning)</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">'Wellbeing (0-10):Q'</span><span class="p">,</span> <span class="nb">bin</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>  <span class="c1"># Eje Y con 'Wellbeing', también agrupado en intervalos</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">'count()'</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s1">'greenblue'</span><span class="p">),</span> <span class="n">legend</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Total Countries'</span><span class="p">))</span>  <span class="c1"># Colorea los rectángulos según el recuento de países, con un esquema de color verde-azul</span>
 <span class="p">)</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>  <span class="c1"># Habilita la interactividad (zoom y desplazamiento)</span>
 </pre></div>
 </div>
@@ -2475,12 +2475,12 @@ function(Bokeh) {
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">selected_region</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;single&quot;</span><span class="p">,</span> <span class="n">encodings</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">])</span>  <span class="c1"># Definir una selección interactiva en el eje x (región)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">selected_region</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">"single"</span><span class="p">,</span> <span class="n">encodings</span><span class="o">=</span><span class="p">[</span><span class="s1">'x'</span><span class="p">])</span>  <span class="c1"># Definir una selección interactiva en el eje x (región)</span>
 
 <span class="n">heatmap</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">hpi_df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_rect</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;Wellbeing (0-10):Q&#39;</span><span class="p">,</span> <span class="nb">bin</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>  <span class="c1"># Eje X con &#39;Wellbeing&#39; agrupado en intervalos (binned)</span>
-    <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;Life Expectancy (years):Q&#39;</span><span class="p">,</span> <span class="nb">bin</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>  <span class="c1"># Eje Y con &#39;Life Expectancy&#39; también agrupado en intervalos</span>
-    <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;count()&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;greenblue&#39;</span><span class="p">),</span> <span class="n">legend</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Total Countries&#39;</span><span class="p">))</span>  <span class="c1"># Colorear según el recuento de países, usando un esquema de color verde-azul</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">'Wellbeing (0-10):Q'</span><span class="p">,</span> <span class="nb">bin</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>  <span class="c1"># Eje X con 'Wellbeing' agrupado en intervalos (binned)</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">'Life Expectancy (years):Q'</span><span class="p">,</span> <span class="nb">bin</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>  <span class="c1"># Eje Y con 'Life Expectancy' también agrupado en intervalos</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">'count()'</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s1">'greenblue'</span><span class="p">),</span> <span class="n">legend</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Total Countries'</span><span class="p">))</span>  <span class="c1"># Colorear según el recuento de países, usando un esquema de color verde-azul</span>
 <span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
     <span class="n">width</span><span class="o">=</span><span class="mi">350</span>  <span class="c1"># Ajustar el ancho del gráfico a 350 píxeles</span>
 <span class="p">)</span>
@@ -2494,8 +2494,8 @@ function(Bokeh) {
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">circles</span> <span class="o">=</span> <span class="n">heatmap</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">alt</span><span class="o">.</span><span class="n">ColorValue</span><span class="p">(</span><span class="s1">&#39;grey&#39;</span><span class="p">),</span>  <span class="c1"># Los puntos (círculos) tendrán color gris</span>
-    <span class="n">alt</span><span class="o">.</span><span class="n">Size</span><span class="p">(</span><span class="s1">&#39;count()&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Records in Selection&#39;</span><span class="p">))</span>  <span class="c1"># El tamaño de los puntos representa el número de registros en la selección</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">ColorValue</span><span class="p">(</span><span class="s1">'grey'</span><span class="p">),</span>  <span class="c1"># Los puntos (círculos) tendrán color gris</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Size</span><span class="p">(</span><span class="s1">'count()'</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Records in Selection'</span><span class="p">))</span>  <span class="c1"># El tamaño de los puntos representa el número de registros en la selección</span>
 <span class="p">)</span><span class="o">.</span><span class="n">transform_filter</span><span class="p">(</span>
     <span class="n">selected_region</span>  <span class="c1"># Filtra los puntos en función de la región seleccionada en el gráfico de barras</span>
 <span class="p">)</span>
@@ -2509,9 +2509,9 @@ function(Bokeh) {
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bars</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">hpi_df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Region:N&#39;</span><span class="p">,</span>  <span class="c1"># Eje X con las regiones (categórico)</span>
-    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;count()&#39;</span><span class="p">,</span>  <span class="c1"># Eje Y con el recuento de países por región</span>
-    <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">selected_region</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">ColorValue</span><span class="p">(</span><span class="s2">&quot;steelblue&quot;</span><span class="p">),</span> <span class="n">alt</span><span class="o">.</span><span class="n">ColorValue</span><span class="p">(</span><span class="s2">&quot;grey&quot;</span><span class="p">))</span>  <span class="c1"># Colorea las barras en azul para la región seleccionada y en gris para las no seleccionadas</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">'Region:N'</span><span class="p">,</span>  <span class="c1"># Eje X con las regiones (categórico)</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">'count()'</span><span class="p">,</span>  <span class="c1"># Eje Y con el recuento de países por región</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">selected_region</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">ColorValue</span><span class="p">(</span><span class="s2">"steelblue"</span><span class="p">),</span> <span class="n">alt</span><span class="o">.</span><span class="n">ColorValue</span><span class="p">(</span><span class="s2">"grey"</span><span class="p">))</span>  <span class="c1"># Colorea las barras en azul para la región seleccionada y en gris para las no seleccionadas</span>
 <span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
     <span class="n">width</span><span class="o">=</span><span class="mi">350</span>  <span class="c1"># Ajusta el ancho del gráfico de barras</span>
 <span class="p">)</span><span class="o">.</span><span class="n">add_selection</span><span class="p">(</span><span class="n">selected_region</span><span class="p">)</span>  <span class="c1"># Añade la selección interactiva en las barras</span>
@@ -2530,8 +2530,8 @@ function(Bokeh) {
 <h3><strong>Creación de un mapa coroplético</strong><a class="headerlink" href="#creacion-de-un-mapa-coropletico" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="c1"># Cargar el archivo CSV proporcionado</span>
 <span class="n">file_path</span> <span class="o">=</span> <span class="c1"># tu codigo aqui</span>
@@ -2563,23 +2563,23 @@ function(Bokeh) {
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>  <span class="c1"># Importa Plotly Express para generar gráficos interactivos de forma sencilla</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span><span class="p">,</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>  <span class="c1"># Importa funciones para visualizar gráficos en Jupyter Notebooks</span>
-<span class="kn">import</span> <span class="nn">chart_studio.plotly</span> <span class="k">as</span> <span class="nn">py</span>  <span class="c1"># Importa Chart Studio para subir gráficos a la plataforma de Plotly (opcional)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>  <span class="c1"># Importa Plotly Express para generar gráficos interactivos de forma sencilla</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">IFrame</span><span class="p">,</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>  <span class="c1"># Importa funciones para visualizar gráficos en Jupyter Notebooks</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">chart_studio.plotly</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">py</span>  <span class="c1"># Importa Chart Studio para subir gráficos a la plataforma de Plotly (opcional)</span>
 
-<span class="n">config</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;showLink&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;displayModeBar&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>  <span class="c1"># Configuración para desactivar enlaces y barra de herramientas</span>
+<span class="n">config</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'showLink'</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s1">'displayModeBar'</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>  <span class="c1"># Configuración para desactivar enlaces y barra de herramientas</span>
 
 <span class="c1"># Crear el mapa coroplético usando el DataFrame filtrado para 2016</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span>
     <span class="o">...</span><span class="p">,</span>  <span class="c1"># DataFrame con los datos del uso de Internet en 2016</span>
-    <span class="n">locations</span><span class="o">=</span><span class="s2">&quot;Code&quot;</span><span class="p">,</span>  <span class="c1"># Columna con los códigos de país ISO 3166</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;Individuals using the Internet (</span><span class="si">% o</span><span class="s2">f population)&quot;</span><span class="p">,</span>  <span class="c1"># Columna para colorear el mapa según el porcentaje de usuarios de Internet</span>
-    <span class="n">hover_name</span><span class="o">=</span><span class="s2">&quot;Country&quot;</span><span class="p">,</span>  <span class="c1"># Columna para mostrar el nombre del país al pasar el cursor</span>
-    <span class="n">color_continuous_scale</span><span class="o">=</span><span class="n">px</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">sequential</span><span class="o">.</span><span class="n">Plasma</span>  <span class="c1"># Esquema de color continuo &#39;Plasma&#39;</span>
+    <span class="n">locations</span><span class="o">=</span><span class="s2">"Code"</span><span class="p">,</span>  <span class="c1"># Columna con los códigos de país ISO 3166</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"Individuals using the Internet (</span><span class="si">% o</span><span class="s2">f population)"</span><span class="p">,</span>  <span class="c1"># Columna para colorear el mapa según el porcentaje de usuarios de Internet</span>
+    <span class="n">hover_name</span><span class="o">=</span><span class="s2">"Country"</span><span class="p">,</span>  <span class="c1"># Columna para mostrar el nombre del país al pasar el cursor</span>
+    <span class="n">color_continuous_scale</span><span class="o">=</span><span class="n">px</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">sequential</span><span class="o">.</span><span class="n">Plasma</span>  <span class="c1"># Esquema de color continuo 'Plasma'</span>
 <span class="p">)</span>
 
 <span class="c1"># Actualizar el título del gráfico</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title_text</span><span class="o">=</span><span class="s1">&#39;Internet usage across the world (% population)&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title_text</span><span class="o">=</span><span class="s1">'Internet usage across the world (% population)'</span><span class="p">)</span>
 
 <span class="c1"># Mostrar el gráfico</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c1"># Visualiza el gráfico de forma interactiva</span>
@@ -2596,16 +2596,16 @@ function(Bokeh) {
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span>
     <span class="o">...</span><span class="p">,</span>  <span class="c1"># DataFrame con los datos de uso de Internet en 2016</span>
-    <span class="n">locations</span><span class="o">=</span><span class="s2">&quot;Code&quot;</span><span class="p">,</span>  <span class="c1"># Columna con los códigos ISO 3166 de los países</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;Individuals using the Internet (</span><span class="si">% o</span><span class="s2">f population)&quot;</span><span class="p">,</span>  <span class="c1"># Columna para colorear el mapa según el porcentaje de usuarios de Internet</span>
-    <span class="n">hover_name</span><span class="o">=</span><span class="s2">&quot;Country&quot;</span><span class="p">,</span>  <span class="c1"># Columna para mostrar el nombre del país al pasar el cursor</span>
-    <span class="n">color_continuous_scale</span><span class="o">=</span><span class="n">px</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">sequential</span><span class="o">.</span><span class="n">Plasma</span>  <span class="c1"># Esquema de color continuo &#39;Plasma&#39;</span>
+    <span class="n">locations</span><span class="o">=</span><span class="s2">"Code"</span><span class="p">,</span>  <span class="c1"># Columna con los códigos ISO 3166 de los países</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"Individuals using the Internet (</span><span class="si">% o</span><span class="s2">f population)"</span><span class="p">,</span>  <span class="c1"># Columna para colorear el mapa según el porcentaje de usuarios de Internet</span>
+    <span class="n">hover_name</span><span class="o">=</span><span class="s2">"Country"</span><span class="p">,</span>  <span class="c1"># Columna para mostrar el nombre del país al pasar el cursor</span>
+    <span class="n">color_continuous_scale</span><span class="o">=</span><span class="n">px</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">sequential</span><span class="o">.</span><span class="n">Plasma</span>  <span class="c1"># Esquema de color continuo 'Plasma'</span>
 <span class="p">)</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
     <span class="c1"># Añadir un título para el gráfico</span>
-    <span class="n">title_text</span><span class="o">=</span><span class="s1">&#39;Uso de Internet en todo Sur América (</span><span class="si">% d</span><span class="s1">e población) - 2016&#39;</span><span class="p">,</span>
-    <span class="n">geo_scope</span><span class="o">=</span><span class="s1">&#39;# TU CODIGO AQUI&#39;</span>  <span class="c1"># Limitar el alcance del mapa a Sudamérica (opciones: north america, africa, asia, etc.)</span>
+    <span class="n">title_text</span><span class="o">=</span><span class="s1">'Uso de Internet en todo Sur América (</span><span class="si">% d</span><span class="s1">e población) - 2016'</span><span class="p">,</span>
+    <span class="n">geo_scope</span><span class="o">=</span><span class="s1">'# TU CODIGO AQUI'</span>  <span class="c1"># Limitar el alcance del mapa a Sudamérica (opciones: north america, africa, asia, etc.)</span>
 <span class="p">)</span>
 
 <span class="c1"># Mostrar el gráfico</span>
@@ -2618,14 +2618,14 @@ function(Bokeh) {
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span><span class="n">df_owd_2016</span><span class="p">,</span>
-                    <span class="n">locations</span><span class="o">=</span><span class="s2">&quot;Code&quot;</span><span class="p">,</span>
-                    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;Individuals using the Internet (</span><span class="si">% o</span><span class="s2">f population)&quot;</span><span class="p">,</span> <span class="c1"># column by which to color-code</span>
-                    <span class="n">hover_name</span><span class="o">=</span><span class="s2">&quot;Country&quot;</span><span class="p">,</span> <span class="c1"># column to display in hover information </span>
+                    <span class="n">locations</span><span class="o">=</span><span class="s2">"Code"</span><span class="p">,</span>
+                    <span class="n">color</span><span class="o">=</span><span class="s2">"Individuals using the Internet (</span><span class="si">% o</span><span class="s2">f population)"</span><span class="p">,</span> <span class="c1"># column by which to color-code</span>
+                    <span class="n">hover_name</span><span class="o">=</span><span class="s2">"Country"</span><span class="p">,</span> <span class="c1"># column to display in hover information </span>
                     <span class="n">color_continuous_scale</span><span class="o">=</span><span class="n">px</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">sequential</span><span class="o">.</span><span class="n">Plasma</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
     <span class="c1"># add a title text for the plot</span>
-    <span class="n">title_text</span> <span class="o">=</span> <span class="s1">&#39;Internet usage across the Europe Continent (% population) - 2016&#39;</span><span class="p">,</span>
-    <span class="n">geo_scope</span> <span class="o">=</span> <span class="s1">&#39;# TU CODIGO AQUI&#39;</span> <span class="c1"># can be set to north america | south america | africa | asia | europe | usa</span>
+    <span class="n">title_text</span> <span class="o">=</span> <span class="s1">'Internet usage across the Europe Continent (% population) - 2016'</span><span class="p">,</span>
+    <span class="n">geo_scope</span> <span class="o">=</span> <span class="s1">'# TU CODIGO AQUI'</span> <span class="c1"># can be set to north america | south america | africa | asia | europe | usa</span>
 <span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -2638,17 +2638,17 @@ function(Bokeh) {
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span>
     <span class="o">...</span><span class="p">,</span>  <span class="c1"># DataFrame con los datos de uso de Internet en 2016</span>
-    <span class="n">locations</span><span class="o">=</span><span class="s2">&quot;Code&quot;</span><span class="p">,</span>  <span class="c1"># Columna con los códigos ISO 3166 de los países</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;Individuals using the Internet (</span><span class="si">% o</span><span class="s2">f population)&quot;</span><span class="p">,</span>  <span class="c1"># Columna para colorear el mapa según el porcentaje de usuarios de Internet</span>
-    <span class="n">hover_name</span><span class="o">=</span><span class="s2">&quot;Country&quot;</span><span class="p">,</span>  <span class="c1"># Columna para mostrar el nombre del país al pasar el cursor</span>
-    <span class="n">color_continuous_scale</span><span class="o">=</span><span class="n">px</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">sequential</span><span class="o">.</span><span class="n">Plasma</span>  <span class="c1"># Esquema de color continuo &#39;Plasma&#39;</span>
+    <span class="n">locations</span><span class="o">=</span><span class="s2">"Code"</span><span class="p">,</span>  <span class="c1"># Columna con los códigos ISO 3166 de los países</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"Individuals using the Internet (</span><span class="si">% o</span><span class="s2">f population)"</span><span class="p">,</span>  <span class="c1"># Columna para colorear el mapa según el porcentaje de usuarios de Internet</span>
+    <span class="n">hover_name</span><span class="o">=</span><span class="s2">"Country"</span><span class="p">,</span>  <span class="c1"># Columna para mostrar el nombre del país al pasar el cursor</span>
+    <span class="n">color_continuous_scale</span><span class="o">=</span><span class="n">px</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">sequential</span><span class="o">.</span><span class="n">Plasma</span>  <span class="c1"># Esquema de color continuo 'Plasma'</span>
 <span class="p">)</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
     <span class="c1"># Añadir un título para el gráfico</span>
-    <span class="n">title_text</span><span class="o">=</span><span class="s1">&#39;Internet usage across the world (% population)&#39;</span><span class="p">,</span>
+    <span class="n">title_text</span><span class="o">=</span><span class="s1">'Internet usage across the world (% population)'</span><span class="p">,</span>
     <span class="c1"># Establecer el estilo de proyección del mapa</span>
-    <span class="n">geo</span><span class="o">=</span><span class="c1"># TU CODIGO  # Establecer proyección tipo &#39;natural earth&#39; (por defecto es &#39;equirectangular&#39;)</span>
+    <span class="n">geo</span><span class="o">=</span><span class="c1"># TU CODIGO  # Establecer proyección tipo 'natural earth' (por defecto es 'equirectangular')</span>
 <span class="p">)</span>
 
 <span class="c1"># Mostrar el gráfico</span>
@@ -2664,22 +2664,22 @@ function(Bokeh) {
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ordenar las fechas</span>
-<span class="n">df_owd</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Year&quot;</span><span class="p">],</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_owd</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s2">"Year"</span><span class="p">],</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span>
     <span class="n">df_owd</span><span class="p">,</span>  <span class="c1"># DataFrame con los datos de uso de Internet</span>
-    <span class="n">locations</span><span class="o">=</span><span class="s2">&quot;Code&quot;</span><span class="p">,</span>  <span class="c1"># Columna con los códigos ISO 3166 de los países</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;Individuals using the Internet (</span><span class="si">% o</span><span class="s2">f population)&quot;</span><span class="p">,</span>  <span class="c1"># Columna que define la coloración según el porcentaje de usuarios de Internet</span>
-    <span class="n">hover_name</span><span class="o">=</span><span class="s2">&quot;Country&quot;</span><span class="p">,</span>  <span class="c1"># Columna para mostrar el nombre del país al pasar el cursor</span>
-    <span class="n">animation_frame</span><span class="o">=</span><span class="s2">&quot;# TU CODIGO&quot;</span><span class="p">,</span>  <span class="c1"># Columna para animar el gráfico a lo largo del tiempo (por año)</span>
-    <span class="n">color_continuous_scale</span><span class="o">=</span><span class="n">px</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">sequential</span><span class="o">.</span><span class="n">Plasma</span>  <span class="c1"># Esquema de color continuo &#39;Plasma&#39;</span>
+    <span class="n">locations</span><span class="o">=</span><span class="s2">"Code"</span><span class="p">,</span>  <span class="c1"># Columna con los códigos ISO 3166 de los países</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"Individuals using the Internet (</span><span class="si">% o</span><span class="s2">f population)"</span><span class="p">,</span>  <span class="c1"># Columna que define la coloración según el porcentaje de usuarios de Internet</span>
+    <span class="n">hover_name</span><span class="o">=</span><span class="s2">"Country"</span><span class="p">,</span>  <span class="c1"># Columna para mostrar el nombre del país al pasar el cursor</span>
+    <span class="n">animation_frame</span><span class="o">=</span><span class="s2">"# TU CODIGO"</span><span class="p">,</span>  <span class="c1"># Columna para animar el gráfico a lo largo del tiempo (por año)</span>
+    <span class="n">color_continuous_scale</span><span class="o">=</span><span class="n">px</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">sequential</span><span class="o">.</span><span class="n">Plasma</span>  <span class="c1"># Esquema de color continuo 'Plasma'</span>
 <span class="p">)</span>
  
 <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
     <span class="c1"># Añadir un título al gráfico</span>
-    <span class="n">title_text</span><span class="o">=</span><span class="s1">&#39;Internet usage across the world (% population)&#39;</span><span class="p">,</span>
+    <span class="n">title_text</span><span class="o">=</span><span class="s1">'Internet usage across the world (% population)'</span><span class="p">,</span>
     <span class="c1"># Establecer el estilo de proyección del mapa</span>
-    <span class="n">geo</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="s1">&#39;natural earth&#39;</span><span class="p">})</span>  <span class="c1"># Establecer proyección &#39;natural earth&#39; (por defecto es &#39;equirectangular&#39;)</span>
+    <span class="n">geo</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="p">{</span><span class="s1">'type'</span><span class="p">:</span><span class="s1">'natural earth'</span><span class="p">})</span>  <span class="c1"># Establecer proyección 'natural earth' (por defecto es 'equirectangular')</span>
 <span class="p">)</span>
 
 <span class="c1"># Mostrar el gráfico animado</span>
@@ -2700,7 +2700,7 @@ function(Bokeh) {
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importemos los datos</span>
 <span class="n">filename</span> <span class="o">=</span> <span class="c1"># TU CODIGO AQUI</span>
-<span class="n">df_pob</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">df_pob</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">)</span>
 <span class="n">df_pob</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -2711,7 +2711,7 @@ function(Bokeh) {
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_pob</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">df_pob</span><span class="p">,</span> <span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;State&#39;</span><span class="p">,</span> <span class="s1">&#39;Code&#39;</span><span class="p">],</span> <span class="n">var_name</span><span class="o">=</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s2">&quot;Population&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_pob</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">df_pob</span><span class="p">,</span> <span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s1">'State'</span><span class="p">,</span> <span class="s1">'Code'</span><span class="p">],</span> <span class="n">var_name</span><span class="o">=</span><span class="s2">"Year"</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s2">"Population"</span><span class="p">)</span>
 <span class="n">df_pob</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -2722,7 +2722,7 @@ function(Bokeh) {
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">plotly.graph_objects</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">go</span>
 </pre></div>
 </div>
 </div>
@@ -2743,16 +2743,16 @@ function(Bokeh) {
     <span class="n">data</span><span class="o">=</span><span class="n">go</span><span class="o">.</span><span class="n">Choropleth</span><span class="p">(</span>
         <span class="n">locations</span><span class="o">=</span><span class="c1"># TU CODIGO,  # Columna con los códigos de los estados de EE. UU.</span>
         <span class="n">z</span><span class="o">=</span><span class="c1"># TU CODIGO,  # Columna con los datos de población para codificar por colores</span>
-        <span class="n">locationmode</span><span class="o">=</span><span class="s1">&#39;USA-states&#39;</span><span class="p">,</span>  <span class="c1"># Definir que las ubicaciones corresponden a los estados de EE. UU.</span>
-        <span class="n">colorscale</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span>  <span class="c1"># Esquema de colores para representar los valores</span>
-        <span class="n">colorbar_title</span><span class="o">=</span><span class="s2">&quot;Población&quot;</span>  <span class="c1"># Título de la barra de colores (población)</span>
+        <span class="n">locationmode</span><span class="o">=</span><span class="s1">'USA-states'</span><span class="p">,</span>  <span class="c1"># Definir que las ubicaciones corresponden a los estados de EE. UU.</span>
+        <span class="n">colorscale</span><span class="o">=</span><span class="s1">'Blues'</span><span class="p">,</span>  <span class="c1"># Esquema de colores para representar los valores</span>
+        <span class="n">colorbar_title</span><span class="o">=</span><span class="s2">"Población"</span>  <span class="c1"># Título de la barra de colores (población)</span>
     <span class="p">)</span>
 <span class="p">)</span>
 
 <span class="c1"># Actualizar el diseño</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
-    <span class="n">title_text</span><span class="o">=</span><span class="s1">&#39;Población de los EE. UU. por estados&#39;</span><span class="p">,</span>  <span class="c1"># Título del gráfico</span>
-    <span class="n">geo_scope</span><span class="o">=</span><span class="s1">&#39;usa&#39;</span>  <span class="c1"># Limitar el mapa al territorio de los EE. UU.</span>
+    <span class="n">title_text</span><span class="o">=</span><span class="s1">'Población de los EE. UU. por estados'</span><span class="p">,</span>  <span class="c1"># Título del gráfico</span>
+    <span class="n">geo_scope</span><span class="o">=</span><span class="s1">'usa'</span>  <span class="c1"># Limitar el mapa al territorio de los EE. UU.</span>
 <span class="p">)</span>
 
 <span class="c1"># Mostrar la figura</span>
@@ -2767,8 +2767,8 @@ function(Bokeh) {
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
-<span class="kn">import</span> <span class="nn">json</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">plotly.graph_objects</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">go</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
 </pre></div>
 </div>
 </div>
@@ -2781,7 +2781,7 @@ function(Bokeh) {
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cargar el archivo GeoJSON desde la ruta local</span>
 <span class="n">geojson_path</span> <span class="o">=</span> <span class="c1"># TU CODIGO AQUI</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">geojson_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>  <span class="c1"># Abrir el archivo local</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">geojson_path</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>  <span class="c1"># Abrir el archivo local</span>
     <span class="n">counties</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2796,10 +2796,10 @@ function(Bokeh) {
 <span class="n">z_id</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># Lista para almacenar los valores de hectáreas</span>
 
 <span class="c1"># Recorrer los features del GeoJSON</span>
-<span class="k">for</span> <span class="n">loc</span> <span class="ow">in</span> <span class="n">counties</span><span class="p">[</span><span class="s1">&#39;features&#39;</span><span class="p">]:</span>
-    <span class="n">loc</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">loc</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;NOMBRE_DPT&#39;</span><span class="p">]</span>  <span class="c1"># Asignar el nombre del departamento como ID</span>
-    <span class="n">locs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;NOMBRE_DPT&#39;</span><span class="p">])</span>  <span class="c1"># Agregar el nombre del departamento a locs</span>
-    <span class="n">z_id</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;HECTARES&#39;</span><span class="p">])</span>  <span class="c1"># Agregar el valor de hectáreas a z_id</span>
+<span class="k">for</span> <span class="n">loc</span> <span class="ow">in</span> <span class="n">counties</span><span class="p">[</span><span class="s1">'features'</span><span class="p">]:</span>
+    <span class="n">loc</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span> <span class="o">=</span> <span class="n">loc</span><span class="p">[</span><span class="s1">'properties'</span><span class="p">][</span><span class="s1">'NOMBRE_DPT'</span><span class="p">]</span>  <span class="c1"># Asignar el nombre del departamento como ID</span>
+    <span class="n">locs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">loc</span><span class="p">[</span><span class="s1">'properties'</span><span class="p">][</span><span class="s1">'NOMBRE_DPT'</span><span class="p">])</span>  <span class="c1"># Agregar el nombre del departamento a locs</span>
+    <span class="n">z_id</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">loc</span><span class="p">[</span><span class="s1">'properties'</span><span class="p">][</span><span class="s1">'HECTARES'</span><span class="p">])</span>  <span class="c1"># Agregar el valor de hectáreas a z_id</span>
 </pre></div>
 </div>
 </div>
@@ -2814,15 +2814,15 @@ function(Bokeh) {
                     <span class="n">geojson</span><span class="o">=</span><span class="c1"># TU CODIGO,</span>
                     <span class="n">locations</span><span class="o">=</span><span class="n">locs</span><span class="p">,</span>
                     <span class="n">z</span><span class="o">=</span><span class="n">z_id</span><span class="p">,</span>
-                    <span class="n">colorscale</span><span class="o">=</span><span class="s1">&#39;Viridis&#39;</span><span class="p">,</span>  <span class="c1"># Esquema de colores Viridis</span>
-                    <span class="n">colorbar_title</span><span class="o">=</span><span class="s2">&quot;Hectáreas&quot;</span>  <span class="c1"># Título de la barra de color</span>
+                    <span class="n">colorscale</span><span class="o">=</span><span class="s1">'Viridis'</span><span class="p">,</span>  <span class="c1"># Esquema de colores Viridis</span>
+                    <span class="n">colorbar_title</span><span class="o">=</span><span class="s2">"Hectáreas"</span>  <span class="c1"># Título de la barra de color</span>
                 <span class="p">))</span>
 
 <span class="c1"># Actualizar el layout del mapa</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
-    <span class="n">mapbox_style</span><span class="o">=</span><span class="s2">&quot;open-street-map&quot;</span><span class="p">,</span>  <span class="c1"># Usar el estilo de mapa de Open Street Map</span>
+    <span class="n">mapbox_style</span><span class="o">=</span><span class="s2">"open-street-map"</span><span class="p">,</span>  <span class="c1"># Usar el estilo de mapa de Open Street Map</span>
     <span class="n">mapbox_zoom</span><span class="o">=</span><span class="mf">3.78</span><span class="p">,</span>  <span class="c1"># Zoom en el mapa</span>
-    <span class="n">mapbox_center</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;lat&quot;</span><span class="p">:</span> <span class="mf">4.570868</span><span class="p">,</span> <span class="s2">&quot;lon&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">74.2973328</span><span class="p">}</span>  <span class="c1"># Centrar el mapa en Colombia</span>
+    <span class="n">mapbox_center</span><span class="o">=</span><span class="p">{</span><span class="s2">"lat"</span><span class="p">:</span> <span class="mf">4.570868</span><span class="p">,</span> <span class="s2">"lon"</span><span class="p">:</span> <span class="o">-</span><span class="mf">74.2973328</span><span class="p">}</span>  <span class="c1"># Centrar el mapa en Colombia</span>
 <span class="p">)</span>
 
 <span class="c1"># Mostrar el gráfico</span>
@@ -2838,14 +2838,14 @@ function(Bokeh) {
                     <span class="n">geojson</span><span class="o">=</span><span class="c1"># TU CODIGO,  # GeoJSON con la geometría de los departamentos</span>
                     <span class="n">locations</span><span class="o">=</span><span class="n">locs</span><span class="p">,</span>  <span class="c1"># Nombres de los departamentos</span>
                     <span class="n">z</span><span class="o">=</span><span class="n">z_id</span><span class="p">,</span>  <span class="c1"># Valores (hectáreas) para colorear el mapa</span>
-                    <span class="n">colorscale</span><span class="o">=</span><span class="s1">&#39;Viridis&#39;</span><span class="p">,</span>  <span class="c1"># Esquema de colores &#39;Viridis&#39;</span>
-                    <span class="n">colorbar_title</span><span class="o">=</span><span class="s2">&quot;Hectáreas&quot;</span>  <span class="c1"># Título de la barra de color</span>
+                    <span class="n">colorscale</span><span class="o">=</span><span class="s1">'Viridis'</span><span class="p">,</span>  <span class="c1"># Esquema de colores 'Viridis'</span>
+                    <span class="n">colorbar_title</span><span class="o">=</span><span class="s2">"Hectáreas"</span>  <span class="c1"># Título de la barra de color</span>
                 <span class="p">))</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
-    <span class="n">mapbox_style</span><span class="o">=</span><span class="s2">&quot;white-bg&quot;</span><span class="p">,</span>  <span class="c1"># Estilo del mapa de fondo (blanco)</span>
+    <span class="n">mapbox_style</span><span class="o">=</span><span class="s2">"white-bg"</span><span class="p">,</span>  <span class="c1"># Estilo del mapa de fondo (blanco)</span>
     <span class="n">mapbox_zoom</span><span class="o">=</span><span class="mf">3.78</span><span class="p">,</span>  <span class="c1"># Nivel de zoom del mapa</span>
-    <span class="n">mapbox_center</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;lat&quot;</span><span class="p">:</span> <span class="mf">4.570868</span><span class="p">,</span> <span class="s2">&quot;lon&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">74.2973328</span><span class="p">}</span>  <span class="c1"># Centrar el mapa en la latitud/longitud de Colombia</span>
+    <span class="n">mapbox_center</span><span class="o">=</span><span class="p">{</span><span class="s2">"lat"</span><span class="p">:</span> <span class="mf">4.570868</span><span class="p">,</span> <span class="s2">"lon"</span><span class="p">:</span> <span class="o">-</span><span class="mf">74.2973328</span><span class="p">}</span>  <span class="c1"># Centrar el mapa en la latitud/longitud de Colombia</span>
 <span class="p">)</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c1"># Mostrar el gráfico</span>
